@@ -1,8 +1,7 @@
 import "./styles/reset.css";
-import "./styles/global.css";
 
 function App() {
-  return <div>init</div>;
+  return <div>영스</div>;
 }
 
 export default App;
