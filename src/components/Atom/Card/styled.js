@@ -104,7 +104,7 @@ const CardStyles = {
     boxShadow: "0px 3px 10px -3px gray",
   },
 
-  stockRecommandCard: {
+  stockRecommandBackgroundCard: {
     background: "white",
     color: "black",
     width: "55vw",
@@ -112,6 +112,15 @@ const CardStyles = {
     borderRadius: "1.5vw",
     border: "0.5px solid #ffffff",
     boxShadow: "2.5px 5px 4px -3px gray",
+  },
+  stockRecommandListCard: {
+    background: "rgba(195, 0, 202, 0.06 )",
+    color: "rgba(0,0,0,8.5)",
+    width: "25vw",
+    height: "6vh",
+    borderRadius: "1.5vw",
+    border: "0.5px solid #ffffff",
+    boxShadow: "0px 1px 6px -4px black",
   },
 };
 
