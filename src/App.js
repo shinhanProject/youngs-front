@@ -1,12 +1,9 @@
+import Router from "./Router";
+
 import "./styles/reset.css";
-import { Button } from "./components";
 
 function App() {
-  return (
-    <div>
-      <Button styleType="btn2">가나다</Button>
-    </div>
-  );
+  return <Router />;
 }
 
 export default App;
