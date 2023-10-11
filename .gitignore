@@ -1,8 +1,12 @@
 .yarn/*
-.yarn/cache
+!.yarn/cache
 !.yarn/patches
 !.yarn/plugins
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
 /node_modules/
+.eslintcache
+.yarn/cache
+
+package-lock.json
