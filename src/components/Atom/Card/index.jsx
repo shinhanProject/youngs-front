@@ -1,9 +1,9 @@
 import React from "react";
 import { StyledCard } from "./styled";
 
-const Card = ({ styleType, onClick, children }) => {
+const Card = ({ theme, onClick, children }) => {
   return (
-    <StyledCard type="div" styleType={styleType} onClick={onClick}>
+    <StyledCard type="div" theme={theme} onClick={onClick}>
       {children}
     </StyledCard>
   );

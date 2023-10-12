@@ -42,14 +42,20 @@ const ButtonStyles = {
     background:
       "linear-gradient( 50deg,  #0046ff 30% , rgba(195, 0, 202, 0.9) 100%)",
     color: "white",
-    border: "1px solid #ECECEC",
+    padding: "0.4vw  1vw",
+    fontSize: "0.8vw",
+    boxShadow: "2px 3.5px 4px -3px lightgray",
+    margin: "0 0 0 -0.8vw",
   },
   rankToUserBtn: {
     borderRadius: "15px",
     background:
       "linear-gradient( to bottom right,rgba(195, 0, 202, 0.7) 10%,  rgba(0,70,255,0.8 ) 30% , rgba(195, 0, 202, 0.7) 100%)",
     color: "white",
-    border: "1px solid #ECECEC",
+    padding: "0.4vw  1.7vw",
+    fontSize: "0.8vw",
+    boxShadow: "2px 3.5px 4px -3px lightgray",
+    margin: "0 0 0 3vw",
   },
 };
 
