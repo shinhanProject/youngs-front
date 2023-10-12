@@ -7,3 +7,5 @@ export { default as Toggle } from "./Atom/Toggle";
 
 export { default as Header } from "./Molecule/Header";
 export { default as Footer } from "./Molecule/Footer";
+
+export { default as Banner } from "./Organism/Banner";
