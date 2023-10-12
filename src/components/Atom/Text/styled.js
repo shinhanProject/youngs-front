@@ -51,6 +51,12 @@ const textStyles = {
     fontWeight: "normal",
     fontSize: "28px",
   },
+  textGptDescription: {
+    fontWeight: "normal",
+    fontSize: "13px",
+    color: "#4A483F",
+    lineHeight: "1.3vw",
+  },
 };
 
 export const StyledText = styled.p`
