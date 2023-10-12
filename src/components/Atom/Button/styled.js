@@ -2,12 +2,18 @@ import styled from "styled-components";
 
 const ButtonStyles = {
   loginBtn: {
+    width: "7vw",
+    height: "5vh",
     borderRadius: "15px",
     background:
       "linear-gradient( 180deg, rgba(253, 136, 206, 0.97) 0.01%,  #0046ff 100% )",
     color: "white",
+    gap: "16px",
   },
-  transparentBtn: {
+  headerBtn: {
+    height: "5vh",
+    textAlign: "center",
+    fontWeight: "bold",
     background: "rgba(255, 255, 255, 0)",
   },
   blueBtn: {
@@ -31,7 +37,6 @@ const ButtonStyles = {
     color: "#0046ff",
     border: "1px solid #ECECEC",
   },
-
   followBtn: {
     borderRadius: "15px",
     background:
@@ -49,5 +54,5 @@ const ButtonStyles = {
 };
 
 export const StyledButton = styled.button`
-  ${props => ButtonStyles[props.styleType]}
+  ${props => ButtonStyles[props.theme]}
 `;
