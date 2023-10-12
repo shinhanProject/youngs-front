@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   width: 100vw;
-  height: 20vh;
+  height: 23vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,7 +13,6 @@ export const LinkGroup = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin: 5em;
 `;
 
 export const TextGroup = styled.div`
@@ -21,17 +20,15 @@ export const TextGroup = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: left;
-  margin: 0.5em;
+  margin: 2vw;
 `;
 
 export const Image = styled.img`
-  width: 2em;
-  height: 2em;
-  margin: 2em;
+  width: 2vw;
+  height: 2vw;
+  margin: 2vw;
 `;
 
 export const ImageLogo = styled.img`
-  width: 14em;
-  height: 4em;
-  margin: 0;
+  width: 15vw;
 `;
