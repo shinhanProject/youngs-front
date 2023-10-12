@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
   ${props =>
     props.theme === "opaque"
       ? `background-color: rgba(255, 255, 255, 0.30);`
-      : `background-color: red;`}
+      : `background-color: white;`}
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -19,4 +19,8 @@ export const Image = styled.img`
   padding-bottom: 1vh;
 `;
 
-export const ButtonGroup = styled.div``;
+export const ButtonGroup = styled.div`
+  width: 20vw;
+  display: flex;
+  justify-content: space-between;
+`;

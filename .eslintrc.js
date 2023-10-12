@@ -29,5 +29,6 @@ module.exports = {
     "react/prop-types": 0,
     "import/prefer-default-export": "off",
     "arrow-body-style": "off",
+    "import/no-cycle": "off",
   },
 };

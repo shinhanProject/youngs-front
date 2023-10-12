@@ -1,7 +1,12 @@
-import { ListItem } from "../../components";
+import { Header, Toggle } from "../../components";
 
 const Main = () => {
-  return <ListItem state="on">하이</ListItem>;
+  return (
+    <>
+      <Header />
+      <Toggle />
+    </>
+  );
 };
 
 export default Main;
