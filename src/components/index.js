@@ -13,5 +13,4 @@ export { default as InfoCategory } from "./Molecule/InfoCategory";
 
 export { default as Banner } from "./Organism/Banner";
 export { default as RankingModal } from "./Organism/RankingModal";
-
 export { default as GptModal } from "./Organism/GptModal";
