@@ -31,5 +31,6 @@ module.exports = {
     "arrow-body-style": "off",
     "import/no-cycle": "off",
     "no-param-reassign": "off",
+    "react/jsx-props-no-spreading": "off",
   },
 };
