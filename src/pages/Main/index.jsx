@@ -1,12 +1,7 @@
-import { Header, Toggle } from "../../components";
+import { Banner } from "../../components";
 
 const Main = () => {
-  return (
-    <>
-      <Header />
-      <Toggle />
-    </>
-  );
+  return <Banner />;
 };
 
 export default Main;
