@@ -12,3 +12,4 @@ export { default as LoginProfile } from "./Molecule/LoginProfile";
 export { default as InfoCategory } from "./Molecule/InfoCategory";
 
 export { default as RankingModal } from "./organism/RankingModal";
+export { default as GptModal } from "./organism/GptModal";
