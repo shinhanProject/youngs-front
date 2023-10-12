@@ -3,6 +3,10 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
   width: 90vw;
   height: 10vh;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
   ${props =>
     props.theme === "opaque"
       ? `background-color: rgba(255, 255, 255, 0.30);`

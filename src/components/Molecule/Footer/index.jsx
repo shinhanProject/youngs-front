@@ -1,5 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Text } from "../../index";
+
 import notion from "../../../assets/images/notionLogo.svg";
 import github from "../../../assets/images/githubLogo.svg";
 import logoBlack from "../../../assets/images/logo_black.svg";
@@ -21,9 +23,23 @@ const Footer = () => {
         </Text>
       </TextGroup>
       <LinkGroup>
-        <Text styleType="text7">ABOUT</Text>
-        <Image src={notion} alt="노션링크" />
-        <Image src={github} alt="깃헙링크" />
+        <Link to="/onboarding">
+          <Text styleType="text7">ABOUT</Text>
+        </Link>
+        <a
+          href="https://legendary-meeting-a7f.notion.site/6-68c17ed5c84e479cb31f952f64e1d832?pvs=4"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Image src={notion} alt="노션링크" />
+        </a>
+        <a
+          href="https://github.com/shinhanProject"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Image src={github} alt="깃헙링크" />
+        </a>
       </LinkGroup>
     </Wrapper>
   );
