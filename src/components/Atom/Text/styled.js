@@ -57,6 +57,25 @@ const textStyles = {
     color: "#4A483F",
     lineHeight: "1.3vw",
   },
+  textSummaryTopic: {
+    fontWeight: "normal",
+    fontSize: "13px",
+    color: "black",
+    textAlign: "center",
+  },
+  textSummaryDate: {
+    fontWeight: "normal",
+    fontSize: "9px",
+    color: "#4A483F",
+
+    margin: "0px 0px 15px 0px",
+  },
+  textSummaryDescription: {
+    fontSize: "13px",
+    color: "#4AFFF",
+    lineHeight: "1.3vw",
+    padding: "10px 0px 10px 0px",
+  },
 };
 
 export const StyledText = styled.p`
