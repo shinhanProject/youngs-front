@@ -47,6 +47,10 @@ const textStyles = {
     fontWeight: "normal",
     fontSize: "20px",
   },
+  textInfoCategory: {
+    fontWeight: "normal",
+    fontSize: "28px",
+  },
 };
 
 export const StyledText = styled.p`
