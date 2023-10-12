@@ -39,8 +39,20 @@ const textStyles = {
     color: "rgba(0,0,0,0.7)",
     margin: "2rem",
   },
+  textRanking: {
+    fontWeight: "normal",
+    fontSize: "10px",
+  },
+  textRankingProfile: {
+    fontWeight: "normal",
+    fontSize: "20px",
+  },
+  textInfoCategory: {
+    fontWeight: "normal",
+    fontSize: "28px",
+  },
 };
 
 export const StyledText = styled.p`
-  ${props => textStyles[props.styleType]}
+  ${props => textStyles[props.theme]}
 `;

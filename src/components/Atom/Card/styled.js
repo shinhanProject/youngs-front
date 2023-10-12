@@ -23,18 +23,28 @@ const CardStyles = {
   categoryCardnotSelected: {
     background: "white",
     color: "black",
-    width: "21vw",
-    height: "10vh",
+    width: "18vw",
+    height: "15vh",
     borderRadius: "2vw",
     border: "1.5px solid #ececec",
     boxShadow: "0 6px 6px -5px black",
   },
 
+  // categoryCardnotSelected : {
+  //   background: "white",
+  //   color: "black",
+  //   width: "18vw",
+  //   height: "15vh",
+  //   borderRadius: "2vw",
+  //   border: "1.5px solid #ececec",
+  //   boxShadow: "0 6px 6px -5px black",
+  // },
+
   categoryCardSelected: {
     background: "white",
     color: "black",
-    width: "21vw",
-    height: "10vh",
+    width: "18vw",
+    height: "15vh",
     border: "1.5px solid transparent",
     borderRadius: "1.5vw",
     backgroundImage:
@@ -65,13 +75,18 @@ const CardStyles = {
   },
 
   rankModalCard: {
-    background: "white",
+    background: "#fdfafa",
     color: "black",
-    width: "14vw",
-    height: "6vh",
+    width: "16vw",
+    height: "13vh",
     borderRadius: "1vw",
     border: "0.5px solid #fdfafa",
-    boxShadow: "2px 3.5px 4px -3px gray",
+    boxShadow: "2px 3.5px 4px -3px lightgray",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-around",
+    alignItem: "center",
+    padding: "1vw",
   },
 
   gptModalCard: {
@@ -125,5 +140,5 @@ const CardStyles = {
 };
 
 export const StyledCard = styled.div`
-  ${props => CardStyles[props.styleType]}
+  ${props => CardStyles[props.theme]}
 `;
