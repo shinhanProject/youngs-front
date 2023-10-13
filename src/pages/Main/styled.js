@@ -16,6 +16,7 @@ export const DecoImg = styled.img`
   left: 15vw;
   width: 15vw;
   z-index: 1;
+  filter: opacity(0.3);
 `;
 
 export const DecoImg2 = styled.img`
