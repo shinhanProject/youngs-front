@@ -77,6 +77,16 @@ const ButtonStyles = {
     boxShadow: "2px 3.5px 4px -3px lightgray",
     margin: "0 0 0 3vw",
   },
+  duplicateCheckBtn: {
+    width: "30%",
+    background: "#ECECEC",
+    color: "white",
+    height: "6.5vh",
+    borderRadius: "2px",
+    "&:hover": {
+      background: "#D9D9D9",
+    },
+  },
 };
 
 export const StyledButton = styled.button`
