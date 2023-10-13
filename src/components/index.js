@@ -13,10 +13,9 @@ export { default as LoginProfile } from "./Molecule/LoginProfile";
 export { default as InfoCategory } from "./Molecule/InfoCategory";
 export { default as SummaryCard } from "./Molecule/SummaryCard";
 export { default as StockRecommandCard } from "./Molecule/StockRecommandCard";
-export { default as RankingCard } from "./Molecule/RankingCard";
 
 export { default as Banner } from "./Organism/Banner";
 export { default as RankingModal } from "./Organism/RankingModal";
 export { default as GptModal } from "./Organism/GptModal";
 export { default as StockRecommand } from "./Organism/StockRecommand";
-
+export { default as CategoryBundle } from "./Organism/CategoryBundle";
