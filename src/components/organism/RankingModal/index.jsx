@@ -1,20 +1,19 @@
 import React from "react";
 import { Wrapper, WrapperProfile } from "./styled";
 import { Text, ProfileImg, Card, Button } from "../../index";
-import solProfile2 from "../../../assets/images/solProfile2.jpg";
-// src 받을 수 있게 해야 합니다
-const RankingModal = ({ children, onClick }) => {
+
+const RankingModal = ({ children, onClick, src }) => {
   const followState = false;
 
   return (
     <Card theme="rankModalCard">
       <WrapperProfile>
         <Text theme="textRankingProfile">{children}</Text>
-        <ProfileImg theme="rankingProfile" src={solProfile2} />
+        <ProfileImg theme="rankingProfile" src={src} />
       </WrapperProfile>
       <Wrapper>
         {followState ? (
-          <Button theme="followBtn" onClick={onClick}>
+          <Button theme="followBtn" onClick={onClick} src={src}>
             follow
           </Button>
         ) : (

@@ -51,6 +51,42 @@ const textStyles = {
     fontWeight: "normal",
     fontSize: "28px",
   },
+  textGptDescription: {
+    fontWeight: "normal",
+    fontSize: "13px",
+    color: "#4A483F",
+    lineHeight: "1.3vw",
+  },
+  textSummaryTopic: {
+    fontWeight: "normal",
+    fontSize: "13px",
+    color: "black",
+    textAlign: "center",
+  },
+  textSummaryDate: {
+    fontWeight: "normal",
+    fontSize: "9px",
+    color: "#4A483F",
+
+    margin: "0px 0px 15px 0px",
+  },
+  textSummaryDescription: {
+    fontSize: "13px",
+    color: "#4AFFF",
+    lineHeight: "1.3vw",
+    padding: "10px 0px 10px 0px",
+  },
+  textStockRankingPercent: {
+    fontWeight: "normal",
+    fontSize: "20px",
+    display: "inline-block",
+    color: "black",
+  },
+  textStockRankingScore: {
+    fontWeight: "normal",
+    fontSize: "20px",
+    color: "red",
+  },
 };
 
 export const StyledText = styled.p`

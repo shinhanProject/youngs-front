@@ -35,16 +35,6 @@ const CardStyles = {
     boxShadow: "0 6px 6px -5px black",
   },
 
-  // categoryCardnotSelected : {
-  //   background: "white",
-  //   color: "black",
-  //   width: "18vw",
-  //   height: "15vh",
-  //   borderRadius: "2vw",
-  //   border: "1.5px solid #ececec",
-  //   boxShadow: "0 6px 6px -5px black",
-  // },
-
   categoryCardSelected: {
     background: "white",
     color: "black",
@@ -98,10 +88,11 @@ const CardStyles = {
     background: "white",
     color: "black",
     width: "25vw",
-    height: "11vh",
+    // height: "11vh",
     borderRadius: "1vw",
     border: "0.5px solid #fdfafa",
     boxShadow: "2px 3.5px 4px -3px gray",
+    padding: "20px",
   },
 
   followModalCard: {
@@ -118,29 +109,39 @@ const CardStyles = {
     background: "white",
     color: "black",
     width: "38vw",
-    height: "9vh",
+    // height: "9vh",
     borderRadius: "1vw",
     border: "0.5px solid #ececec",
     boxShadow: "0px 3px 10px -3px gray",
+    padding: "15px 15px 0px 15px",
   },
 
   stockRecommandBackgroundCard: {
     background: "white",
     color: "black",
     width: "55vw",
-    height: "20vh",
     borderRadius: "1.5vw",
-    border: "0.5px solid #ffffff",
+    border: "0.5px solid #ececec",
     boxShadow: "2.5px 5px 4px -3px gray",
+
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-around",
+    alignItems: "center",
+
+    padding: "2vw 1vw 2vw 1vw",
+    margin: "10px 0px 0px 0px ",
   },
   stockRecommandListCard: {
     background: "rgba(195, 0, 202, 0.06 )",
     color: "rgba(0,0,0,8.5)",
-    width: "25vw",
+    width: "22vw",
     height: "6vh",
     borderRadius: "1.5vw",
     border: "0.5px solid #ffffff",
     boxShadow: "0px 1px 6px -4px black",
+    padding: "5px 0px 5px 0px",
+    margin: "0px 0px 10px 0px",
   },
 };
 

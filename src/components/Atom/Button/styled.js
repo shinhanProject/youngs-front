@@ -67,6 +67,16 @@ const ButtonStyles = {
     boxShadow: "2px 3.5px 4px -3px lightgray",
     margin: "0 0 0 3vw",
   },
+  gptCloseButton: {
+    borderRadius: "15px",
+    background: "lightgray",
+    color: "black",
+    padding: "0.4vw  1.7vw",
+    fontSize: "0.8vw",
+    width: "10vw",
+    boxShadow: "2px 3.5px 4px -3px lightgray",
+    margin: "0 0 0 3vw",
+  },
 };
 
 export const StyledButton = styled.button`
