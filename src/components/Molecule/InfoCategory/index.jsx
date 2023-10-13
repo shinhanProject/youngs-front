@@ -1,15 +1,16 @@
 import React from "react";
-import { Wrapper, Image } from "./styled";
-import { Text, Card } from "../../index";
+import { Text } from "../../index";
 
-const InfoCategory = ({ children, onClick, src }) => {
+import { Container, Wrapper, Image } from "./styled";
+
+const InfoCategory = ({ selected, children, src }) => {
   return (
-    <Card theme="categoryCardnotSelected" onClick={onClick}>
+    <Container selected={selected}>
       <Wrapper>
         <Image src={src} alt="category1" />
         <Text theme="textInfoCategory">{children}</Text>
       </Wrapper>
-    </Card>
+    </Container>
   );
 };
 

@@ -20,9 +20,14 @@ const settings = {
   className: "slides",
 };
 
+const bannerStyle = {
+  width: "30%",
+  marginBottom: "10vh",
+};
+
 const Banner = () => {
   return (
-    <Slider {...settings} style={{ width: "30%" }}>
+    <Slider {...settings} style={bannerStyle}>
       <a
         href="https://www.shinhansec.com/event2/230701_feeEvent/event.jsp"
         target="_blank"

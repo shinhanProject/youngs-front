@@ -49,7 +49,7 @@ const textStyles = {
   },
   textInfoCategory: {
     fontWeight: "normal",
-    fontSize: "28px",
+    fontSize: "1.3vw",
   },
   textGptDescription: {
     fontWeight: "normal",
@@ -78,13 +78,13 @@ const textStyles = {
   },
   textStockRankingPercent: {
     fontWeight: "normal",
-    fontSize: "20px",
+    fontSize: "1vw",
     display: "inline-block",
     color: "black",
   },
   textStockRankingScore: {
     fontWeight: "normal",
-    fontSize: "20px",
+    fontSize: "1vw",
     color: "red",
   },
 };
