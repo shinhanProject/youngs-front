@@ -6,7 +6,7 @@ const StockRecommandCard = ({ onClick }) => {
   return (
     <Card theme="stockRecommandListCard" onClick={onClick}>
       <Wrapper>
-        <Text theme="textRankingProfile">피엔케이피부임상연구센타</Text>
+        <Text theme="textStockRankingPercent">피엔케이피부임상연구센타</Text>
         <Text theme="textStockRankingScore">
           23
           <Text theme="textStockRankingPercent">%</Text>

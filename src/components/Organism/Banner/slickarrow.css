@@ -8,9 +8,6 @@
   .slick-prev {
     right: 15px !important;
   }
-  .slick-next {
-    right: -6%;
-  }
   .slick-prev:before {
     color: black;
     right: 20% !important;
