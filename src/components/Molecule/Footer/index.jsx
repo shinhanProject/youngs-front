@@ -13,18 +13,16 @@ const Footer = () => {
     <Wrapper>
       <TextGroup>
         <ImageLogo src={logoBlack} alt="로고-검은색" />
-        <Text styleType="text6">
-          김태우 | 박상희 | 이은지 | 이주현 | 조하영
-        </Text>
-        <Text styleType="text6">신한프로디지털 아카데미 6조</Text>
-        <Text styleType="text6">
+        <Text theme="text6">김태우 | 박상희 | 이은지 | 이주현 | 조하영</Text>
+        <Text theme="text6">신한프로디지털 아카데미 6조</Text>
+        <Text theme="text6">
           Copyright © 2023. ShinhanProDigitalAcademy YOUNGs All rights
           reserved.
         </Text>
       </TextGroup>
       <LinkGroup>
         <Link to="/onboarding">
-          <Text styleType="text7">ABOUT</Text>
+          <Text theme="text7">ABOUT</Text>
         </Link>
         <a
           href="https://legendary-meeting-a7f.notion.site/6-68c17ed5c84e479cb31f952f64e1d832?pvs=4"

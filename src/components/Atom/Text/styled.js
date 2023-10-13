@@ -28,13 +28,13 @@ const textStyles = {
     margin: "5px",
   },
   text6: {
-    fontWeight: "normal",
-    fontSize: "0.7em",
+    fontWeight: "lighter",
+    fontSize: "0.3em",
     color: "rgba(0,0,0,0.7)",
     margin: "4px",
   },
   text7: {
-    fontWeight: "normal",
+    fontWeight: "lighter",
     fontSize: "0.7em",
     color: "rgba(0,0,0,0.7)",
     margin: "2rem",

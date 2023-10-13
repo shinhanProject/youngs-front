@@ -17,9 +17,19 @@ const ButtonStyles = {
     background: "rgba(255, 255, 255, 0)",
   },
   blueBtn: {
+    width: "100%",
     borderRadius: "15px",
     color: "white",
     background: "#0046ff",
+    height: "5vh",
+    marginBottom: "4vh",
+  },
+  blueTextBtn: {
+    width: "30%",
+    color: "#0046ff",
+    height: "3vh",
+    border: "none",
+    background: "white",
   },
   blueCharBtn: {
     background: "rgba(255, 255, 255, 0)",
