@@ -4,11 +4,16 @@ const CardStyles = {
   loginCard: {
     background: "white",
     color: "black",
-    width: "40vw",
-    height: "30vh",
+    width: "21vw",
+    height: "56vh",
     borderRadius: "2vw",
     border: "1px solid #7e7979",
     boxShadow: "0vw 0.8vw 0.6vw -0.5vw gray",
+    display: "flex",
+    justifyContent: "center",
+    flexDirection: "column",
+    alignItems: "start",
+    padding: "2vh 7vw",
   },
   signupCard: {
     background: "white",
