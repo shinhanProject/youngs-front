@@ -76,6 +76,17 @@ const textStyles = {
     lineHeight: "1.3vw",
     padding: "10px 0px 10px 0px",
   },
+  textStockRankingPercent: {
+    fontWeight: "normal",
+    fontSize: "20px",
+    display: "inline-block",
+    color: "black",
+  },
+  textStockRankingScore: {
+    fontWeight: "normal",
+    fontSize: "20px",
+    color: "red",
+  },
 };
 
 export const StyledText = styled.p`
