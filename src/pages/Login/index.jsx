@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { Header, Card, Button, Footer } from "../../components";
 
 import { Container, Wrapper, LoginInput, SignUpWrapper, Image } from "./styled";
@@ -32,7 +33,9 @@ const Login = () => {
           <Button theme="blueBtn">로그인</Button>
           <SignUpWrapper>
             <Button theme="blueTextBtn">비밀번호 찾기</Button>
-            <Button theme="blueTextBtn">회원가입 하기</Button>
+            <Button theme="blueTextBtn">
+              <Link to="/signup">회원가입 하기</Link>
+            </Button>
           </SignUpWrapper>
         </Card>
       </Wrapper>
