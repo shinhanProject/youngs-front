@@ -119,6 +119,18 @@ const CardStyles = {
     padding: "5px 0px 5px 0px",
     margin: "0px 0px 10px 0px",
   },
+  grayCard: {
+    background: "#ECECEC",
+    borderRadius: "1.5vw",
+    boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+    width: "8vw",
+    height: "40vh",
+    display: "flex",
+    justifyContent: "center",
+    flexDirection: "column",
+    alignItems: "start",
+    padding: "2vh 2vw",
+  },
 };
 
 export const StyledCard = styled.div`

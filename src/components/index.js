@@ -19,3 +19,4 @@ export { default as RankingModal } from "./Organism/RankingModal";
 export { default as GptModal } from "./Organism/GptModal";
 export { default as StockRecommand } from "./Organism/StockRecommand";
 export { default as CategoryBundle } from "./Organism/CategoryBundle";
+export { default as NewsCategory } from "./Organism/NewsCategory";

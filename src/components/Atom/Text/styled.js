@@ -8,7 +8,7 @@ const textStyles = {
   },
   text2: {
     fontWeight: "bold",
-    fontSize: "32px",
+    fontSize: "1.5vw",
     color: "#333333",
   },
   text3: {
