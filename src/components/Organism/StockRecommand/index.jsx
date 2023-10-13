@@ -7,12 +7,12 @@ const StockRecommand = ({ onClick }) => {
   return (
     <Container>
       <Text theme="text2">급상승 종목</Text>
-      <Card theme="stockRecommandBackgroundCard" onClick={onClick}>
+      <Card theme="stockRecommandBackgroundCard">
         <Image src={stockRecommandImg} alt="stockRecommandImg" />
         <Wrapper1>
-          <StockRecommandCard />
-          <StockRecommandCard />
-          <StockRecommandCard />
+          <StockRecommandCard name="temp" percent="temp" onClick={onClick} />
+          <StockRecommandCard name="temp" percent="temp" onClick={onClick} />
+          <StockRecommandCard name="temp" percent="temp" onClick={onClick} />
         </Wrapper1>
       </Card>
     </Container>
