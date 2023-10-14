@@ -13,7 +13,7 @@ import { Container, Wrapper, WrapperTitile, Wrapperpage } from "./styled";
 const Ranking = () => {
   const [posts, setPosts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage, setPostsPerPage] = useState(10);
+  const postsPerPage = 10;
   const postData = {
     userSeq: 30,
   };

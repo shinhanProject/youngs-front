@@ -15,6 +15,7 @@ export { default as InfoCategory } from "./Molecule/InfoCategory";
 export { default as SummaryCard } from "./Molecule/SummaryCard";
 export { default as StockRecommandCard } from "./Molecule/StockRecommandCard";
 export { default as RankingCard } from "./Molecule/RankingCard";
+export { default as NewsListItem } from "./Molecule/NewsListItem";
 export { default as SearchCard } from "./Molecule/SearchCard";
 
 export { default as Banner } from "./Organism/Banner";

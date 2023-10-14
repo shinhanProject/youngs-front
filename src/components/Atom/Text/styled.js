@@ -28,13 +28,13 @@ const textStyles = {
     margin: "5px",
   },
   text6: {
-    fontWeight: "lighter",
+    fontWeight: "100",
     fontSize: "0.3em",
     color: "rgba(0,0,0,0.7)",
     margin: "4px",
   },
   text7: {
-    fontWeight: "lighter",
+    fontWeight: "100",
     fontSize: "0.7em",
     color: "rgba(0,0,0,0.7)",
     margin: "2rem",
@@ -92,6 +92,23 @@ const textStyles = {
     fontSize: "1.2vw",
     color: "#333333",
   },
+  infoTitle: {
+    fontWeight: "bold",
+    fontSize: "2vw",
+    marginTop: "5vh",
+  },
+  infoText: {
+    fontWeight: "100",
+    fontSize: "1vw",
+    color: "#D9D9D9",
+    marginTop: "1vh",
+    marginBottom: "5vh",
+  },
+  descriptionText: {
+    fontWeight: "100",
+    fontSize: "0.7vw",
+    color: "gray",
+    margin: "3px 0",
   textSearch: {
     fontWeight: "bold",
     fontSize: "1.8vw",
