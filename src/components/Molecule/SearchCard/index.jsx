@@ -3,8 +3,6 @@ import { Container, Wrapper, Image, SearchInput } from "./styled";
 import { Text } from "../../index";
 import searchImg from "../../../assets/images/searchImg.svg";
 
-//  1,2,3 등만 숫자 다르니까 theme 받아서 나열하자
-
 const SearchCard = () => {
   return (
     <Container>

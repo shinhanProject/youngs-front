@@ -22,8 +22,13 @@ const Ranking = () => {
       axiosInstance
         .post("/rank", postData)
         .then(response => {
+          const dataWithRank = response.data.map((item, index) => ({
+            ...item,
+            rank: index + 1,
+          }));
           console.log(response.data);
-          setPosts(response.data);
+          console.log(dataWithRank);
+          setPosts(dataWithRank);
         })
         .catch(e => {
           console.log(e);

@@ -1,20 +1,20 @@
 import React from "react";
-import { Wrapper, Container, Wrapper2 } from "./styled";
+import { Wrapper, Container, Wrapper2, WrapperUsername } from "./styled";
 import { Text } from "../../index";
 //  1,2,3 등만 숫자 다르니까 theme 받아서 나열하자
 
-const RankingCard = ({ index, tier, usrname, score }) => {
+const RankingCard = ({ tier, usrname, score, onClick, rank }) => {
   return (
     <Container>
       <Wrapper>
-        <Text theme="textRankingPage"> {index} </Text>
+        <Text theme="textRankingPage"> {rank} </Text>
       </Wrapper>
       <Wrapper>
         <Text theme="textRankingPage"> {tier} </Text>
       </Wrapper>
-      <Wrapper>
+      <WrapperUsername onClick={onClick}>
         <Text theme="textRankingPage">{usrname}</Text>
-      </Wrapper>
+      </WrapperUsername>
       <Wrapper2>
         <Text theme="textRankingPage"> {score} </Text>
       </Wrapper2>
