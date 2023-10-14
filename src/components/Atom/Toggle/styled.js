@@ -13,7 +13,8 @@ export const ToggleBtn = styled.button`
   border-radius: 15px;
   border: none;
   cursor: pointer;
-  background-color: ${props => (!props.toggle ? "#D9D9D9" : "#0046FF")};
+  background-color: ${props =>
+    props.toggle === "false" ? "#D9D9D9" : "#0046FF"};
   position: relative;
   display: flex;
   justify-content: center;
@@ -29,7 +30,7 @@ export const Circle = styled.div`
   left: 0.3vw;
   transition: all 0.5s ease-in-out;
   ${props =>
-    props.toggle &&
+    props.toggle === "true" &&
     css`
       transform: translate(1.5vw, 0);
       transition: all 0.5s ease-in-out;

@@ -9,7 +9,7 @@ const SearchCard = () => {
       <Text theme="textSearch">종목 검색</Text>
       <Wrapper>
         <Image src={searchImg} alt="searchImage" />
-        <SearchInput placeholder="기업명을 입력하세요"></SearchInput>
+        <SearchInput placeholder="기업명을 입력하세요" />
       </Wrapper>
     </Container>
   );

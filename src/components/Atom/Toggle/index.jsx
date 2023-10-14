@@ -1,11 +1,15 @@
 import { useState } from "react";
+import { useSetRecoilState } from "recoil";
+import { gptDragState } from "../../../store/atoms";
 import { Text } from "../../index";
 import { ToggleBtn, Circle, Wrapper } from "./styled";
 
 const Toggle = ({ flag }) => {
   const [toggle, setToggle] = useState(false);
+  const setGptDrag = useSetRecoilState(gptDragState);
   const clickedToggle = () => {
     setToggle(prev => !prev);
+    setGptDrag(prev => !prev);
   };
   let buttonText = "";
   if (flag === 1) {
@@ -15,8 +19,8 @@ const Toggle = ({ flag }) => {
   }
   return (
     <Wrapper flag={flag}>
-      <ToggleBtn onClick={clickedToggle} toggle={toggle}>
-        <Circle toggle={toggle} />
+      <ToggleBtn onClick={clickedToggle} toggle={toggle.toString()}>
+        <Circle toggle={toggle.toString()} />
       </ToggleBtn>
       <Text>{buttonText}</Text>
     </Wrapper>
