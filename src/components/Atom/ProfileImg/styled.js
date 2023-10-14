@@ -23,6 +23,14 @@ const profileStyles = {
     border: "1px solid lightgray",
     margin: "0 0 0 4.3vw",
   },
+  settingProfile: {
+    width: "50px",
+    height: "auto",
+    borderRadius: "70%",
+    overflow: "hidden",
+    border: "1px solid lightgray",
+    margin: "5px",
+  },
 };
 
 export const StyledProfile = styled.div`

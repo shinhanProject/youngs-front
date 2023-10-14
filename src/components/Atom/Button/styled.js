@@ -10,6 +10,16 @@ const ButtonStyles = {
     color: "white",
     gap: "16px",
   },
+  settingBtn: {
+    width: "7vw",
+    height: "4vh",
+    borderRadius: "15px",
+    background:
+      "linear-gradient( to bottom right,rgba(195, 0, 202, 0.7) 0%,  rgba(0,70,255,0.9 ) 10% , rgba(195, 0, 202, 0.7) 100%)",
+    color: "white",
+    boxShadow: "2px 3.5px 4px -1px darkgray",
+    gap: "16px",
+  },
   headerBtn: {
     height: "5vh",
     textAlign: "center",

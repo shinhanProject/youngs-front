@@ -115,6 +115,12 @@ const textStyles = {
     fontSize: "1.8vw",
     color: "#333333",
   },
+  textSetting: {
+    fontWeight: "normal",
+    fontSize: "1vw",
+    color: "#4B4B4B",
+    marginBottom: "7px",
+  },
 };
 
 export const StyledText = styled.p`
