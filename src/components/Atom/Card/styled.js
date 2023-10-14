@@ -130,6 +130,7 @@ const CardStyles = {
     flexDirection: "column",
     alignItems: "start",
     padding: "2vh 2vw",
+    marginLeft: "4vw",
   },
 };
 

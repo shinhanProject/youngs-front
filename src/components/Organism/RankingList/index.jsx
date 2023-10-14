@@ -6,8 +6,9 @@ const RankingList = ({ posts }) => {
   return (
     <Rankers>
       <RankingCard index="순위" tier="등급" usrname="User" score="점수" />
-      {posts.map((post, index) => (
+      {posts.map((post, idx) => (
         <RankingCard
+          idx={idx}
           index={post.userSeq}
           tier={post.tier}
           usrname={post.nickname}
