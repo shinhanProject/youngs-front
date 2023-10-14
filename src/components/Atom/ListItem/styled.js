@@ -28,5 +28,7 @@ export const Asterisk = styled.img`
 `;
 
 export const StyledListItem = styled.p`
-  ${props => listItemState[props.state]};
+  ${props => listItemState[props.category]};
+  cursor: pointer;
+  caret-color: transparent;
 `;

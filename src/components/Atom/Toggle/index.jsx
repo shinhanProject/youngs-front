@@ -2,17 +2,23 @@ import { useState } from "react";
 import { Text } from "../../index";
 import { ToggleBtn, Circle, Wrapper } from "./styled";
 
-const Toggle = () => {
+const Toggle = ({ flag }) => {
   const [toggle, setToggle] = useState(false);
   const clickedToggle = () => {
     setToggle(prev => !prev);
   };
+  let buttonText = "";
+  if (flag === 1) {
+    buttonText = "학습한 내용 포함하지 않기";
+  } else if (flag === 2) {
+    buttonText = "GPT 사용하기";
+  }
   return (
-    <Wrapper>
+    <Wrapper flag={flag}>
       <ToggleBtn onClick={clickedToggle} toggle={toggle}>
         <Circle toggle={toggle} />
       </ToggleBtn>
-      <Text>{!toggle ? "학습한 내용 안 보기" : "학습한 내용 보기"}</Text>
+      <Text>{buttonText}</Text>
     </Wrapper>
   );
 };

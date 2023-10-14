@@ -19,18 +19,17 @@ export const Wrapper = styled.div`
   height: 60vh;
 `;
 
-export const ContentContainer = styled.div`
+export const Wrapperpage = styled.div`
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin-right: 20vw;
+`;
+
+export const CategoryWrapper = styled.div`
   width: 80vw;
   display: flex;
   flex-direction: column;
-  border-top: 1px solid rgba(0, 0, 0, 0.4);
 `;
 
-export const ContentWrapper = styled.div`
-  width: 75vw;
-  height: 80vh;
-  border-radius: 30px;
-  border: 1px solid #ececec;
-  background: #fff;
-  box-shadow: 10px 10px 30px 0px rgba(51, 51, 51, 0.3);
-`;
+export const List = styled.div``;
