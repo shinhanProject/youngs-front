@@ -2,13 +2,13 @@ import React from "react";
 import { Wrapper } from "./styled";
 import { Text, Card } from "../../index";
 
-const StockRecommandCard = ({ onClick }) => {
+const StockRecommandCard = ({ name, percent, onClick }) => {
   return (
     <Card theme="stockRecommandListCard" onClick={onClick}>
       <Wrapper>
-        <Text theme="textStockRankingPercent">피엔케이피부임상연구센타</Text>
+        <Text theme="textRankingProfile">{name}</Text>
         <Text theme="textStockRankingScore">
-          23
+          {percent}
           <Text theme="textStockRankingPercent">%</Text>
         </Text>
       </Wrapper>

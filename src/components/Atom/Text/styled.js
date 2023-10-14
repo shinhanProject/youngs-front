@@ -87,6 +87,11 @@ const textStyles = {
     fontSize: "1vw",
     color: "red",
   },
+  textRankingPage: {
+    fontWeight: "normal",
+    fontSize: "1.2vw",
+    color: "#333333",
+  },
 };
 
 export const StyledText = styled.p`
