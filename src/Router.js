@@ -22,7 +22,10 @@ const Router = () => {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/basicknowledge" element={<BasicKnowledgeList />} />
         <Route path="/pressrelease" element={<PressReleaseList />} />
-        <Route path="/pldetail" element={<PressReleaseDetail />} />
+        <Route
+          path="/prdetail/:category/:id"
+          element={<PressReleaseDetail />}
+        />
         <Route path="/stockitem" element={<StockItemList />} />
         <Route path="/ranking" element={<Ranking />} />
         <Route path="/onboarding" element={<OnBoarding />} />
