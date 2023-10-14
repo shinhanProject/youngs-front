@@ -92,6 +92,11 @@ const textStyles = {
     fontSize: "1.2vw",
     color: "#333333",
   },
+  textSearch: {
+    fontWeight: "bold",
+    fontSize: "1.8vw",
+    color: "#333333",
+  },
 };
 
 export const StyledText = styled.p`
