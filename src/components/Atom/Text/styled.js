@@ -109,6 +109,7 @@ const textStyles = {
     fontSize: "0.7vw",
     color: "gray",
     margin: "3px 0",
+  },
   textSearch: {
     fontWeight: "bold",
     fontSize: "1.8vw",

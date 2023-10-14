@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { useRecoilValue } from "recoil";
 import { axiosInstance } from "../../apis";
+import { gptDragState } from "../../store/atoms";
 import {
   Header,
   CategoryBundle,
@@ -7,33 +9,52 @@ import {
   Text,
   NewsCategory,
   Toggle,
+  GptModal,
 } from "../../components";
 import { Container, Wrapper, ContentContainer, ContentWrapper } from "./styled";
 
 const PressReleaseDetail = () => {
+  const gptDrag = useRecoilValue(gptDragState);
   const [word, setWord] = useState("");
+  const [explanation, setExplanation] = useState("설명을 불러오는 중입니다.");
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalPosition, setModalPosition] = useState({ top: 0, left: 0 });
 
-  const handleSelect = () => {
-    const text = window.getSelection().toString().trim();
-    console.log(text);
-    if (text.length <= 20) {
-      setWord(text);
-    } else {
-      console.log("길어");
+  const showModal = () => {
+    setModalOpen(true);
+  };
+
+  const handleSelect = event => {
+    if (gptDrag) {
+      const text = window.getSelection().toString().trim();
+      console.log(text);
+      if (text.length <= 20) {
+        setModalPosition({
+          top: event.clientY,
+          left: event.clientX,
+        });
+        setWord(text);
+      } else {
+        console.log("길어");
+      }
     }
   };
+
   const getWord = ({ w }) => {
     axiosInstance
       .get(`/word/${w}`)
       .then(response => {
         console.log(response.data);
+        setExplanation(response.data.description);
       })
       .catch(e => {
         console.log(e);
       });
   };
+
   useEffect(() => {
-    if (word !== "") {
+    if (word !== "" && gptDrag === true) {
+      showModal();
       getWord({ w: word });
     }
   }, [word]);
@@ -49,8 +70,17 @@ const PressReleaseDetail = () => {
       <CategoryBundle selected="pressrelease" />
       <Wrapper>
         <NewsCategory />
-        <ContentContainer onMouseUp={handleSelect}>
-          <Toggle flag={1} />
+        {modalOpen && (
+          <GptModal
+            setModalOpen={setModalOpen}
+            word={word}
+            explanation={explanation}
+            setExplanation={setExplanation}
+            position={modalPosition}
+          />
+        )}
+        <ContentContainer onMouseUp={event => handleSelect(event)}>
+          <Toggle flag={2} />
           <ContentWrapper>
             <p>
               반도체 대장주인 삼성전자와 SK하이닉스 주가가 최근 들어 다른 양상을
