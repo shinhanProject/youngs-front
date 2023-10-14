@@ -6,6 +6,9 @@ import NotFound from "./pages/NotFound";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import BasicKnowledgeList from "./pages/BasicKnowledgeList";
+import PressReleaseList from "./pages/PressReleaseList";
+import StockItemList from "./pages/StockItemList";
+import PressReleaseDetail from "./pages/PressReleaseDetail";
 import Ranking from "./pages/Ranking";
 import OnBoarding from "./pages/OnBoarding";
 
@@ -17,7 +20,10 @@ const Router = () => {
         <Route path="*" element={<NotFound />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/basicknowledgelist" element={<BasicKnowledgeList />} />
+        <Route path="/basicknowledge" element={<BasicKnowledgeList />} />
+        <Route path="/pressrelease" element={<PressReleaseList />} />
+        <Route path="/pldetail" element={<PressReleaseDetail />} />
+        <Route path="/stockitem" element={<StockItemList />} />
         <Route path="/ranking" element={<Ranking />} />
         <Route path="/onboarding" element={<OnBoarding />} />
       </Routes>

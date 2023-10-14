@@ -25,30 +25,6 @@ const CardStyles = {
     boxShadow: "0vw 0.8vw 0.6vw -0.5vw gray",
   },
 
-  categoryCardnotSelected: {
-    background: "white",
-    color: "black",
-    width: "18vw",
-    height: "15vh",
-    borderRadius: "2vw",
-    border: "1.5px solid #ececec",
-    boxShadow: "0 6px 6px -5px black",
-  },
-
-  categoryCardSelected: {
-    background: "white",
-    color: "black",
-    width: "18vw",
-    height: "15vh",
-    border: "1.5px solid transparent",
-    borderRadius: "1.5vw",
-    backgroundImage:
-      "linear-gradient(#fff, #fff), linear-gradient(to bottom, #e300ca 0%, #0046ff 100%)",
-    backgroundOrigin: "border-box",
-    backgroundClip: "content-box, border-box",
-    boxShadow: "0 6px 6px -5px black",
-  },
-
   educateCard: {
     background: "white",
     color: "black",
@@ -119,7 +95,7 @@ const CardStyles = {
   stockRecommandBackgroundCard: {
     background: "white",
     color: "black",
-    width: "55vw",
+    width: "45vw",
     borderRadius: "1.5vw",
     border: "0.5px solid #ececec",
     boxShadow: "2.5px 5px 4px -3px gray",
@@ -135,8 +111,8 @@ const CardStyles = {
   stockRecommandListCard: {
     background: "rgba(195, 0, 202, 0.06 )",
     color: "rgba(0,0,0,8.5)",
-    width: "22vw",
-    height: "6vh",
+    width: "18vw",
+    height: "5vh",
     borderRadius: "1.5vw",
     border: "0.5px solid #ffffff",
     boxShadow: "0px 1px 6px -4px black",

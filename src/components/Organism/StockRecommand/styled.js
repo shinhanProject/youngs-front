@@ -5,6 +5,8 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
 `;
 export const Wrapper1 = styled.div`
   display: flex;
