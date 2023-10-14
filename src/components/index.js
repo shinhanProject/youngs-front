@@ -6,6 +6,7 @@ export { default as Input } from "./Atom/Input";
 export { default as Toggle } from "./Atom/Toggle";
 export { default as ProfileImg } from "./Atom/ProfileImg";
 export { default as Sandhole } from "./Atom/Sandhole";
+export { default as Pagination } from "./Atom/Pagination";
 
 export { default as Header } from "./Molecule/Header";
 export { default as Footer } from "./Molecule/Footer";
@@ -19,4 +20,5 @@ export { default as Banner } from "./Organism/Banner";
 export { default as RankingModal } from "./Organism/RankingModal";
 export { default as GptModal } from "./Organism/GptModal";
 export { default as StockRecommand } from "./Organism/StockRecommand";
-
+export { default as CategoryBundle } from "./Organism/CategoryBundle";
+export { default as RankingList } from "./Organism/RankingList";
