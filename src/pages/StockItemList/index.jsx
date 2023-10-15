@@ -22,6 +22,7 @@ import {
 } from "./styled";
 
 const StockItemList = () => {
+  // 이거 const [stockname, setStockname] = useState(); 로 바꿔서 검색 시 사용하기
   const category = useRecoilValue(newsCategoryState);
   const [posts, setPosts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
