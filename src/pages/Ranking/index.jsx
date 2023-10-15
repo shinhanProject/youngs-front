@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { useRecoilState } from "recoil";
 
 import { axiosInstance } from "../../apis";
 import {
@@ -7,13 +8,43 @@ import {
   Text,
   RankingList,
   Pagination,
+  RankingModal,
 } from "../../components";
 import { Container, Wrapper, WrapperTitile, Wrapperpage } from "./styled";
+import { rankModalOpenState } from "../../store/atoms";
 
 const Ranking = () => {
   const [posts, setPosts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 10;
+  const [modalstate, setIsModalOpen] = useRecoilState(rankModalOpenState);
+  const [useridState, setUserid] = useState(1);
+  const [usernameState, setUsername] = useState(1);
+  const [followState, setfollow] = useState(0);
+  const [modalPosition, setModalPosition] = useState({ top: 0, left: 0 });
+  const [profileImg, setprofileImg] = useState("sol");
+
+  const ismodalOpen = () => {
+    setIsModalOpen(true);
+  };
+  const ismodalClose = () => {
+    setIsModalOpen(false);
+  };
+
+  const followOnClick = () => {
+    if (followState === 1) {
+      setfollow(2);
+    } else {
+      setfollow(1);
+    }
+  };
+  const handlePosition = event => {
+    setModalPosition({
+      top: event.clientY,
+      left: event.clientX,
+    });
+  };
+
   const postData = {
     userSeq: 30,
   };
@@ -43,16 +74,43 @@ const Ranking = () => {
     currentPosts = posts.slice(indexOfFirst, indexOfLast);
     return currentPosts;
   };
+
   console.log(posts);
+  console.log(
+    "변화를 확인하고싶어",
+    useridState,
+    usernameState,
+    followState,
+    profileImg,
+  );
   return (
     <Container>
       <Header />
       <Wrapper>
-        <WrapperTitile>
+        <WrapperTitile onClick={ismodalClose}>
           <Text theme="text2"> RANKING</Text>
           <Text theme="text1">2023년 랭킹</Text>
         </WrapperTitile>
-        <RankingList posts={getCurrentPosts(posts)} />
+        {modalstate && (
+          <RankingModal
+            setModalState={setIsModalOpen}
+            userSeq={useridState}
+            username={usernameState}
+            isfollow={followState}
+            modalPosition={modalPosition}
+            followOnClick={followOnClick}
+            profileImg={profileImg}
+          />
+        )}
+        <RankingList
+          setUserid={setUserid}
+          posts={getCurrentPosts(posts)}
+          setmodalOpen={ismodalOpen}
+          setUsername={setUsername}
+          setfollow={setfollow}
+          handlePosition={handlePosition}
+          changeProfile={setprofileImg}
+        />
         <Wrapperpage>
           <Pagination
             postsPerPage={postsPerPage}

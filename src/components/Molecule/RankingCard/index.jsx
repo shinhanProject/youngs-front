@@ -3,16 +3,40 @@ import { Wrapper, Container, Wrapper2, WrapperUsername } from "./styled";
 import { Text } from "../../index";
 //  1,2,3 등만 숫자 다르니까 theme 받아서 나열하자
 
-const RankingCard = ({ tier, usrname, score, onClick, rank }) => {
+const RankingCard = ({
+  tier,
+  usrname,
+  score,
+  setmodalOpen,
+  rank,
+  setUserid,
+  userSeq,
+  setUsername,
+  userfollow,
+  setfollow,
+  handlePosition,
+  profile,
+  changeProfile,
+}) => {
   return (
-    <Container>
+    <Container
+      onClick={event => {
+        setmodalOpen();
+        changeProfile(profile);
+        console.log(profile, "카드카드 - 여기에서 잘 읽힘?");
+        setUserid(userSeq);
+        setUsername(usrname);
+        setfollow(userfollow);
+        handlePosition(event);
+      }}
+    >
       <Wrapper>
         <Text theme="textRankingPage"> {rank} </Text>
       </Wrapper>
       <Wrapper>
         <Text theme="textRankingPage"> {tier} </Text>
       </Wrapper>
-      <WrapperUsername onClick={onClick}>
+      <WrapperUsername>
         <Text theme="textRankingPage">{usrname}</Text>
       </WrapperUsername>
       <Wrapper2>
