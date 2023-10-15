@@ -31,6 +31,14 @@ const profileStyles = {
     border: "1px solid lightgray",
     margin: "5px",
   },
+  followingProfile: {
+    width: "30px",
+    height: "auto",
+    borderRadius: "70%",
+    overflow: "hidden",
+    border: "1px solid lightgray",
+    margin: "5px",
+  },
 };
 
 export const StyledProfile = styled.div`
