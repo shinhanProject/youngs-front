@@ -146,9 +146,28 @@ const textStyles = {
     lineHeight: "1.5vw",
   },
   textStockItemDescription: {
-    fontSize: "13px",
+    fontSize: "12px",
     color: "#4A483F",
     lineHeight: "1.1vw",
+  },
+  textBasicItemName: {
+    fontWeight: "normal",
+    fontSize: "1.2vw",
+    color: "black",
+    lineHeight: "1.5vw",
+    marginBottom: "0.5vw",
+  },
+  textBasicItemDescription: {
+    fontSize: "12px",
+    color: "#4AFFF",
+    lineHeight: "1.1vw",
+  },
+
+  textBasicDate: {
+    fontWeight: "normal",
+    fontSize: "9px",
+    color: "#4A483F",
+    margin: "0px 0px 10px 0px",
   },
   textupPrice: {
     fontSize: "13px",

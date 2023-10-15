@@ -19,6 +19,7 @@ export { default as NewsListItem } from "./Molecule/NewsListItem";
 export { default as SearchCard } from "./Molecule/SearchCard";
 export { default as SandBeach } from "./Molecule/SandBeach";
 export { default as StockItemCard } from "./Molecule/StockItemCard";
+export { default as BasicKnowledgeCard } from "./Molecule/BasicKnowledgeCard";
 
 export { default as Banner } from "./Organism/Banner";
 export { default as RankingModal } from "./Organism/RankingModal";
@@ -30,3 +31,4 @@ export { default as RankingList } from "./Organism/RankingList";
 export { default as SettingModal } from "./Organism/SettingModal";
 export { default as FollowingModal } from "./Organism/FollowingModal";
 export { default as FollowerModal } from "./Organism/FollowerModal";
+export { default as BasicKnowledgeCategory } from "./Organism/BasicKnowledgeCategory";
