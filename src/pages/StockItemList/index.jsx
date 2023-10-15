@@ -18,13 +18,14 @@ import {
   Wrapperpage,
   List,
   CategoryWrapper,
+  InnerOuterWrapper,
 } from "./styled";
 
 const StockItemList = () => {
   const category = useRecoilValue(newsCategoryState);
   const [posts, setPosts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const postsPerPage = 4;
+  const postsPerPage = 8;
 
   // 주식 api 나오면 수정할 부분
   useEffect(() => {
@@ -59,27 +60,29 @@ const StockItemList = () => {
       <CategoryBundle selected="stockitem" />
       <Wrapper>
         <SearchCard />
-        <CategoryWrapper>
-          <List>
-            {getCurrentPosts(posts).map(post => (
-              <Link to={`/stdetail/${post.newsSeq}`}>
-                <StockItemCard
-                  price={post.newsSeq}
-                  name={post.newsSeq}
-                  priceChange={post.newsSeq}
-                  date={post.pubDate}
-                />
-              </Link>
-            ))}
-          </List>
-          <Wrapperpage>
-            <Pagination
-              postsPerPage={postsPerPage}
-              totalPosts={posts.length}
-              paginate={setCurrentPage}
-            />
-          </Wrapperpage>
-        </CategoryWrapper>
+        <InnerOuterWrapper>
+          <CategoryWrapper>
+            <List>
+              {getCurrentPosts(posts).map(post => (
+                <Link to={`/stdetail/${post.newsSeq}`}>
+                  <StockItemCard
+                    price={post.newsSeq}
+                    name={post.newsSeq}
+                    priceChange={post.newsSeq}
+                    date={post.pubDate}
+                  />
+                </Link>
+              ))}
+            </List>
+            <Wrapperpage>
+              <Pagination
+                postsPerPage={postsPerPage}
+                totalPosts={posts.length}
+                paginate={setCurrentPage}
+              />
+            </Wrapperpage>
+          </CategoryWrapper>
+        </InnerOuterWrapper>
       </Wrapper>
       <Footer />
     </Container>

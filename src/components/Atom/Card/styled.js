@@ -48,7 +48,7 @@ const CardStyles = {
   stockItemCard: {
     background: "white",
     color: "black",
-    width: "17vw",
+    width: "16vw",
     height: "12vh",
     borderRadius: "1.5vw",
     border: "0.5px solid #ececec",

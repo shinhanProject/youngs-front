@@ -11,6 +11,8 @@ export const Container = styled.div`
   border-radius: 30px;
   box-shadow: 0 10px 10px -5px lightgray;
   padding: 1vw 0.7vh 1vw 0.7vh;
+  position: relative;
+  left: 2.2vw;
 `;
 
 export const Wrapper = styled.div`
