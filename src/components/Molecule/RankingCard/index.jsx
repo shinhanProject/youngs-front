@@ -23,7 +23,6 @@ const RankingCard = ({
       onClick={event => {
         setmodalOpen();
         changeProfile(profile);
-        console.log(profile, "카드카드 - 여기에서 잘 읽힘?");
         setUserid(userSeq);
         setUsername(usrname);
         setfollow(userfollow);
