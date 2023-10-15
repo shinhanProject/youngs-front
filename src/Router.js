@@ -11,6 +11,7 @@ import StockItemList from "./pages/StockItemList";
 import PressReleaseDetail from "./pages/PressReleaseDetail";
 import Ranking from "./pages/Ranking";
 import OnBoarding from "./pages/OnBoarding";
+import MyPage from "./pages/MyPage";
 
 const Router = () => {
   return (
@@ -29,6 +30,7 @@ const Router = () => {
         <Route path="/stockitem" element={<StockItemList />} />
         <Route path="/ranking" element={<Ranking />} />
         <Route path="/onboarding" element={<OnBoarding />} />
+        <Route path="/mypage/:id" element={<MyPage />} />
       </Routes>
     </BrowserRouter>
   );
