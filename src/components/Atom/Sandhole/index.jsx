@@ -1,16 +1,29 @@
 import React from "react";
-import { StyledSandhole, Shells } from "./styled";
-// import shell1 from "../../../assets/images/shell1.svg";
-// src 로 shell1, shell2, shell3  바꿔서 넣으면 될 것 같습니다
-// 정답 맞춘 개수 받아서 shells 수정할 수 있도록 상태값 받기로 수정 ?
+import { Text } from "../../index";
+import { Container, StyledSandHole, Noti } from "./styled";
 
-const ProfileImg = ({ src }) => {
+const SandHole = ({ count, date }) => {
+  let cnt = "none";
+
+  if (count <= 0) {
+    cnt = "none";
+  } else if (count <= 1) {
+    cnt = "low";
+  } else if (count <= 2) {
+    cnt = "mid";
+  } else {
+    cnt = "high";
+  }
+
   return (
-    <StyledSandhole theme="snadhole1">
-      {/* <ProfileImages src={src} alt="src" /> */}
-      <Shells src={src} alt="shell1" />
-    </StyledSandhole>
+    <Container>
+      <StyledSandHole cnt={cnt} />
+      <Noti>
+        <Text theme="mypagesmall">{date}</Text>
+        <Text theme="mypagesmall">{count}</Text>
+      </Noti>
+    </Container>
   );
 };
 
-export default ProfileImg;
+export default SandHole;
