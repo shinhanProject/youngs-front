@@ -8,6 +8,7 @@ import SignUp from "./pages/SignUp";
 import BasicKnowledgeList from "./pages/BasicKnowledgeList";
 import PressReleaseList from "./pages/PressReleaseList";
 import StockItemList from "./pages/StockItemList";
+import StockItemDetail from "./pages/StockItemDetail";
 import PressReleaseDetail from "./pages/PressReleaseDetail";
 import Ranking from "./pages/Ranking";
 import OnBoarding from "./pages/OnBoarding";
@@ -28,6 +29,7 @@ const Router = () => {
           element={<PressReleaseDetail />}
         />
         <Route path="/stockitem" element={<StockItemList />} />
+        <Route path="/stdetail/:id" element={<StockItemDetail />} />
         <Route path="/ranking" element={<Ranking />} />
         <Route path="/onboarding" element={<OnBoarding />} />
         <Route path="/mypage/:id" element={<MyPage />} />
