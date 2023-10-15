@@ -16,9 +16,6 @@ export const WrapperUsername = styled.div`
   text-align: center;
   align-items: center;
   width: 20vw;
-  &:hover {
-    cursor: pointer;
-  }
 `;
 
 export const Wrapper2 = styled.div`

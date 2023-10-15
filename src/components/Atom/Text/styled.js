@@ -121,6 +121,12 @@ const textStyles = {
     color: "#4B4B4B",
     marginBottom: "7px",
   },
+  textFollowing: {
+    fontWeight: "normal",
+    fontSize: "1vw",
+    color: "#4B4B4B",
+    marginBottom: "7px",
+  },
   mypageText: {
     fontWeight: "bold",
     fontSize: "2vw",

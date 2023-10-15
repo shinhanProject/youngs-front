@@ -27,3 +27,5 @@ export { default as CategoryBundle } from "./Organism/CategoryBundle";
 export { default as NewsCategory } from "./Organism/NewsCategory";
 export { default as RankingList } from "./Organism/RankingList";
 export { default as SettingModal } from "./Organism/SettingModal";
+export { default as FollowingModal } from "./Organism/FollowingModal";
+export { default as FollowerModal } from "./Organism/FollowerModal";
