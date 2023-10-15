@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { useRecoilState } from "recoil";
 
 import { axiosInstance } from "../../apis";
@@ -40,7 +40,7 @@ const Ranking = () => {
   };
   const handlePosition = event => {
     setModalPosition({
-      top: event.clientY,
+      top: event.clientY + window.scrollY,
       left: event.clientX,
     });
   };
