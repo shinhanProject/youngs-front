@@ -39,7 +39,7 @@ export const SearchInput = styled.input`
   width: 60%;
 
   height: 4vh;
-  font-size: 0.8rem;
+  font-size: 0.5rem;
   &::placeholder {
     color: gray;
     padding-left: 1px;
