@@ -17,12 +17,12 @@ const imageMap = {
   lulu,
   moli,
 };
-const FollowingModal = () => {
+const FollowingModal = ({ userSeq }) => {
   const [followings, setFollowings] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       axiosInstance
-        .get(`/profile/1/following`)
+        .get(`/profile/${userSeq}/following`)
         .then(response => {
           const dataWithRank = response.data.map((item, index) => ({
             ...item,
