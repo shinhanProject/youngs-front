@@ -127,6 +127,16 @@ const textStyles = {
     color: "#4B4B4B",
     marginBottom: "7px",
   },
+  mypageText: {
+    fontWeight: "bold",
+    fontSize: "2vw",
+    color: "rgba(0, 70, 255, 0.5)",
+  },
+  mypagesmall: {
+    fontSize: "0.5vw",
+    color: "D9D9D9",
+    margin: "0.5vh 0",
+  },
 };
 
 export const StyledText = styled.p`
