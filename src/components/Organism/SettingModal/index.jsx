@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { Container, Wrapper, NicknameInput, ImgWrapper } from "./styled";
 import { Text, ProfileImg, Button } from "../../index";
-import sol from "../../../assets/images/solProfile2.jpg";
-import doraemi from "../../../assets/images/doraemiProfile.svg";
-import shoo from "../../../assets/images/shooProfile.svg";
-import lino from "../../../assets/images/linoProfile.svg";
-import lulu from "../../../assets/images/luluProfile.svg";
-import moli from "../../../assets/images/moliProfile.svg";
+import sol from "../../../assets/images/sol.jpg";
+import doraemi from "../../../assets/images/doraemi.svg";
+import shoo from "../../../assets/images/shoo.svg";
+import lino from "../../../assets/images/lino.svg";
+import lulu from "../../../assets/images/lulu.svg";
+import moli from "../../../assets/images/moli.svg";
 
 const SettingModal = () => {
   const [nickname, setNickname] = useState("");

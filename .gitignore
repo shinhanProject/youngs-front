@@ -8,7 +8,7 @@
 /node_modules/
 .eslintcache
 .yarn/cache
-
+./src/pages/NotFound/index.jsx
 package-lock.json
 
 # local env files
