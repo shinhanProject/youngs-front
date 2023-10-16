@@ -156,12 +156,11 @@ const textStyles = {
     fontWeight: "normal",
     fontSize: "1vw",
     color: "#4B4B4B",
-    marginBottom: "7px",
   },
   mypageText: {
     fontWeight: "bold",
-    fontSize: "1.5vw",
-    color: "rgba(0, 70, 255, 0.5)",
+    fontSize: "1vw",
+    color: "#333333",
   },
   mypagesmall: {
     fontSize: "0.5vw",

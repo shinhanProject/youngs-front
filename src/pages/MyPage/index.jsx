@@ -27,6 +27,7 @@ import {
   ProfileWrapper,
   TextWrapper,
   SummaryContainer,
+  ErrorBoundary,
 } from "./styled";
 
 import setting from "../../assets/images/setting.svg";
@@ -163,13 +164,17 @@ const MyPage = () => {
             )}
           </Left>
           <Right>
-            <SandBeach id={id} />
-            <Toggle flag={3} />
+            {currentCount === 0 ? (
+              <ErrorBoundary>요약 기록이 없습니다.</ErrorBoundary>
+            ) : (
+              <SandBeach id={id} />
+            )}
+            {isMe && <Toggle flag={3} />}
             <SummaryContainer>
               {summary.length > 0 ? (
                 summary.map(s => <SummaryCard key={s.articleSeq} data={s} />)
               ) : (
-                <div>불러오는 중</div>
+                <Text>요약을 통해 중요한 점들을 기록해보세요!</Text>
               )}
             </SummaryContainer>
           </Right>

@@ -25,7 +25,7 @@ export const Wrapper = styled.div`
   justify-content: space-around;
   align-items: center;
   width: 90%;
-  hight: 70%;
+  height: 70%;
   overflow: auto;
   &::-webkit-scrollbar {
     width: 8px;
@@ -42,7 +42,6 @@ export const Wrapper = styled.div`
 export const ImgWrapper = styled.div`
   width: 100%;
   display: flex;
-  flex-direction: row;
   justify-content: space-around;
   align-items: center;
   &:hover {

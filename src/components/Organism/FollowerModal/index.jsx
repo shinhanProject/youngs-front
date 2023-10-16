@@ -54,19 +54,21 @@ const FollowerModal = ({ setOpenFollowersModal }) => {
             <Text theme="textFollowing">{follower.nickname}</Text>
             {follower.status === 1 ? (
               <Button
+                theme="follow"
                 onClick={e => {
                   onFollow(e);
                 }}
               >
-                팔로우
+                follow
               </Button>
             ) : (
               <Button
+                theme="unfollow"
                 onClick={e => {
                   onUnFollow(e);
                 }}
               >
-                언팔로우
+                unfollow
               </Button>
             )}
           </ImgWrapper>

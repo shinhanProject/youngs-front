@@ -13,37 +13,37 @@ const SummaryCard = ({ data }) => {
     if (data.category === "basic") {
       if (data.title === "경제 기초 지식") {
         setBasic(1);
-        navigate(`/bsdetail/1/${data.newsSeq}`);
+        navigate(`/bsdetail/1/${data.articleSeq}`);
       }
       if (data.title === "주식 투자 기법") {
         setBasic(2);
-        navigate(`/bsdetail/2/${data.newsSeq}`);
+        navigate(`/bsdetail/2/${data.articleSeq}`);
       }
       if (data.title === "위험성") {
         setBasic(3);
-        navigate(`/bsdetail/3/${data.newsSeq}`);
+        navigate(`/bsdetail/3/${data.articleSeq}`);
       }
       if (data.title === "주식 기초") {
         setBasic(4);
-        navigate(`/bsdetail/4/${data.newsSeq}`);
+        navigate(`/bsdetail/4/${data.articleSeq}`);
       }
     }
     if (data.category === "news") {
       if (data.title === "경제") {
         setNews(1);
-        navigate(`/prdetail/1/${data.newsSeq}`);
+        navigate(`/prdetail/1/${data.articleSeq}`);
       }
       if (data.title === "증권") {
         setNews(2);
-        navigate(`/prdetail/2/${data.newsSeq}`);
+        navigate(`/prdetail/2/${data.articleSeq}`);
       }
       if (data.title === "부동산") {
         setNews(3);
-        navigate(`/prdetail/3/${data.newsSeq}`);
+        navigate(`/prdetail/3/${data.articleSeq}`);
       }
       if (data.title === "기업∙경영") {
         setNews(4);
-        navigate(`/prdetail/4/${data.newsSeq}`);
+        navigate(`/prdetail/4/${data.articleSeq}`);
       }
     }
   };

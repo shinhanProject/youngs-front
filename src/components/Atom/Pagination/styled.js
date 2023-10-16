@@ -7,6 +7,7 @@ export const Wrapper = styled.div`
   text-align: center;
   justify-content: center;
   margin-top: 30px;
+  caret-color: transparent;
 `;
 export const PageUl = styled.ul`
   float: left;

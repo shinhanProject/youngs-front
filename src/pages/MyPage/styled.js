@@ -100,3 +100,16 @@ export const SummaryContainer = styled.div`
   ${hideScrollbar};
 }
 `;
+
+export const ErrorBoundary = styled.div`
+  border: 1px solid #d9d9d9;
+  width: 62vw;
+  padding: 0 1vw;
+  border-radius: 1vw;
+  text-align: center;
+  height: 25vh;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  background-color: white;
+`;

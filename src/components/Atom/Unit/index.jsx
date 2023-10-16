@@ -1,8 +1,8 @@
 import React from "react";
 import { Text } from "../../index";
-import { Container, StyledSandHole, Noti } from "./styled";
+import { Container, StyledUnit, Noti } from "./styled";
 
-const SandHole = ({ count, date }) => {
+const Unit = ({ count, date }) => {
   let cnt = "none";
 
   if (count <= 0) {
@@ -17,7 +17,7 @@ const SandHole = ({ count, date }) => {
 
   return (
     <Container>
-      <StyledSandHole cnt={cnt} />
+      <StyledUnit cnt={cnt} />
       <Noti>
         <Text theme="mypagesmall">{date}</Text>
         <Text theme="mypagesmall">{count}</Text>
@@ -26,4 +26,4 @@ const SandHole = ({ count, date }) => {
   );
 };
 
-export default SandHole;
+export default Unit;
