@@ -5,13 +5,17 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  width: 15vw;
+  width: 17vw;
   height: 38vh;
   background: #ececec;
   padding: 1vh 1vw 1vh 1vw;
   border-radius: 20px;
   border: 0.5px solid #fdfafa;
   box-shadow: 2px 3.5px 4px -3px gray;
+  position: absolute;
+  top: 0vw;
+  left: -1vw;
+  z-index: 30;
 `;
 export const Wrapper = styled.div`
   display: flex;
@@ -47,4 +51,13 @@ export const WrapperProfile = styled.div`
   align-items: center;
   width: 16vw;
   margin: 0.5vw 0 0.5vw -0.1vw;
+`;
+
+export const SettingProfile = styled.img`
+  width: 50px;
+  height: auto;
+  borderRadius: 70%,
+  overflow: hidden,
+  border: 1px solid lightgray,
+  margin: 5px,
 `;

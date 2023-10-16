@@ -34,7 +34,7 @@ export const Left = styled.div`
   height: 80vh;
   background: white;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
 `;
@@ -48,4 +48,26 @@ export const Right = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+`;
+
+export const SettingImg = styled.img`
+  position: absolute;
+  top: 75%;
+  right: 0%;
+`;
+
+export const ButtonWrapper = styled.div`
+  display: flex;
+`;
+
+export const ProfileWrapper = styled.div`
+  position: relative;
+`;
+
+export const TextWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  height: 10vh;
 `;

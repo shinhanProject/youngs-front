@@ -64,12 +64,13 @@ const ButtonStyles = {
     marginBottom: "1.5vh",
   },
   followBtn: {
-    borderRadius: "15px",
+    width: "10vw",
+    borderRadius: "20px",
     background:
       "linear-gradient( 50deg,  #0046ff 30% , rgba(195, 0, 202, 0.9) 100%)",
     color: "white",
     padding: "0.4vw  1vw",
-    fontSize: "0.8vw",
+    fontSize: "1.2vw",
     boxShadow: "2px 3.5px 4px -3px lightgray",
     margin: "0 0 0 -0.8vw",
   },
@@ -102,6 +103,15 @@ const ButtonStyles = {
     "&:hover": {
       background: "#D9D9D9",
     },
+  },
+  followersBtn: {
+    background: "white",
+    color: "#0046FF",
+    fontSize: "1.2vw",
+  },
+  followingBtn: {
+    background: "white",
+    fontSize: "1.2vw",
   },
 };
 

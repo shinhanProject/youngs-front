@@ -27,10 +27,9 @@ const Header = ({ theme }) => {
               isLogin: false,
               userInfo: {
                 userSeq: -999,
+                email: "",
                 nickname: "",
                 profile: "",
-                accessToken: "",
-                refreshToken: "",
               },
             });
             navigate("/");
@@ -50,7 +49,7 @@ const Header = ({ theme }) => {
         <Image src={logo} alt="헤더로고" />
       </Link>
       <ButtonGroup login={loginUserState.isLogin}>
-        <Link to="/basicknowledgelist">
+        <Link to="/basicknowledge">
           <Button theme="headerBtn">정보 탐색</Button>
         </Link>
         <Link to="/ranking">
@@ -59,7 +58,7 @@ const Header = ({ theme }) => {
         {loginUserState.isLogin ? (
           <>
             <Link to={`/mypage/${loginUserState.userInfo.userSeq}`}>
-              <LoginProfile src={loginUserState.userInfo.profile}>
+              <LoginProfile profile={loginUserState.userInfo.profile}>
                 {loginUserState.userInfo.nickname}
               </LoginProfile>
             </Link>

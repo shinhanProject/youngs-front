@@ -6,7 +6,6 @@ export const Wrapper = styled.div`
   justify-content: center;
   text-align: center;
   align-items: center;
-
   width: 20vw;
 `;
 export const WrapperUsername = styled.div`
@@ -23,7 +22,6 @@ export const Wrapper2 = styled.div`
   flex-direction: row;
   justify-content: center;
   text-align: center;
-
   width: 30vw;
 `;
 
@@ -32,7 +30,7 @@ export const Container = styled.div`
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  width: 90vw;
+  width: 70vw;
   grid-template-rows: repeat(auto-fill, minmax(100px, 1fr));
   border-bottom: 1px solid lightgray;
   &:hover {

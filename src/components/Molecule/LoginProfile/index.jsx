@@ -1,13 +1,12 @@
 import React from "react";
-import { Wrapper } from "./styled";
 import { Text, ProfileImg } from "../../index";
 
-import sol from "../../../assets/images/sol.jpg";
+import { Wrapper } from "./styled";
 
-const LoginProfile = ({ children }) => {
+const LoginProfile = ({ children, profile }) => {
   return (
     <Wrapper>
-      <ProfileImg theme="loginProfile" src={sol} />
+      <ProfileImg theme="loginProfile" profile={profile} />
       <Text theme="text4">{children}</Text>
     </Wrapper>
   );

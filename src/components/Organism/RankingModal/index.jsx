@@ -1,21 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Wrapper, WrapperProfile } from "./styled";
 import { Text, ProfileImg, Card, Button } from "../../index";
-import sol from "../../../assets/images/sol.jpg";
-import doraemi from "../../../assets/images/doraemi.svg";
-import shoo from "../../../assets/images/shoo.svg";
-import lino from "../../../assets/images/lino.svg";
-import lulu from "../../../assets/images/lulu.svg";
-import moli from "../../../assets/images/moli.svg";
 
-const imageMap = {
-  sol,
-  doraemi,
-  shoo,
-  lino,
-  lulu,
-  moli,
-};
 const RankingModal = ({
   closeModal,
   profileImg,
@@ -25,8 +12,6 @@ const RankingModal = ({
   modalPosition,
   followOnClick,
 }) => {
-  const selectedImage = imageMap[profileImg];
-  console.log("모달모달 프로필이미지", profileImg);
   return (
     <div
       style={{
@@ -38,15 +23,17 @@ const RankingModal = ({
       <Card theme="rankModalCard">
         <WrapperProfile>
           <Text theme="textRankingProfile">{username}</Text>
-          <ProfileImg theme="rankingProfile" src={selectedImage} />
+          <ProfileImg theme="rankingProfile" profile={profileImg} />
         </WrapperProfile>
         <Wrapper>
           <Button theme="followBtn" onClick={followOnClick}>
             {isfollow === 1 ? "Follow" : "Unfollow"}
           </Button>
-          <Button theme="rankToUserBtn" onClick={closeModal}>
-            To {userSeq}
-          </Button>
+          <Link to={`/mypage/${userSeq}`}>
+            <Button theme="rankToUserBtn" onClick={closeModal}>
+              보러가기
+            </Button>
+          </Link>
         </Wrapper>
       </Card>
     </div>

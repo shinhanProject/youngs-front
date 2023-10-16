@@ -4,7 +4,7 @@ import { axiosInstance } from "../../../apis";
 
 import { Container, Wrapper } from "./styled";
 
-const SandBeach = () => {
+const SandBeach = ({ id }) => {
   const [data, setData] = useState({});
   const [sand, setSand] = useState({});
 
@@ -36,7 +36,7 @@ const SandBeach = () => {
 
   const getClam = () => {
     axiosInstance
-      .get("/profile/1/sand")
+      .get(`/profile/${id}/sand`)
       .then(response => {
         setData(response.data);
         console.log(response.data);
