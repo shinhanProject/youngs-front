@@ -28,7 +28,8 @@ export const Wrapper = styled.div`
   display: flex;
   text-align: center;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
+  padding-bottom: 10px;
 `;
 
 export const Wrapperpage = styled.div`

@@ -1,7 +1,12 @@
 import React from "react";
-import { Wrapper, Container, Wrapper2, WrapperUsername } from "./styled";
+import {
+  Wrapper,
+  Container,
+  Wrapper2,
+  WrapperUsername,
+  WrapperRank,
+} from "./styled";
 import { Text } from "../../index";
-//  1,2,3 등만 숫자 다르니까 theme 받아서 나열하자
 
 const RankingCard = ({
   tier,
@@ -18,6 +23,19 @@ const RankingCard = ({
   profile,
   changeProfile,
 }) => {
+  let isHigh = "high";
+  let isHighText = "textRankingPage";
+  if (rank === 1 || rank === 2 || rank === 3) {
+    isHigh = "high";
+    isHighText = "highrank";
+  } else if (rank === "순위") {
+    isHigh = "text";
+    isHighText = "textRankingPage";
+  } else {
+    isHighText = "lowrank";
+    isHigh = "normal";
+  }
+
   return (
     <Container
       onClick={event => {
@@ -29,8 +47,11 @@ const RankingCard = ({
         handlePosition(event);
       }}
     >
+      {" "}
       <Wrapper>
-        <Text theme="textRankingPage"> {rank} </Text>
+        <WrapperRank theme={isHigh}>
+          <Text theme={isHighText}>{rank}</Text>
+        </WrapperRank>
       </Wrapper>
       <Wrapper>
         <Text theme="textRankingPage"> {tier} </Text>

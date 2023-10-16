@@ -3,8 +3,8 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
   width: 30vw;
   display: flex;
+  flex-direction: center;
   text-align: center;
-
   justify-content: center;
   margin-top: 30px;
 `;

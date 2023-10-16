@@ -92,6 +92,37 @@ const textStyles = {
     fontSize: "1vw",
     color: "#333333",
   },
+  textRankPageSubTitle: {
+    fontWeight: "normal",
+    fontSize: "1vw",
+    color: "#595953",
+    marginTop: "10px",
+  },
+  highrank: {
+    fontWeight: "normal",
+    fontSize: "1vw",
+    color: "white",
+    display: "flex",
+    justifyContents: "center",
+    alignItems: "center",
+  },
+  lowrank: {
+    fontWeight: "normal",
+    fontSize: "1vw",
+    color: "#333333",
+    display: "flex",
+    justifyContents: "center",
+    alignItems: "center",
+  },
+  textRankNumber: {
+    fontWeight: "normal",
+    fontSize: "1vw",
+    color: "#333333",
+    display: "flex",
+    justifyContents: "center",
+    alignItems: "center",
+  },
+
   infoTitle: {
     fontWeight: "bold",
     fontSize: "2vw",
