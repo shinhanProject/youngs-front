@@ -25,6 +25,46 @@ export const Wrapper2 = styled.div`
   width: 30vw;
 `;
 
+const rankStyles = {
+  normal: {
+    fontWeight: "normal",
+    fontSize: "1vw",
+    display: "flex",
+    flexDirection: "center",
+    justifyContent: "center",
+    textAlign: "center",
+    width: "1.8vw",
+    height: "1.8vw",
+    color: "#333333",
+    background: "rgba(0, 79, 255, 0.2)",
+    borderRadius: "70%",
+    boxShadow: "0vw 0.5vw 0.5vw -0.5vw gray",
+  },
+  high: {
+    fontWeight: "normal",
+    fontSize: "1vw",
+    color: "white",
+    display: "flex",
+    flexDirection: "center",
+    justifyContent: "center",
+    textAlign: "center",
+    width: "1.8vw",
+    height: "1.8vw",
+    background:
+      "radial-gradient(circle, #004fff, #004fff, rgba(235, 255, 0, 0.8))",
+    borderRadius: "70%",
+    boxShadow: "0vw 0.5vw 0.6vw -0.5vw gray",
+  },
+  text: {
+    fontWeight: "normal",
+    fontSize: "1vw",
+    color: "#333333",
+  },
+};
+export const WrapperRank = styled.div`
+  ${props => rankStyles[props.theme]}
+`;
+
 export const Container = styled.div`
   display: flex;
   flex-direction: row;

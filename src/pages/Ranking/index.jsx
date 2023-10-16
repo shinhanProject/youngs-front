@@ -78,7 +78,7 @@ const Ranking = () => {
       <Wrapper>
         <WrapperTitile onClick={ismodalClose}>
           <Text theme="text2"> RANKING</Text>
-          <Text theme="text1">요약 개수 랭킹</Text>
+          <Text theme="textRankPageSubTitle">요약 개수 랭킹</Text>
         </WrapperTitile>
         {modalstate && (
           <RankingModal
