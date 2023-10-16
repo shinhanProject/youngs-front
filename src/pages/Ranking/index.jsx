@@ -9,7 +9,13 @@ import {
   Pagination,
   RankingModal,
 } from "../../components";
-import { Container, Wrapper, WrapperTitile, Wrapperpage } from "./styled";
+import {
+  Container,
+  Wrapper,
+  WrapperTitile,
+  Wrapperpage,
+  Dummy,
+} from "./styled";
 import { rankModalOpenState } from "../../store/atoms";
 
 const Ranking = () => {
@@ -74,7 +80,13 @@ const Ranking = () => {
 
   return (
     <Container>
-      <Header />
+      <Dummy
+        onClick={() => {
+          ismodalClose();
+        }}
+      >
+        <Header />
+      </Dummy>
       <Wrapper>
         <WrapperTitile onClick={ismodalClose}>
           <Text theme="text2"> RANKING</Text>

@@ -38,6 +38,7 @@ const RankingCard = ({
 
   return (
     <Container
+      theme={isHigh}
       onClick={event => {
         setmodalOpen();
         changeProfile(profile);
