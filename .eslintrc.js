@@ -32,5 +32,9 @@ module.exports = {
     "import/no-cycle": "off",
     "no-param-reassign": "off",
     "react/jsx-props-no-spreading": "off",
+    "dot-notation": "off",
+    "prefer-destructuring": "off",
+    "prefer-template": "off",
+    "no-restricted-globals": "off",
   },
 };

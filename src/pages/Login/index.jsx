@@ -1,36 +1,86 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { useSetRecoilState } from "recoil";
+import { Link, useNavigate } from "react-router-dom";
+import { axiosInstance } from "../../apis";
 import { Header, Card, Button, Footer } from "../../components";
+import { loginState } from "../../store/atoms";
 
 import { Container, Wrapper, LoginInput, SignUpWrapper, Image } from "./styled";
 import login from "../../assets/images/loginto.svg";
 
 const Login = () => {
-  const [id, setId] = useState("");
+  const [userEmail, setUserEmail] = useState("");
   const [pw, setPw] = useState("");
+  const setUserInfo = useSetRecoilState(loginState);
+
+  const navigate = useNavigate();
 
   const onIdChange = e => {
-    setId(e.target.value);
+    setUserEmail(e.target.value);
   };
 
   const onPwChange = e => {
     setPw(e.target.value);
   };
 
+  const onLogin = async () => {
+    axiosInstance
+      .post("/auth/login", {
+        email: userEmail,
+        userPw: pw,
+      })
+      .then(response => {
+        if (response.status === 200) {
+          const accessToken = response.data.accessToken;
+          setUserInfo({
+            isLogin: true,
+            userInfo: {
+              userSeq: response.data.userSeq,
+              email: userEmail,
+              nickname: response.data.nickname,
+              profile: response.data.profile,
+            },
+          });
+          axiosInstance.defaults.headers.common[
+            "Authorization"
+          ] = `Bearer ${accessToken}`;
+          navigate("/");
+        } else {
+          alert("아이디/비밀번호가 일치하지 않습니다.");
+        }
+      })
+      .catch(() => {
+        alert("로그인 중 오류가 발생했습니다.");
+      });
+  };
+
+  const handleOnKeyPress = e => {
+    if (e.key === "Enter") {
+      onLogin();
+    }
+  };
+
   return (
     <Container>
-      <Header />
+      <Header theme="opaque" />
       <Wrapper>
         <Card theme="loginCard">
           <Image src={login} alt="로그인" />
-          <LoginInput placeholder="이메일" onChange={onIdChange} value={id} />
+          <LoginInput
+            placeholder="이메일"
+            onChange={onIdChange}
+            value={userEmail}
+          />
           <LoginInput
             type="password"
             placeholder="비밀번호"
             onChange={onPwChange}
+            onKeyPress={handleOnKeyPress}
             value={pw}
           />
-          <Button theme="blueBtn">로그인</Button>
+          <Button theme="blueBtn" onClick={onLogin}>
+            로그인
+          </Button>
           <SignUpWrapper>
             <Button theme="blueTextBtn">비밀번호 찾기</Button>
             <Button theme="blueTextBtn">

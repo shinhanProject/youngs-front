@@ -24,7 +24,8 @@ export const Image = styled.img`
 `;
 
 export const ButtonGroup = styled.div`
-  width: 20vw;
+  width: ${props => (props.login ? "25vw" : "20vw")};
   display: flex;
   justify-content: space-between;
+  align-items: center;
 `;

@@ -18,7 +18,7 @@ const textStyles = {
   },
   text4: {
     fontWeight: "normal",
-    fontSize: "16px",
+    fontSize: "1.2vw",
     color: "#333333",
   },
   text5: {
@@ -130,6 +130,11 @@ const textStyles = {
     fontSize: "0.5vw",
     color: "D9D9D9",
     margin: "0.5vh 0",
+  },
+  emailerror: {
+    fontSize: "0.8vw",
+    color: "red",
+    marginBottom: "2vh",
   },
 };
 
