@@ -32,7 +32,7 @@ export const CategoryWrapper = styled.div`
 export const InnerOuterWrapper = styled.div`
   width: 80vw;
   border-top: 1px solid darkgray;
-  padding-top: 4vh;
+  padding-top: 0.1vh;
 `;
 
 export const List = styled.div`

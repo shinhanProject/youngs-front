@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useRecoilValue } from "recoil";
 import { Link } from "react-router-dom";
 import { axiosInstance } from "../../apis";
-import { basicCategoryState } from "../../store/atoms";
+import { basicCategoryState, alreadyLearn } from "../../store/atoms";
 import {
   Header,
   CategoryBundle,
@@ -11,6 +11,7 @@ import {
   Pagination,
   BasicKnowledgeCategory,
   BasicKnowledgeCard,
+  Toggle,
 } from "../../components";
 import {
   Container,
@@ -22,16 +23,18 @@ import {
 } from "./styled";
 
 const BasicKnowledgeList = () => {
+  const isAlreadyLearn = useRecoilValue(alreadyLearn);
   const category = useRecoilValue(basicCategoryState);
   const [posts, setPosts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 6;
 
-  // 주식 api 나오면 수정할 부분
   useEffect(() => {
     const fetchData = async () => {
       axiosInstance
-        .get(`news/${category}`)
+        .get(
+          `/basic/category?categorySeq=${category}&isChecked=${isAlreadyLearn}`,
+        )
         .then(response => {
           console.log(response.data);
           setPosts(response.data);
@@ -61,13 +64,14 @@ const BasicKnowledgeList = () => {
       <Wrapper>
         <BasicKnowledgeCategory />
         <InnerOuterWrapper>
+          <Toggle flag={1} />
           <CategoryWrapper>
             <List>
               {getCurrentPosts(posts).map(post => (
-                <Link to={`/stdetail/${post.newsSeq}`}>
+                <Link to={`/bsdetail/${category}/${post.basicSeq}`}>
                   <BasicKnowledgeCard
-                    name={post.newsSeq}
-                    description={post.description}
+                    name={post.subject}
+                    description={post.information}
                     category={post.pubDate}
                   />
                 </Link>

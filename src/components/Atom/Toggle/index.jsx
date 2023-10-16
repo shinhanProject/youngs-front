@@ -1,15 +1,17 @@
 import { useState } from "react";
 import { useSetRecoilState } from "recoil";
-import { gptDragState } from "../../../store/atoms";
+import { gptDragState, alreadyLearn } from "../../../store/atoms";
 import { Text } from "../../index";
 import { ToggleBtn, Circle, Wrapper } from "./styled";
 
 const Toggle = ({ flag }) => {
   const [toggle, setToggle] = useState(false);
   const setGptDrag = useSetRecoilState(gptDragState);
+  const setalreadyLearn = useSetRecoilState(alreadyLearn);
   const clickedToggle = () => {
     setToggle(prev => !prev);
     setGptDrag(prev => !prev);
+    setalreadyLearn(prev => !prev);
   };
   let buttonText = "";
   if (flag === 1) {
