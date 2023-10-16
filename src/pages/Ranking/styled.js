@@ -12,7 +12,7 @@ export const Container = styled.div`
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: between;
   align-items: center;
   text-align: center;
 `;
@@ -29,7 +29,6 @@ export const Wrapper = styled.div`
   text-align: center;
   flex-direction: column;
   justify-content: space-around;
-  padding-bottom: 10px;
 `;
 
 export const Wrapperpage = styled.div`
@@ -54,3 +53,4 @@ export const Rankers = styled.div`
   grid-gap: 4px; /* 요소 간 간격 설정 */
 `;
 export const Pagenation = styled.div``;
+export const Dummy = styled.div``;

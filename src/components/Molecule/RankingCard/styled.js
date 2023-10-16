@@ -74,6 +74,9 @@ export const Container = styled.div`
   grid-template-rows: repeat(auto-fill, minmax(100px, 1fr));
   border-bottom: 1px solid lightgray;
   &:hover {
-    background-color: rgba(0, 70, 255, 0.1);
+    ${props =>
+      props.theme === "normal" || props.theme === "high"
+        ? "background-color: rgba(0, 70, 255, 0.1)"
+        : "background-color: white"};
   }
 `;
