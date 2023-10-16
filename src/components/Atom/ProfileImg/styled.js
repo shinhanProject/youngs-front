@@ -7,6 +7,7 @@ const profileStyles = {
     borderRadius: "70%",
     overflow: "hidden",
     border: "1px solid #ececec",
+    background: "white",
   },
   mypageProfile: {
     width: "17vw",
@@ -22,6 +23,7 @@ const profileStyles = {
     overflow: "hidden",
     border: "1px solid lightgray",
     margin: "0 0 0 4.3vw",
+    background: "white",
   },
   followingProfile: {
     width: "30px",

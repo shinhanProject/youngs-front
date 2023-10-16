@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import { StyledProfile, ProfileImages } from "./styled";
-import solImg from "../../../assets/images/sol.jpg";
+import solImg from "../../../assets/images/sol.svg";
 import doraemiImg from "../../../assets/images/doraemi.svg";
 import shooImg from "../../../assets/images/shoo.svg";
 import linoImg from "../../../assets/images/lino.svg";

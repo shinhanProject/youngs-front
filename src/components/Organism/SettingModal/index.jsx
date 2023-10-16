@@ -12,7 +12,7 @@ import {
   SettingProfile,
 } from "./styled";
 
-import sol from "../../../assets/images/sol.jpg";
+import sol from "../../../assets/images/sol.svg";
 import doraemi from "../../../assets/images/doraemi.svg";
 import shoo from "../../../assets/images/shoo.svg";
 import lino from "../../../assets/images/lino.svg";
