@@ -101,6 +101,7 @@ const Ranking = () => {
             modalPosition={modalPosition}
             followOnClick={followOnClick}
             profileImg={profileImg}
+            closeModal={ismodalClose}
           />
         )}
         <RankingList
