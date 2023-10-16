@@ -11,6 +11,8 @@ export const Container = styled.div`
   border-radius: 30px;
   box-shadow: 0 10px 10px -5px lightgray;
   padding: 1vw 0.7vh 1vw 0.7vh;
+  position: relative;
+  left: 2.2vw;
 `;
 
 export const Wrapper = styled.div`
@@ -39,7 +41,7 @@ export const SearchInput = styled.input`
   width: 60%;
 
   height: 4vh;
-  font-size: 0.8rem;
+  font-size: 0.5rem;
   &::placeholder {
     color: gray;
     padding-left: 1px;

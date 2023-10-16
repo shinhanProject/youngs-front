@@ -57,6 +57,7 @@ const textStyles = {
     color: "#4A483F",
     lineHeight: "1.3vw",
   },
+
   textSummaryTopic: {
     fontWeight: "normal",
     fontSize: "13px",
@@ -112,10 +113,16 @@ const textStyles = {
   },
   textSearch: {
     fontWeight: "bold",
-    fontSize: "1.8vw",
+    fontSize: "1.1vw",
     color: "#333333",
   },
   textSetting: {
+    fontWeight: "normal",
+    fontSize: "1vw",
+    color: "#4B4B4B",
+    marginBottom: "7px",
+  },
+  textFollowing: {
     fontWeight: "normal",
     fontSize: "1vw",
     color: "#4B4B4B",
@@ -135,6 +142,63 @@ const textStyles = {
     fontSize: "0.8vw",
     color: "red",
     marginBottom: "2vh",
+  },
+  textStockItemName: {
+    fontWeight: "normal",
+    fontSize: "1.2vw",
+    color: "#4AFFF",
+    lineHeight: "1.5vw",
+  },
+  textStockItemDescription: {
+    fontSize: "12px",
+    color: "#4A483F",
+    lineHeight: "1.1vw",
+  },
+  textBasicItemName: {
+    fontWeight: "normal",
+    fontSize: "1.2vw",
+    color: "black",
+    lineHeight: "1.5vw",
+    marginBottom: "0.5vw",
+  },
+  textBasicItemDescription: {
+    fontSize: "12px",
+    color: "#4AFFF",
+    lineHeight: "1.1vw",
+  },
+  textBasicDate: {
+    fontWeight: "normal",
+    fontSize: "9px",
+    color: "#4A483F",
+    margin: "0px 0px 10px 0px",
+  },
+  textupPrice: {
+    fontSize: "12px",
+    color: "red",
+    lineHeight: "1.1vw",
+  },
+  textdownPrice: {
+    fontSize: "12px",
+    color: "blue",
+    lineHeight: "1.1vw",
+  },
+  textblackPrice: {
+    fontSize: "12px",
+    color: "black",
+    lineHeight: "1.1vw",
+  },
+  textbasicDetailTitle: {
+    fontSize: "24px",
+    color: "black",
+    fontWeight: "bold",
+    lineHeight: "1.1vw",
+    marginBottom: "3vh",
+  },
+  textbasicDetailDescription: {
+    fontSize: "12px",
+    fontWeight: "normal",
+    color: "black",
+    lineHeight: "1.1vw",
   },
 };
 

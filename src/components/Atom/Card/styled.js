@@ -45,6 +45,26 @@ const CardStyles = {
     boxShadow: "3px 5px 8px -3px gray",
   },
 
+  stockItemCard: {
+    background: "white",
+    color: "black",
+    width: "16vw",
+    height: "12vh",
+    borderRadius: "1.5vw",
+    border: "0.5px solid #ececec",
+    padding: "1vh 1vw 1vh 1vw",
+    boxShadow: "3px 5px 12px -1px gray",
+  },
+  basicItemCard: {
+    background: "white",
+    color: "black",
+    width: "21vw",
+    height: "16vh",
+    borderRadius: "1.5vw",
+    border: "0.5px solid #ececec",
+    padding: "1vh 1vw 1vh 1vw",
+    boxShadow: "3px 5px 12px -1px gray",
+  },
   rankModalCard: {
     background: "#fdfafa",
     color: "black",
