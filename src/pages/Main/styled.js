@@ -12,8 +12,8 @@ export const Container = styled.div`
 
 export const DecoImg = styled.img`
   position: absolute;
-  top: 30vh;
-  left: 10vw;
+  top: 20vh;
+  left: 5vw;
   width: 15vw;
   z-index: -1;
   filter: opacity(0.2);
@@ -21,18 +21,18 @@ export const DecoImg = styled.img`
 
 export const DecoImg2 = styled.img`
   position: absolute;
-  bottom: -15vh;
-  transform: rotate(55deg);
-  left: 14vw;
+  bottom: 0vh;
+  transform: rotate(15deg);
+  left: 17vw;
   width: 35vw;
   z-index: -1;
   filter: opacity(0.1);
 `;
 export const DecoImg3 = styled.img`
   position: absolute;
-  top: 2vh;
+  top: 10vh;
   transform: rotate(55deg);
-  right: 10vw;
+  right: 2vw;
   width: 40vw;
   z-index: -1;
   filter: invert(15%) sepia(87%) saturate(7242%) hue-rotate(227deg)

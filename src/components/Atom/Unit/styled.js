@@ -16,7 +16,7 @@ export const Noti = styled.div`
   z-index: 10;
 `;
 
-const sandholeStyles = {
+const unitStyles = {
   none: {
     background: "rgba(0, 70, 255, 0.10)",
   },
@@ -31,7 +31,7 @@ const sandholeStyles = {
   },
 };
 
-export const StyledSandHole = styled.div`
+export const StyledUnit = styled.div`
   width: 1vw;
   height: 1vw;
   border-radius: 70%;
@@ -41,7 +41,7 @@ export const StyledSandHole = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  ${props => sandholeStyles[props.cnt]}
+  ${props => unitStyles[props.cnt]}
   &:hover + ${Noti} {
     display: flex;
     flex-direction: column;

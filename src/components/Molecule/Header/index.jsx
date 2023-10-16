@@ -43,6 +43,15 @@ const Header = ({ theme }) => {
     }
   };
 
+  const goRank = () => {
+    if (loginUserState.isLogin) {
+      navigate("/ranking");
+    } else {
+      alert("로그인이 필요한 서비스입니다.");
+      navigate("/login");
+    }
+  };
+
   return (
     <Wrapper theme={theme}>
       <Link to="/">
@@ -52,9 +61,9 @@ const Header = ({ theme }) => {
         <Link to="/basicknowledge">
           <Button theme="headerBtn">정보 탐색</Button>
         </Link>
-        <Link to="/ranking">
-          <Button theme="headerBtn">랭킹</Button>
-        </Link>
+        <Button theme="headerBtn" onClick={goRank}>
+          랭킹
+        </Button>
         {loginUserState.isLogin ? (
           <>
             <Link to={`/mypage/${loginUserState.userInfo.userSeq}`}>

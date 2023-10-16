@@ -25,7 +25,7 @@ export const Wrapper = styled.div`
   justify-content: space-around;
   align-items: center;
   width: 90%;
-  hight: 70%;
+  height: 70%;
   overflow-y: scroll;
   &::-webkit-scrollbar {
     width: 8px;
