@@ -129,7 +129,7 @@ const textStyles = {
   },
   mypageText: {
     fontWeight: "bold",
-    fontSize: "2vw",
+    fontSize: "1.5vw",
     color: "rgba(0, 70, 255, 0.5)",
   },
   mypagesmall: {

@@ -105,8 +105,7 @@ const CardStyles = {
   summaryCard: {
     background: "white",
     color: "black",
-    width: "38vw",
-    // height: "9vh",
+    width: "40vw",
     borderRadius: "1vw",
     border: "0.5px solid #ececec",
     boxShadow: "0px 3px 10px -3px gray",

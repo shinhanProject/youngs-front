@@ -12,6 +12,10 @@ export const Container = styled.div`
   border-radius: 20px;
   border: 0.5px solid #fdfafa;
   box-shadow: 2px 3.5px 4px -3px gray;
+  position: absolute;
+  z-index: 30;
+  top: -45vh;
+  left: 1vw;
 `;
 export const Wrapper = styled.div`
   margin-top: 1vh;

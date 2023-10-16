@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Container = styled.div`
   background: conic-gradient(
@@ -26,17 +26,18 @@ export const Content = styled.div`
   height: 80vh;
   border-radius: 1vw;
   display: flex;
-  box-shadow: 0px 50px 150px 0px rgba(94, 77, 119, 0.25);
+  box-shadow: 0px 0px 50px 0px rgba(94, 77, 119, 0.25);
 `;
 
 export const Left = styled.div`
   width: 24vw;
-  height: 80vh;
+  height: 70vh;
   background: white;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
+  padding: 5vh 0;
 `;
 
 export const Right = styled.div`
@@ -45,7 +46,7 @@ export const Right = styled.div`
   background: #f7f8fa;
   box-shadow: 0px 50px 150px 0px rgba(94, 77, 119, 0.25);
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
 `;
@@ -58,6 +59,7 @@ export const SettingImg = styled.img`
 
 export const ButtonWrapper = styled.div`
   display: flex;
+  position: relative;
 `;
 
 export const ProfileWrapper = styled.div`
@@ -70,4 +72,31 @@ export const TextWrapper = styled.div`
   align-items: center;
   flex-direction: column;
   height: 10vh;
+`;
+
+const hideScrollbar = css`
+  *::-webkit-scrollbar {
+    width: 10px;
+  }
+  *::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 10px;
+  }
+  *::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0);
+  }
+`;
+
+export const SummaryContainer = styled.div`
+  height: 40vh;
+  padding: 1vh 1vw;
+  border-radius: 1vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  overflow-y: scroll;
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
+  ${hideScrollbar};
+}
 `;

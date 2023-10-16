@@ -1,11 +1,24 @@
 import styled, { css } from "styled-components";
 
+export const getWidthBasedOnFlag = flag => {
+  if (flag === 1) {
+    return "16.5vw";
+  }
+  if (flag === 2) {
+    return "11vw";
+  }
+  if (flag === 3) {
+    return "13vw";
+  }
+  return "12vw";
+};
+
 export const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: ${props => (props.flag === 1 ? "16.5vw" : "11vw")};
-  margin: 2vh 0;
+  width: ${props => getWidthBasedOnFlag(props.flag)};
+  margin: ${props => (props.flag === 3 ? "0" : "2vh 0")};
 `;
 export const ToggleBtn = styled.button`
   width: 3.5vw;

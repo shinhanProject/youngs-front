@@ -1,16 +1,16 @@
 import { atom } from "recoil";
 import { recoilPersist } from "recoil-persist";
 
-export const newsCategoryState = atom({
-  key: "newsCategoryState",
-  default: 1,
-  // 1:경제 2:증권 3:부동산 4:기업/경영
-});
-
 export const basicCategoryState = atom({
   key: "basicCategoryState",
   default: 1,
   // 1:경제 기초 지식 2:주식 투자 기법 3:위험성 4:주식 기초
+});
+
+export const newsCategoryState = atom({
+  key: "newsCategoryState",
+  default: 1,
+  // 1:경제 2:증권 3:부동산 4:기업/경영
 });
 
 export const gptDragState = atom({
@@ -47,4 +47,10 @@ export const loginState = atom({
     },
   },
   effects_UNSTABLE: [persistAtom],
+});
+
+export const privateSummary = atom({
+  key: "privateSummary",
+  default: false,
+  // 요약 나만 보기 true
 });
