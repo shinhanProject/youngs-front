@@ -11,6 +11,7 @@ export const Container = styled.div`
   width: 100vw;
   height: 100vh;
 `;
+
 export const Wrapper = styled.div`
   width: 100vw;
   padding-top: 10vh;
@@ -20,28 +21,31 @@ export const Wrapper = styled.div`
   align-items: center;
 `;
 
-export const LoginInput = styled.input`
-  border: 1px solid #ececec;
-  width: 98%;
-  border-radius: 2px;
-  height: 6vh;
-  font-size: 0.8rem;
-  margin-bottom: 1.5vh;
-
-  &::placeholder {
-    color: #d9d9d9;
-    padding-left: 15px;
-  }
-`;
-
-export const SignUpWrapper = styled.div`
-  width: 100%;
+export const Content = styled.div`
+  width: 90vw;
+  height: 80vh;
+  border-radius: 1vw;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  box-shadow: 0px 50px 150px 0px rgba(94, 77, 119, 0.25);
 `;
 
-export const Image = styled.img`
-  width: 100%;
-  margin-bottom: 4vh;
+export const Left = styled.div`
+  width: 24vw;
+  height: 80vh;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`;
+
+export const Right = styled.div`
+  width: 66vw;
+  height: 80vh;
+  background: #f7f8fa;
+  box-shadow: 0px 50px 150px 0px rgba(94, 77, 119, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 `;

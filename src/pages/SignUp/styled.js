@@ -13,7 +13,7 @@ export const Container = styled.div`
 `;
 export const Wrapper = styled.div`
   width: 100vw;
-  margin-top: 10vh;
+  padding-top: 10vh;
   height: 90vh;
   display: flex;
   justify-content: center;

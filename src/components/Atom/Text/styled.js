@@ -18,7 +18,7 @@ const textStyles = {
   },
   text4: {
     fontWeight: "normal",
-    fontSize: "16px",
+    fontSize: "1.2vw",
     color: "#333333",
   },
   text5: {
@@ -138,7 +138,11 @@ const textStyles = {
     color: "D9D9D9",
     margin: "0.5vh 0",
   },
-
+  emailerror: {
+    fontSize: "0.8vw",
+    color: "red",
+    marginBottom: "2vh",
+  },
   textStockItemName: {
     fontWeight: "normal",
     fontSize: "1.2vw",
@@ -162,7 +166,6 @@ const textStyles = {
     color: "#4AFFF",
     lineHeight: "1.1vw",
   },
-
   textBasicDate: {
     fontWeight: "normal",
     fontSize: "9px",

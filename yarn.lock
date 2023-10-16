@@ -11513,7 +11513,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"recoil@npm:^0.7.7":
+"recoil-persist@npm:^5.1.0":
+  version: 5.1.0
+  resolution: "recoil-persist@npm:5.1.0"
+  peerDependencies:
+    recoil: ^0.7.2
+  checksum: 03ee8417b9bfcb1e5d61af373a304437190da394bf42b0979cf54ec4edeb27e7577f76ae4f9348d131865b87b19dc8dedc158e2bacd3976d4b936be1ab005d18
+  languageName: node
+  linkType: hard
+
+"recoil@npm:^0.7.7, recoil@npm:latest":
   version: 0.7.7
   resolution: "recoil@npm:0.7.7"
   dependencies:
@@ -12219,6 +12228,7 @@ __metadata:
     react-scripts: 5.0.1
     react-slick: ^0.29.0
     recoil: ^0.7.7
+    recoil-persist: ^5.1.0
     slick-carousel: ^1.8.1
     styled-components: ^6.0.8
     web-vitals: ^2.1.4
