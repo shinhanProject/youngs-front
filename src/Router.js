@@ -28,13 +28,11 @@ const Router = () => {
           path="/bsdetail/:category/:id"
           element={<BasicKnowledgeDetail />}
         />
-
         <Route path="/pressrelease" element={<PressReleaseList />} />
         <Route
           path="/prdetail/:category/:id"
           element={<PressReleaseDetail />}
         />
-
         <Route path="/stockitem" element={<StockItemList />} />
         <Route path="/stdetail/:id" element={<StockItemDetail />} />
         <Route path="/ranking" element={<Ranking />} />

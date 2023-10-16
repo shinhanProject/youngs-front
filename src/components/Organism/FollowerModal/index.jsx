@@ -1,28 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Container, Wrapper, ImgWrapper } from "./styled";
 import { Text, ProfileImg, Button } from "../../index";
 import { axiosInstance } from "../../../apis";
-import sol from "../../../assets/images/sol.jpg";
-import doraemi from "../../../assets/images/doraemi.svg";
-import shoo from "../../../assets/images/shoo.svg";
-import lino from "../../../assets/images/lino.svg";
-import lulu from "../../../assets/images/lulu.svg";
-import moli from "../../../assets/images/moli.svg";
 
-const imageMap = {
-  sol,
-  doraemi,
-  shoo,
-  lino,
-  lulu,
-  moli,
-};
-const FollowerModal = ({ userSeq }) => {
+const FollowerModal = ({ setOpenFollowersModal }) => {
   const [followers, setFollowers] = useState([]);
+  const modalRef = useRef(null);
+
   useEffect(() => {
     const fetchData = async () => {
       axiosInstance
-        .get(`/profile/${userSeq}/follower`)
+        .get(`/profile/${1}/follower`)
         .then(response => {
           const dataWithRank = response.data.map((item, index) => ({
             ...item,
@@ -38,22 +26,60 @@ const FollowerModal = ({ userSeq }) => {
     fetchData();
   }, []);
 
+  const onFollow = async e => {
+    console.log(e.target);
+  };
+
+  const onUnFollow = () => {};
+
+  useEffect(() => {
+    const handler = event => {
+      if (modalRef.current && !modalRef.current.contains(event.target)) {
+        setOpenFollowersModal(false);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+    return () => {
+      document.removeEventListener("mousedown", handler);
+    };
+  });
+
   return (
-    <Container>
+    <Container ref={modalRef}>
       <Text theme="textSetting">Followers</Text>
       <Wrapper>
         {followers.map(follower => (
           <ImgWrapper key={follower.index}>
-            <ProfileImg
-              theme="followingProfile"
-              src={imageMap[follower.profile]}
-            />
+            <ProfileImg theme="followingProfile" profile={follower.profile} />
             <Text theme="textFollowing">{follower.nickname}</Text>
+            {follower.status === 1 ? (
+              <Button
+                onClick={e => {
+                  onFollow(e);
+                }}
+              >
+                팔로우
+              </Button>
+            ) : (
+              <Button
+                onClick={e => {
+                  onUnFollow(e);
+                }}
+              >
+                언팔로우
+              </Button>
+            )}
           </ImgWrapper>
         ))}
       </Wrapper>
-
-      <Button theme="settingBtn">닫기</Button>
+      <Button
+        theme="settingBtn"
+        onClick={() => {
+          setOpenFollowersModal(false);
+        }}
+      >
+        닫기
+      </Button>
     </Container>
   );
 };
