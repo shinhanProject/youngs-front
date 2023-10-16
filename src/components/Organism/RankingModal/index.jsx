@@ -26,7 +26,7 @@ const RankingModal = ({
           <ProfileImg theme="rankingProfile" profile={profileImg} />
         </WrapperProfile>
         <Wrapper>
-          <Button theme="followBtn" onClick={followOnClick}>
+          <Button theme="rankToUserBtn" onClick={followOnClick}>
             {isfollow === 1 ? "Follow" : "Unfollow"}
           </Button>
           <Link to={`/mypage/${userSeq}`}>

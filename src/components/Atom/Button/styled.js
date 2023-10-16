@@ -82,7 +82,7 @@ const ButtonStyles = {
     padding: "0.4vw  1.7vw",
     fontSize: "0.8vw",
     boxShadow: "2px 3.5px 4px -3px lightgray",
-    margin: "0 0 0 3vw",
+    margin: "0",
   },
   gptCloseButton: {
     borderRadius: "15px",

@@ -3,10 +3,10 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   width: 16vw;
-  margin: 0.5vw;
+  margin: 0;
 `;
 export const WrapperProfile = styled.div`
   display: flex;
