@@ -21,7 +21,7 @@ const Ranking = () => {
   const [usernameState, setUsername] = useState(1);
   const [followState, setfollow] = useState(0);
   const [modalPosition, setModalPosition] = useState({ top: 0, left: 0 });
-  const [profileImg, setprofileImg] = useState("sol");
+  const [profileImg, setprofileImg] = useState("SOL");
 
   const ismodalOpen = () => {
     setIsModalOpen(true);
@@ -56,8 +56,6 @@ const Ranking = () => {
             ...item,
             rank: index + 1,
           }));
-          console.log(response.data);
-          console.log(dataWithRank);
           setPosts(dataWithRank);
         })
         .catch(e => {
@@ -74,21 +72,13 @@ const Ranking = () => {
     return currentPosts;
   };
 
-  console.log(posts);
-  console.log(
-    "변화를 확인하고싶어",
-    useridState,
-    usernameState,
-    followState,
-    profileImg,
-  );
   return (
     <Container>
       <Header />
       <Wrapper>
         <WrapperTitile onClick={ismodalClose}>
           <Text theme="text2"> RANKING</Text>
-          <Text theme="text1">2023년 랭킹</Text>
+          <Text theme="text1">요약 개수 랭킹</Text>
         </WrapperTitile>
         {modalstate && (
           <RankingModal

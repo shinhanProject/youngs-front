@@ -9,7 +9,7 @@ export const Container = styled.div`
     rgba(227, 0, 202, 0.3) 360deg
   );
   width: 100vw;
-  height: 1250px;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -19,11 +19,11 @@ export const Container = styled.div`
 
 export const Wrapper = styled.div`
   background: white;
-  width: 90vw;
-  margin-top: 23vh;
-  margin-bottom: 13vh;
+  width: 70vw;
+  margin-top: 15vh;
+  margin-bottom: 5vh;
   border-radius: 20px;
-  height: 1000px;
+  height: 80vh;
   box-shadow: 5px 5px 5px lightslategray;
   display: flex;
   text-align: center;

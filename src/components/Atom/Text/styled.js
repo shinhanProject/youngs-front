@@ -68,7 +68,6 @@ const textStyles = {
     fontWeight: "normal",
     fontSize: "9px",
     color: "#4A483F",
-
     margin: "0px 0px 15px 0px",
   },
   textSummaryDescription: {
@@ -90,7 +89,7 @@ const textStyles = {
   },
   textRankingPage: {
     fontWeight: "normal",
-    fontSize: "1.2vw",
+    fontSize: "1vw",
     color: "#333333",
   },
   infoTitle: {

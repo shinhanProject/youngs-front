@@ -30,7 +30,6 @@ const GptModalCard = ({
     };
   });
 
-  console.log(modalRef.current);
   return (
     <div
       ref={modalRef}
