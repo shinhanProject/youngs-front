@@ -36,5 +36,6 @@ module.exports = {
     "prefer-destructuring": "off",
     "prefer-template": "off",
     "no-restricted-globals": "off",
+    "import/no-unresolved": "off",
   },
 };

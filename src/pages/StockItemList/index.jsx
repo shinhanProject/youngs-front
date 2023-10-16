@@ -40,7 +40,7 @@ const StockItemList = () => {
         });
     };
     fetchData();
-  });
+  }, []);
   const indexOfLast = currentPage * postsPerPage;
   const indexOfFirst = indexOfLast - postsPerPage;
   const getCurrentPosts = () => {
