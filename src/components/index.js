@@ -32,3 +32,5 @@ export { default as SettingModal } from "./Organism/SettingModal";
 export { default as FollowingModal } from "./Organism/FollowingModal";
 export { default as FollowerModal } from "./Organism/FollowerModal";
 export { default as BasicKnowledgeCategory } from "./Organism/BasicKnowledgeCategory";
+export { default as StockChart } from "./Organism/StockChart";
+export { default as StockTable } from "./Organism/StockTable";
