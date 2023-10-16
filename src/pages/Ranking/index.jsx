@@ -110,7 +110,11 @@ const Ranking = () => {
           handlePosition={handlePosition}
           changeProfile={setprofileImg}
         />
-        <Wrapperpage>
+        <Wrapperpage
+          onClick={() => {
+            ismodalClose();
+          }}
+        >
           <Pagination
             postsPerPage={postsPerPage}
             totalPosts={posts.length}

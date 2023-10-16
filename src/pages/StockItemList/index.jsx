@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { useRecoilValue } from "recoil";
 import { Link } from "react-router-dom";
 import { axiosInstance } from "../../apis";
-import { newsCategoryState } from "../../store/atoms";
 import {
   Header,
   CategoryBundle,
@@ -23,7 +21,7 @@ import {
 
 const StockItemList = () => {
   // 이거 const [stockname, setStockname] = useState(); 로 바꿔서 검색 시 사용하기
-  const category = useRecoilValue(newsCategoryState);
+
   const [posts, setPosts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 8;
@@ -32,7 +30,7 @@ const StockItemList = () => {
   useEffect(() => {
     const fetchData = async () => {
       axiosInstance
-        .get(`news/${category}`)
+        .get(`news/1`)
         .then(response => {
           console.log(response.data);
           setPosts(response.data);
@@ -42,7 +40,7 @@ const StockItemList = () => {
         });
     };
     fetchData();
-  }, [category]);
+  });
   const indexOfLast = currentPage * postsPerPage;
   const indexOfFirst = indexOfLast - postsPerPage;
   const getCurrentPosts = () => {

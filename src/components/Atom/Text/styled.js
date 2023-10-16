@@ -170,17 +170,30 @@ const textStyles = {
     margin: "0px 0px 10px 0px",
   },
   textupPrice: {
-    fontSize: "13px",
+    fontSize: "12px",
     color: "red",
     lineHeight: "1.1vw",
   },
   textdownPrice: {
-    fontSize: "13px",
+    fontSize: "12px",
     color: "blue",
     lineHeight: "1.1vw",
   },
   textblackPrice: {
-    fontSize: "13px",
+    fontSize: "12px",
+    color: "black",
+    lineHeight: "1.1vw",
+  },
+  textbasicDetailTitle: {
+    fontSize: "24px",
+    color: "black",
+    fontWeight: "bold",
+    lineHeight: "1.1vw",
+    marginBottom: "3vh",
+  },
+  textbasicDetailDescription: {
+    fontSize: "12px",
+    fontWeight: "normal",
     color: "black",
     lineHeight: "1.1vw",
   },
