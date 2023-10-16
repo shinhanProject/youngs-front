@@ -78,13 +78,17 @@ const textStyles = {
   },
   textStockRankingPercent: {
     fontWeight: "normal",
-    fontSize: "1vw",
-    display: "inline-block",
+    fontSize: "20px",
+    // display: "inline-block",
     color: "black",
+  },
+  textStockRankingTitle: {
+    fontWeight: "normal",
+    fontSize: "20px",
   },
   textStockRankingScore: {
     fontWeight: "normal",
-    fontSize: "1vw",
+    fontSize: "20px",
     color: "red",
   },
   textRankingPage: {
