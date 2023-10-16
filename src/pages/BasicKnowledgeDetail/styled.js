@@ -36,6 +36,10 @@ export const SummaryInput = styled.div`
   flex-direction: row;
   justify-content: space-between;
 `;
+export const ButtonWrapper = styled.div`
+  display: flex;
+  flex-direction: column-reverse;
+`;
 
 export const ContentWrapper = styled.div`
   width: 60vw;
@@ -47,7 +51,9 @@ export const ContentWrapper = styled.div`
   padding: 3vw;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-top: 4vh;
   word-break: keep-all;
+  line-height: 1.5;
+  color: #0044b;
 `;

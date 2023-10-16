@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Wrapper1 = styled.div`
   display: flex;
   flex-direction: column;
-
+  justify-content: space-around;
   align-items: flex-start;
   height: 100%;
   border-botton: 1px solid lightgray;
@@ -24,4 +24,8 @@ export const Wrapper3 = styled.div`
   height: 100%;
   justify-content: space-between;
   align-items: flex-start;
+`;
+export const TextShortener = styled.div`
+  font-size: 1.2vw;
+  color: blue;
 `;

@@ -17,6 +17,7 @@ import {
   ContentContainer,
   ContentWrapper,
   SummaryInput,
+  ButtonWrapper,
 } from "./styled";
 
 const BasicKnowledgeDetail = () => {
@@ -60,8 +61,14 @@ const BasicKnowledgeDetail = () => {
             <Text theme="textbasicDetailTitle"> {posts.title}</Text>
             <p>{posts.info}</p>
             <SummaryInput>
-              <Input />
-              <Button theme="summaryEnrollBtn">수정하기</Button>
+              <Input
+                label="한 줄 요약하기"
+                type="text"
+                placeholder="요약을 입력하세요"
+              />
+              <ButtonWrapper>
+                <Button theme="summaryEnrollBtn">수정하기</Button>
+              </ButtonWrapper>
             </SummaryInput>
           </ContentWrapper>
         </ContentContainer>

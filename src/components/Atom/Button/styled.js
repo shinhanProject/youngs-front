@@ -46,16 +46,22 @@ const ButtonStyles = {
     color: "#0046ff",
   },
   summaryEditBtn: {
+    height: "5vh",
     borderRadius: "15px",
     background: "white",
     color: "#e300ca",
     border: "1px solid #ECECEC",
+    margin: "0 auto",
+    marginBottom: "1.5vh",
   },
   summaryEnrollBtn: {
+    height: "5vh",
     borderRadius: "15px",
     background: "white",
     color: "#0046ff",
     border: "1px solid #ECECEC",
+    margin: "0 auto",
+    marginBottom: "1.5vh",
   },
   followBtn: {
     borderRadius: "15px",
