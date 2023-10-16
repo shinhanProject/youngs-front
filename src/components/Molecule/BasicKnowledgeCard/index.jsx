@@ -17,7 +17,7 @@ const TextShortener = ({ text, maxLength }) => {
 };
 
 const BasicKnowledgeCard = ({ name, category, description }) => {
-  const maxLength = 20;
+  const maxLength = 30;
   const shortened = TextShortener({ text: description, maxLength }); // 여기 수정
   return (
     <Card theme="basicItemCard">

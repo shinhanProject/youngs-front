@@ -37,5 +37,6 @@ module.exports = {
     "prefer-template": "off",
     "no-restricted-globals": "off",
     "global-require": "off",
+    "import/no-unresolved": "off",
   },
 };

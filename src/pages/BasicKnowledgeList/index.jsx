@@ -28,21 +28,23 @@ const BasicKnowledgeList = () => {
   const [posts, setPosts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 6;
-
+  const fetchData = async () => {
+    axiosInstance
+      .get(
+        `/basic/category?categorySeq=${category}&isChecked=${isAlreadyLearn}`,
+      )
+      .then(response => {
+        console.log(response.data);
+        setPosts(response.data);
+      })
+      .catch(e => {
+        console.log(e);
+      });
+  };
   useEffect(() => {
-    const fetchData = async () => {
-      axiosInstance
-        .get(
-          `/basic/category?categorySeq=${category}&isChecked=${isAlreadyLearn}`,
-        )
-        .then(response => {
-          console.log(response.data);
-          setPosts(response.data);
-        })
-        .catch(e => {
-          console.log(e);
-        });
-    };
+    fetchData();
+  }, [isAlreadyLearn]);
+  useEffect(() => {
     fetchData();
   }, [category]);
   const indexOfLast = currentPage * postsPerPage;

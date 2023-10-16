@@ -26,7 +26,7 @@ export const rankModalOpenState = atom({
 
 export const alreadyLearn = atom({
   key: "alreadyLearn",
-  default: true,
+  default: false,
   // 공부한 내용 안보기. default : 기능 안 킴
 });
 

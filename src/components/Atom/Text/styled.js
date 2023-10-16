@@ -158,7 +158,7 @@ const textStyles = {
     fontSize: "1.2vw",
     color: "black",
     lineHeight: "1.5vw",
-    marginBottom: "0.5vw",
+    marginBottom: "1vw",
   },
   textBasicItemDescription: {
     fontSize: "12px",

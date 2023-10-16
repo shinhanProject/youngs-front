@@ -32,6 +32,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@testing-library/jest-dom", "virtual:124cfa88c804d3ef9664d62bf75e3732a738462a7df2c91c749bc023d8f1ab02224d421ee6a2ddd629421c7d4ec9598a167d87406d529480e527da83618b89ec#npm:6.1.3"],\
             ["@testing-library/react", "virtual:124cfa88c804d3ef9664d62bf75e3732a738462a7df2c91c749bc023d8f1ab02224d421ee6a2ddd629421c7d4ec9598a167d87406d529480e527da83618b89ec#npm:13.4.0"],\
             ["@testing-library/user-event", "virtual:124cfa88c804d3ef9664d62bf75e3732a738462a7df2c91c749bc023d8f1ab02224d421ee6a2ddd629421c7d4ec9598a167d87406d529480e527da83618b89ec#npm:13.5.0"],\
+            ["apexcharts", "npm:3.43.2-0"],\
             ["axios", "npm:1.5.1"],\
             ["babel-eslint", "virtual:124cfa88c804d3ef9664d62bf75e3732a738462a7df2c91c749bc023d8f1ab02224d421ee6a2ddd629421c7d4ec9598a167d87406d529480e527da83618b89ec#npm:10.1.0"],\
             ["eslint", "npm:8.51.0"],\
@@ -45,11 +46,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-react-hooks", "virtual:124cfa88c804d3ef9664d62bf75e3732a738462a7df2c91c749bc023d8f1ab02224d421ee6a2ddd629421c7d4ec9598a167d87406d529480e527da83618b89ec#npm:4.6.0"],\
             ["prettier", "npm:3.0.3"],\
             ["react", "npm:18.2.0"],\
+            ["react-apexcharts", "virtual:124cfa88c804d3ef9664d62bf75e3732a738462a7df2c91c749bc023d8f1ab02224d421ee6a2ddd629421c7d4ec9598a167d87406d529480e527da83618b89ec#npm:1.4.1"],\
             ["react-dom", "virtual:124cfa88c804d3ef9664d62bf75e3732a738462a7df2c91c749bc023d8f1ab02224d421ee6a2ddd629421c7d4ec9598a167d87406d529480e527da83618b89ec#npm:18.2.0"],\
             ["react-hook-form", "virtual:124cfa88c804d3ef9664d62bf75e3732a738462a7df2c91c749bc023d8f1ab02224d421ee6a2ddd629421c7d4ec9598a167d87406d529480e527da83618b89ec#npm:7.47.0"],\
             ["react-router-dom", "virtual:124cfa88c804d3ef9664d62bf75e3732a738462a7df2c91c749bc023d8f1ab02224d421ee6a2ddd629421c7d4ec9598a167d87406d529480e527da83618b89ec#npm:6.16.0"],\
             ["react-scripts", "virtual:124cfa88c804d3ef9664d62bf75e3732a738462a7df2c91c749bc023d8f1ab02224d421ee6a2ddd629421c7d4ec9598a167d87406d529480e527da83618b89ec#npm:5.0.1"],\
             ["react-slick", "virtual:124cfa88c804d3ef9664d62bf75e3732a738462a7df2c91c749bc023d8f1ab02224d421ee6a2ddd629421c7d4ec9598a167d87406d529480e527da83618b89ec#npm:0.29.0"],\
+            ["react-table", "virtual:124cfa88c804d3ef9664d62bf75e3732a738462a7df2c91c749bc023d8f1ab02224d421ee6a2ddd629421c7d4ec9598a167d87406d529480e527da83618b89ec#npm:7.8.0"],\
             ["recoil", "virtual:124cfa88c804d3ef9664d62bf75e3732a738462a7df2c91c749bc023d8f1ab02224d421ee6a2ddd629421c7d4ec9598a167d87406d529480e527da83618b89ec#npm:0.7.7"],\
             ["recoil-persist", "virtual:124cfa88c804d3ef9664d62bf75e3732a738462a7df2c91c749bc023d8f1ab02224d421ee6a2ddd629421c7d4ec9598a167d87406d529480e527da83618b89ec#npm:5.1.0"],\
             ["slick-carousel", "virtual:124cfa88c804d3ef9664d62bf75e3732a738462a7df2c91c749bc023d8f1ab02224d421ee6a2ddd629421c7d4ec9598a167d87406d529480e527da83618b89ec#npm:1.8.1"],\
@@ -5557,6 +5560,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["@yr/monotone-cubic-spline", [\
+        ["npm:1.0.3", {\
+          "packageLocation": "./.yarn/cache/@yr-monotone-cubic-spline-npm-1.0.3-a6469f7958-ebc75e4d84.zip/node_modules/@yr/monotone-cubic-spline/",\
+          "packageDependencies": [\
+            ["@yr/monotone-cubic-spline", "npm:1.0.3"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["abab", [\
         ["npm:2.0.6", {\
           "packageLocation": "./.yarn/cache/abab-npm-2.0.6-2662fba7f0-6ffc1af4ff.zip/node_modules/abab/",\
@@ -5889,6 +5901,22 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["anymatch", "npm:3.1.3"],\
             ["normalize-path", "npm:3.0.0"],\
             ["picomatch", "npm:2.3.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["apexcharts", [\
+        ["npm:3.43.2-0", {\
+          "packageLocation": "./.yarn/cache/apexcharts-npm-3.43.2-0-807edaa3bc-29931609ff.zip/node_modules/apexcharts/",\
+          "packageDependencies": [\
+            ["@yr/monotone-cubic-spline", "npm:1.0.3"],\
+            ["apexcharts", "npm:3.43.2-0"],\
+            ["svg.draggable.js", "npm:2.2.2"],\
+            ["svg.easing.js", "npm:2.0.0"],\
+            ["svg.filter.js", "npm:2.0.2"],\
+            ["svg.pathmorphing.js", "npm:0.1.3"],\
+            ["svg.resize.js", "npm:1.4.3"],\
+            ["svg.select.js", "npm:3.0.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -15618,6 +15646,33 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["react-apexcharts", [\
+        ["npm:1.4.1", {\
+          "packageLocation": "./.yarn/cache/react-apexcharts-npm-1.4.1-2dc909d883-32d1a946ad.zip/node_modules/react-apexcharts/",\
+          "packageDependencies": [\
+            ["react-apexcharts", "npm:1.4.1"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:124cfa88c804d3ef9664d62bf75e3732a738462a7df2c91c749bc023d8f1ab02224d421ee6a2ddd629421c7d4ec9598a167d87406d529480e527da83618b89ec#npm:1.4.1", {\
+          "packageLocation": "./.yarn/__virtual__/react-apexcharts-virtual-dd38bdfe0c/0/cache/react-apexcharts-npm-1.4.1-2dc909d883-32d1a946ad.zip/node_modules/react-apexcharts/",\
+          "packageDependencies": [\
+            ["@types/apexcharts", null],\
+            ["@types/react", null],\
+            ["apexcharts", "npm:3.43.2-0"],\
+            ["prop-types", "npm:15.8.1"],\
+            ["react", "npm:18.2.0"],\
+            ["react-apexcharts", "virtual:124cfa88c804d3ef9664d62bf75e3732a738462a7df2c91c749bc023d8f1ab02224d421ee6a2ddd629421c7d4ec9598a167d87406d529480e527da83618b89ec#npm:1.4.1"]\
+          ],\
+          "packagePeers": [\
+            "@types/apexcharts",\
+            "@types/react",\
+            "apexcharts",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["react-app-polyfill", [\
         ["npm:3.0.0", {\
           "packageLocation": "./.yarn/cache/react-app-polyfill-npm-3.0.0-e607e071bd-1bb031080a.zip/node_modules/react-app-polyfill/",\
@@ -15924,6 +15979,28 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             "@types/react-dom",\
             "@types/react",\
             "react-dom",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["react-table", [\
+        ["npm:7.8.0", {\
+          "packageLocation": "./.yarn/cache/react-table-npm-7.8.0-61488af438-44ca0fb848.zip/node_modules/react-table/",\
+          "packageDependencies": [\
+            ["react-table", "npm:7.8.0"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:124cfa88c804d3ef9664d62bf75e3732a738462a7df2c91c749bc023d8f1ab02224d421ee6a2ddd629421c7d4ec9598a167d87406d529480e527da83618b89ec#npm:7.8.0", {\
+          "packageLocation": "./.yarn/__virtual__/react-table-virtual-02c61c2be5/0/cache/react-table-npm-7.8.0-61488af438-44ca0fb848.zip/node_modules/react-table/",\
+          "packageDependencies": [\
+            ["@types/react", null],\
+            ["react", "npm:18.2.0"],\
+            ["react-table", "virtual:124cfa88c804d3ef9664d62bf75e3732a738462a7df2c91c749bc023d8f1ab02224d421ee6a2ddd629421c7d4ec9598a167d87406d529480e527da83618b89ec#npm:7.8.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/react",\
             "react"\
           ],\
           "linkType": "HARD"\
@@ -16759,6 +16836,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@testing-library/jest-dom", "virtual:124cfa88c804d3ef9664d62bf75e3732a738462a7df2c91c749bc023d8f1ab02224d421ee6a2ddd629421c7d4ec9598a167d87406d529480e527da83618b89ec#npm:6.1.3"],\
             ["@testing-library/react", "virtual:124cfa88c804d3ef9664d62bf75e3732a738462a7df2c91c749bc023d8f1ab02224d421ee6a2ddd629421c7d4ec9598a167d87406d529480e527da83618b89ec#npm:13.4.0"],\
             ["@testing-library/user-event", "virtual:124cfa88c804d3ef9664d62bf75e3732a738462a7df2c91c749bc023d8f1ab02224d421ee6a2ddd629421c7d4ec9598a167d87406d529480e527da83618b89ec#npm:13.5.0"],\
+            ["apexcharts", "npm:3.43.2-0"],\
             ["axios", "npm:1.5.1"],\
             ["babel-eslint", "virtual:124cfa88c804d3ef9664d62bf75e3732a738462a7df2c91c749bc023d8f1ab02224d421ee6a2ddd629421c7d4ec9598a167d87406d529480e527da83618b89ec#npm:10.1.0"],\
             ["eslint", "npm:8.51.0"],\
@@ -16772,11 +16850,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-react-hooks", "virtual:124cfa88c804d3ef9664d62bf75e3732a738462a7df2c91c749bc023d8f1ab02224d421ee6a2ddd629421c7d4ec9598a167d87406d529480e527da83618b89ec#npm:4.6.0"],\
             ["prettier", "npm:3.0.3"],\
             ["react", "npm:18.2.0"],\
+            ["react-apexcharts", "virtual:124cfa88c804d3ef9664d62bf75e3732a738462a7df2c91c749bc023d8f1ab02224d421ee6a2ddd629421c7d4ec9598a167d87406d529480e527da83618b89ec#npm:1.4.1"],\
             ["react-dom", "virtual:124cfa88c804d3ef9664d62bf75e3732a738462a7df2c91c749bc023d8f1ab02224d421ee6a2ddd629421c7d4ec9598a167d87406d529480e527da83618b89ec#npm:18.2.0"],\
             ["react-hook-form", "virtual:124cfa88c804d3ef9664d62bf75e3732a738462a7df2c91c749bc023d8f1ab02224d421ee6a2ddd629421c7d4ec9598a167d87406d529480e527da83618b89ec#npm:7.47.0"],\
             ["react-router-dom", "virtual:124cfa88c804d3ef9664d62bf75e3732a738462a7df2c91c749bc023d8f1ab02224d421ee6a2ddd629421c7d4ec9598a167d87406d529480e527da83618b89ec#npm:6.16.0"],\
             ["react-scripts", "virtual:124cfa88c804d3ef9664d62bf75e3732a738462a7df2c91c749bc023d8f1ab02224d421ee6a2ddd629421c7d4ec9598a167d87406d529480e527da83618b89ec#npm:5.0.1"],\
             ["react-slick", "virtual:124cfa88c804d3ef9664d62bf75e3732a738462a7df2c91c749bc023d8f1ab02224d421ee6a2ddd629421c7d4ec9598a167d87406d529480e527da83618b89ec#npm:0.29.0"],\
+            ["react-table", "virtual:124cfa88c804d3ef9664d62bf75e3732a738462a7df2c91c749bc023d8f1ab02224d421ee6a2ddd629421c7d4ec9598a167d87406d529480e527da83618b89ec#npm:7.8.0"],\
             ["recoil", "virtual:124cfa88c804d3ef9664d62bf75e3732a738462a7df2c91c749bc023d8f1ab02224d421ee6a2ddd629421c7d4ec9598a167d87406d529480e527da83618b89ec#npm:0.7.7"],\
             ["recoil-persist", "virtual:124cfa88c804d3ef9664d62bf75e3732a738462a7df2c91c749bc023d8f1ab02224d421ee6a2ddd629421c7d4ec9598a167d87406d529480e527da83618b89ec#npm:5.1.0"],\
             ["slick-carousel", "virtual:124cfa88c804d3ef9664d62bf75e3732a738462a7df2c91c749bc023d8f1ab02224d421ee6a2ddd629421c7d4ec9598a167d87406d529480e527da83618b89ec#npm:1.8.1"],\
@@ -17506,6 +17586,84 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/svg-parser-npm-2.0.4-1b0b6afbe9-b3de665304.zip/node_modules/svg-parser/",\
           "packageDependencies": [\
             ["svg-parser", "npm:2.0.4"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["svg.draggable.js", [\
+        ["npm:2.2.2", {\
+          "packageLocation": "./.yarn/cache/svg.draggable.js-npm-2.2.2-91cd7475f3-b9068975d7.zip/node_modules/svg.draggable.js/",\
+          "packageDependencies": [\
+            ["svg.draggable.js", "npm:2.2.2"],\
+            ["svg.js", "npm:2.7.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["svg.easing.js", [\
+        ["npm:2.0.0", {\
+          "packageLocation": "./.yarn/cache/svg.easing.js-npm-2.0.0-0c84ce8158-0f7df78333.zip/node_modules/svg.easing.js/",\
+          "packageDependencies": [\
+            ["svg.easing.js", "npm:2.0.0"],\
+            ["svg.js", "npm:2.7.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["svg.filter.js", [\
+        ["npm:2.0.2", {\
+          "packageLocation": "./.yarn/cache/svg.filter.js-npm-2.0.2-f65ff6d47e-f0e780bfe3.zip/node_modules/svg.filter.js/",\
+          "packageDependencies": [\
+            ["svg.filter.js", "npm:2.0.2"],\
+            ["svg.js", "npm:2.7.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["svg.js", [\
+        ["npm:2.7.1", {\
+          "packageLocation": "./.yarn/cache/svg.js-npm-2.7.1-c232ccf7aa-945bfc9623.zip/node_modules/svg.js/",\
+          "packageDependencies": [\
+            ["svg.js", "npm:2.7.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["svg.pathmorphing.js", [\
+        ["npm:0.1.3", {\
+          "packageLocation": "./.yarn/cache/svg.pathmorphing.js-npm-0.1.3-83b910d5a4-bcbe1ccea9.zip/node_modules/svg.pathmorphing.js/",\
+          "packageDependencies": [\
+            ["svg.pathmorphing.js", "npm:0.1.3"],\
+            ["svg.js", "npm:2.7.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["svg.resize.js", [\
+        ["npm:1.4.3", {\
+          "packageLocation": "./.yarn/cache/svg.resize.js-npm-1.4.3-9e6b42a70f-8f4116f442.zip/node_modules/svg.resize.js/",\
+          "packageDependencies": [\
+            ["svg.resize.js", "npm:1.4.3"],\
+            ["svg.js", "npm:2.7.1"],\
+            ["svg.select.js", "npm:2.1.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["svg.select.js", [\
+        ["npm:2.1.2", {\
+          "packageLocation": "./.yarn/cache/svg.select.js-npm-2.1.2-d8be268fcb-1dbbb44d16.zip/node_modules/svg.select.js/",\
+          "packageDependencies": [\
+            ["svg.select.js", "npm:2.1.2"],\
+            ["svg.js", "npm:2.7.1"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:3.0.1", {\
+          "packageLocation": "./.yarn/cache/svg.select.js-npm-3.0.1-9baa0ca5b5-0ce3bda86f.zip/node_modules/svg.select.js/",\
+          "packageDependencies": [\
+            ["svg.select.js", "npm:3.0.1"],\
+            ["svg.js", "npm:2.7.1"]\
           ],\
           "linkType": "HARD"\
         }]\
