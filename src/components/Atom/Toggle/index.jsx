@@ -15,6 +15,7 @@ const Toggle = ({ flag }) => {
   const setGptDragStock = useSetRecoilState(gptDragStateStock);
   const setAlreadyLearn = useSetRecoilState(alreadyLearn);
   const setPrivateSummary = useSetRecoilState(privateSummary);
+
   const clickedToggle = () => {
     setToggle(prev => !prev);
     setGptDrag(prev => !prev);
