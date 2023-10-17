@@ -58,7 +58,7 @@ export const SettingImg = styled.img`
 `;
 
 export const ButtonWrapper = styled.div`
-  width: 100%;
+  width: 80%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;

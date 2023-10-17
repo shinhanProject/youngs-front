@@ -37,7 +37,8 @@ const Header = ({ theme }) => {
             delete axiosInstance.defaults.headers.common["Authorization"];
           }
         })
-        .catch(() => {
+        .catch(e => {
+          console.log(e);
           alert("로그아웃 중 오류가 발생했습니다.");
         });
     }
