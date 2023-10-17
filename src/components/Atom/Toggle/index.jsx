@@ -4,6 +4,7 @@ import {
   gptDragState,
   alreadyLearn,
   privateSummary,
+  gptDragStateStock,
 } from "../../../store/atoms";
 import { Text } from "../../index";
 import { ToggleBtn, Circle, Wrapper } from "./styled";
@@ -11,12 +12,14 @@ import { ToggleBtn, Circle, Wrapper } from "./styled";
 const Toggle = ({ flag }) => {
   const [toggle, setToggle] = useState(false);
   const setGptDrag = useSetRecoilState(gptDragState);
+  const setGptDragStock = useSetRecoilState(gptDragStateStock);
   const setAlreadyLearn = useSetRecoilState(alreadyLearn);
   const setPrivateSummary = useSetRecoilState(privateSummary);
   const clickedToggle = () => {
     setToggle(prev => !prev);
     setGptDrag(prev => !prev);
     setAlreadyLearn(prev => !prev);
+    setGptDragStock(prev => !prev);
     if (flag === 3) {
       setPrivateSummary(prev => !prev);
     }
