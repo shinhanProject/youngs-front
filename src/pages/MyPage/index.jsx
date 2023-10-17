@@ -175,7 +175,12 @@ const MyPage = () => {
             {isMe && <Toggle flag={3} />}
             <SummaryContainer>
               {summary.length > 0 ? (
-                summary.map(s => <SummaryCard key={s.articleSeq} data={s} />)
+                summary.map(s => (
+                  <SummaryCard
+                    key={s.categorySeq + "/" + s.articleSeq}
+                    data={s}
+                  />
+                ))
               ) : (
                 <Text>요약을 통해 중요한 점들을 기록해보세요!</Text>
               )}
