@@ -34,8 +34,8 @@ const GptModalCard = ({
     <div
       ref={modalRef}
       style={{
-        top: `${position.top - 200}px`,
-        left: `${position.left - 400}px`,
+        top: `${position.top}px`,
+        left: `${position.left}px`,
         position: "absolute",
       }}
     >

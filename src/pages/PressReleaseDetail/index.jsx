@@ -50,7 +50,7 @@ const PressReleaseDetail = () => {
       console.log(text);
       if (text.length <= 20) {
         setModalPosition({
-          top: event.clientY,
+          top: event.clientY + window.scrollY,
           left: event.clientX,
         });
         setWord(text);
