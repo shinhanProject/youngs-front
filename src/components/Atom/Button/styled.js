@@ -35,7 +35,7 @@ const ButtonStyles = {
     marginBottom: "4vh",
   },
   blueTextBtn: {
-    width: "30%",
+    width: "35%",
     color: "#0046ff",
     height: "3vh",
     border: "none",
