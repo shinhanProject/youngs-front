@@ -38,5 +38,6 @@ module.exports = {
     "no-restricted-globals": "off",
     "global-require": "off",
     "import/no-unresolved": "off",
+    "no-use-before-define": "off",
   },
 };

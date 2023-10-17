@@ -60,3 +60,9 @@ export const summaryContent = atom({
   default: "summary",
   // 요약 내용
 });
+
+export const followCheck = atom({
+  key: "followCheck",
+  default: -1,
+  effects_UNSTABLE: [persistAtom],
+});

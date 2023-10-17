@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useSetRecoilState } from "recoil";
+import { useRecoilState } from "recoil";
 import { Link, useNavigate } from "react-router-dom";
 import { axiosInstance } from "../../apis";
 import { Header, Card, Button, Footer } from "../../components";
@@ -11,7 +11,7 @@ import login from "../../assets/images/loginto.svg";
 const Login = () => {
   const [userEmail, setUserEmail] = useState("");
   const [pw, setPw] = useState("");
-  const setUserInfo = useSetRecoilState(loginState);
+  const [userInfo, setUserInfo] = useRecoilState(loginState);
 
   const navigate = useNavigate();
 
@@ -31,7 +31,7 @@ const Login = () => {
       })
       .then(response => {
         if (response.status === 200) {
-          const accessToken = response.data.accessToken;
+          onLoginSuccess(response);
           setUserInfo({
             isLogin: true,
             userInfo: {
@@ -41,9 +41,6 @@ const Login = () => {
               profile: response.data.profile,
             },
           });
-          axiosInstance.defaults.headers.common[
-            "Authorization"
-          ] = `Bearer ${accessToken}`;
           navigate("/");
         } else {
           alert("아이디/비밀번호가 일치하지 않습니다.");
@@ -54,12 +51,31 @@ const Login = () => {
       });
   };
 
-  const handleOnKeyPress = e => {
-    if (e.key === "Enter") {
-      onLogin();
-    }
+  const onSilentRefresh = () => {
+    axiosInstance
+      .post("/auth/reissue", { email: userInfo.userInfo.email })
+      .then(response => {
+        console.log(response);
+        if (response.status === 200) {
+          onLoginSuccess(response);
+        }
+      })
+      .catch(e => {
+        console.log(e);
+        navigate("/login");
+      });
   };
 
+  const JWT_EXPIRY_TIME = 24 * 3600;
+
+  const onLoginSuccess = response => {
+    const accessToken = response.data.accessToken;
+    axiosInstance.defaults.headers.common[
+      "Authorization"
+    ] = `Bearer ${accessToken}`;
+    setTimeout(onSilentRefresh, JWT_EXPIRY_TIME - 60000);
+  };
+  console.log(userInfo.userInfo.email);
   return (
     <Container>
       <Header theme="opaque" />
@@ -75,7 +91,6 @@ const Login = () => {
             type="password"
             placeholder="비밀번호"
             onChange={onPwChange}
-            onKeyPress={handleOnKeyPress}
             value={pw}
           />
           <Button theme="blueBtn" onClick={onLogin}>
