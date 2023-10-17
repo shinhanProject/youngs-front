@@ -58,12 +58,11 @@ const StockItemDetail = () => {
         y: [open, high, low, close],
       };
     });
-
-    return transformedData; // 변환된 데이터를 반환합니다.
+    return transformedData;
   };
   useEffect(() => {
-    const transformedData = fineData(); // 데이터 변환을 수행하고 결과를 저장합니다.
-    setSeriesData(transformedData); // 변환된 데이터를 상태에 저장합니다.
+    const transformedData = fineData();
+    setSeriesData(transformedData);
     console.log("USEEFFECT 안이지롱 ", stockData, transformedData);
   }, [stockData]);
 
