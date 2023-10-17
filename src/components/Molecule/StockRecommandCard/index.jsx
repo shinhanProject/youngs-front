@@ -7,10 +7,7 @@ const StockRecommandCard = ({ name, percent, onClick }) => {
     <Card theme="stockRecommandListCard" onClick={onClick}>
       <Wrapper>
         <Text theme="textRankingProfile">{name}</Text>
-        <Text theme="textStockRankingScore">
-          {percent}
-          <Text theme="textStockRankingPercent">%</Text>
-        </Text>
+        <Text theme="textStockRankingScore">{percent}%</Text>
       </Wrapper>
     </Card>
   );

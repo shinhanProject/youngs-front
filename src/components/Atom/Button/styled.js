@@ -53,6 +53,7 @@ const ButtonStyles = {
     border: "1px solid #ECECEC",
     margin: "0 auto",
     marginBottom: "1.5vh",
+    transition: "transform 0.2s",
   },
   summaryEnrollBtn: {
     height: "5vh",
@@ -62,6 +63,7 @@ const ButtonStyles = {
     border: "1px solid #ECECEC",
     margin: "0 auto",
     marginBottom: "1.5vh",
+    transition: "transform 0.2s",
   },
   followBtn: {
     width: "10vw",
@@ -105,13 +107,24 @@ const ButtonStyles = {
     },
   },
   followersBtn: {
-    background: "white",
-    color: "#0046FF",
+    background:
+      " linear-gradient(to top, rgba(0, 79, 255, 0.8), rgba(222, 180, 223, 0.6))",
+    color: "white",
     fontSize: "1.2vw",
+    padding: "1vh 2vh",
+    borderRadius: "20px",
+    boxShadow: "2px 3.5px 4px -3px lightgray",
+    textShadow: "-0.2px 0 #000, 0 0.2px #000, 0.2px 0 #000, 0 -0.2px #000",
   },
   followingBtn: {
-    background: "white",
+    color: "white",
+    background:
+      " linear-gradient(to bottom, rgba(0, 79, 255, 0.8), rgba(222, 180, 223, 0.6))",
     fontSize: "1.2vw",
+    padding: "1vh 2vh",
+    borderRadius: "20px",
+    boxShadow: "2px 3.5px 4px -3px lightgray",
+    textShadow: "-0.2px 0 #000, 0 0.2px #000, 0.2px 0 #000, 0 -0.2px #000",
   },
   unfollow: {
     width: "5vw",
@@ -130,4 +143,13 @@ const ButtonStyles = {
 
 export const StyledButton = styled.button`
   ${props => ButtonStyles[props.theme]}
+  &:active, &:focus {
+    transform: scale(0.95);
+  }
+
+  ,
+  &:hover {
+    transform: scale(1);
+    cursor: pointer;
+  }
 `;
