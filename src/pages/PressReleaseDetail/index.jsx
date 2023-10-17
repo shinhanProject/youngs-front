@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { useRecoilValue } from "recoil";
+import { useParams, useNavigate } from "react-router-dom";
+
+import { useRecoilValue, useSetRecoilState } from "recoil";
 import { axiosInstance } from "../../apis";
-import { gptDragState } from "../../store/atoms";
+import { gptDragState, summaryContent, loginState } from "../../store/atoms";
 import {
   Header,
   CategoryBundle,
@@ -24,6 +26,15 @@ import {
 
 const PressReleaseDetail = () => {
   const gptDrag = useRecoilValue(gptDragState);
+  const navigate = useNavigate();
+  const summaryContents = useRecoilValue(summaryContent);
+  const loginStates = useRecoilValue(loginState);
+  const [haveContent, setHaveContent] = useState("");
+  const [isSummaryDone, setisSummaryDone] = useState(false);
+  const [summaryId, setSummayId] = useState(1);
+  const setSummaryContent = useSetRecoilState(summaryContent);
+
+  const { category, id } = useParams();
   const [word, setWord] = useState("");
   const [explanation, setExplanation] = useState("설명을 불러오는 중입니다.");
   const [modalOpen, setModalOpen] = useState(false);
@@ -67,6 +78,88 @@ const PressReleaseDetail = () => {
       getWord({ w: word });
     }
   }, [word]);
+
+  const enrollPostData = {
+    category: "basic",
+    articleId: id,
+    context: summaryContents,
+  };
+
+  // 요약하기 버튼 클릭 시 => post api 날리기
+  const EnrollSummaryapi = async () => {
+    if (loginStates.isLogin) {
+      axiosInstance
+        .post(`/summary`, enrollPostData)
+        .then(response => {
+          console.log(response.data, " 요약하기 버튼 클림함 ! ");
+          setisSummaryDone(true);
+          setHaveContent(summaryContents);
+          console.log(isSummaryDone, " 요약 했니? ! ");
+          console.log(response.data);
+          setSummayId(response.data.summarySeq);
+        })
+        .catch(e => {
+          console.log(enrollPostData);
+          console.log(e);
+        });
+    } else {
+      alert("로그인이 필요한 서비스입니다.");
+      navigate("/login");
+    }
+  };
+  const editPostData = {
+    category: "news",
+    summarySeq: summaryId,
+    context: summaryContents,
+  };
+
+  const EditSummaryapi = async () => {
+    console.log(editPostData);
+    axiosInstance
+      .patch(`/summary`, editPostData)
+      .then(response => {
+        console.log(response.data);
+        setHaveContent(summaryContents);
+      })
+      .catch(e => {
+        console.log(e);
+        console.log(editPostData);
+      });
+  };
+
+  // 해당 카드에 대한 요약 여부를 가져와서 set 한다.
+  useEffect(() => {
+    const fetchData = async () => {
+      if (loginStates.isLogin) {
+        axiosInstance
+          .get(`/summary?category=news&articleId=${id}`)
+          .then(response => {
+            console.log(response.data, "요약여부를 가져오는 api");
+            setSummaryContent(response.data.context);
+            setSummayId(response.data.summarySeq);
+            setisSummaryDone(response.data.wasWritten);
+            setHaveContent(response.data.summarySeq);
+            console.log(summaryContents, " 서머리 컨텐츠 ");
+            console.log(haveContent, " haveContent ");
+          })
+          .catch(e => {
+            console.log(e);
+          });
+      }
+    };
+    fetchData();
+  }, [id]);
+
+  const fetchHaveContext = async () => {
+    if (isSummaryDone === true) {
+      setHaveContent(summaryContents);
+      console.log(haveContent);
+    }
+  };
+
+  useEffect(() => {
+    fetchHaveContext();
+  }, [category]);
 
   return (
     <Container>
@@ -131,9 +224,19 @@ const PressReleaseDetail = () => {
                 label="한 줄 요약하기"
                 type="text"
                 placeholder="요약을 입력하세요"
+                context={haveContent}
               />
               <ButtonWrapper>
-                <Button theme="summaryEnrollBtn">수정하기</Button>
+                {!isSummaryDone && (
+                  <Button theme="summaryEnrollBtn" onClick={EnrollSummaryapi}>
+                    요약하기
+                  </Button>
+                )}
+                {isSummaryDone && (
+                  <Button theme="summaryEditBtn" onClick={EditSummaryapi}>
+                    수정하기
+                  </Button>
+                )}
               </ButtonWrapper>
             </SummaryInput>
           </ContentWrapper>
