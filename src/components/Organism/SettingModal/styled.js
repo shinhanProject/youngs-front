@@ -56,8 +56,16 @@ export const WrapperProfile = styled.div`
 export const SettingProfile = styled.img`
   width: 50px;
   height: auto;
-  borderRadius: 70%,
-  overflow: hidden,
-  border: 1px solid lightgray,
-  margin: 5px,
+  border-radius: 70%;
+  overflow: hidden;
+  transition: transform 0.5s;
+  &:hover {
+    transform: translateY(-5px); 
+  },
+  &:active , &:focus, &:visited {
+    border: 2px solid #ececec;
+
+    background : white;
+  },
+
 `;

@@ -21,7 +21,7 @@ import moli from "../../../assets/images/moli.svg";
 
 const SettingModal = ({ setIsOpenSettingModal, id }) => {
   const [changeNickname, setChangeNickname] = useState("");
-  const [changeProfile, setChangeProfile] = useState("");
+  const [selectedProfile, setSelectedProfile] = useState(""); // 선택한 프로필 상태 추가
   const setUser = useSetRecoilState(loginState);
 
   const modalRef = useRef(null);
@@ -33,7 +33,7 @@ const SettingModal = ({ setIsOpenSettingModal, id }) => {
   const updateProfile = async () => {
     axiosInstance
       .patch(`/profile/${id}`, {
-        profile: changeProfile,
+        profile: selectedProfile, // 선택한 프로필로 업데이트
         nickname: changeNickname,
       })
       .then(response => {
@@ -43,7 +43,7 @@ const SettingModal = ({ setIsOpenSettingModal, id }) => {
             userInfo: {
               ...prev.userInfo,
               nickname: changeNickname,
-              profile: changeProfile,
+              profile: selectedProfile, // 선택한 프로필로 업데이트
             },
           }));
         } else {
@@ -55,8 +55,12 @@ const SettingModal = ({ setIsOpenSettingModal, id }) => {
       });
   };
 
+  const handleProfileClick = profile => {
+    setSelectedProfile(profile); // 선택한 프로필 설정
+  };
+
   const changeSetting = () => {
-    if (changeNickname !== "" && changeProfile !== "") {
+    if (changeNickname !== "" && selectedProfile !== "") {
       updateProfile();
     }
     setIsOpenSettingModal(false);
@@ -79,17 +83,51 @@ const SettingModal = ({ setIsOpenSettingModal, id }) => {
       <Wrapper>
         <Text theme="textSetting">프로필 변경</Text>
         <ImgWrapper>
-          <SettingProfile src={sol} onClick={() => setChangeProfile("SOL")} />
+          <SettingProfile
+            src={sol}
+            onClick={() => handleProfileClick("SOL")}
+            style={{
+              background: selectedProfile === "SOL" ? "white" : "transparent",
+            }}
+          />
           <SettingProfile
             src={doraemi}
-            onClick={() => setChangeProfile("DORAEMI")}
+            onClick={() => handleProfileClick("DORAEMI")}
+            style={{
+              background:
+                selectedProfile === "DORAEMI" ? "white" : "transparent",
+            }}
           />
-          <SettingProfile src={shoo} onClick={() => setChangeProfile("SHOO")} />
+          <SettingProfile
+            src={shoo}
+            onClick={() => handleProfileClick("SHOO")}
+            style={{
+              background: selectedProfile === "SHOO" ? "white" : "transparent",
+            }}
+          />
         </ImgWrapper>
         <ImgWrapper>
-          <SettingProfile src={lino} onClick={() => setChangeProfile("LINO")} />
-          <SettingProfile src={lulu} onClick={() => setChangeProfile("LULU")} />
-          <SettingProfile src={moli} onClick={() => setChangeProfile("MOLI")} />
+          <SettingProfile
+            src={lino}
+            onClick={() => handleProfileClick("LINO")}
+            style={{
+              background: selectedProfile === "LINO" ? "white" : "transparent",
+            }}
+          />
+          <SettingProfile
+            src={lulu}
+            onClick={() => handleProfileClick("LULU")}
+            style={{
+              background: selectedProfile === "LULU" ? "white" : "transparent",
+            }}
+          />
+          <SettingProfile
+            src={moli}
+            onClick={() => handleProfileClick("MOLI")}
+            style={{
+              background: selectedProfile === "MOLI" ? "white" : "transparent",
+            }}
+          />
         </ImgWrapper>
       </Wrapper>
       <Wrapper>
