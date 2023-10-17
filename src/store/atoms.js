@@ -18,6 +18,11 @@ export const gptDragState = atom({
   default: false,
 });
 
+export const gptDragStateStock = atom({
+  key: "gptDragStateStock",
+  default: false,
+});
+
 export const rankModalOpenState = atom({
   key: "rankModalOpenState",
   default: false,
