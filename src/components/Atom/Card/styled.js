@@ -110,6 +110,7 @@ const CardStyles = {
     border: "0.5px solid #ececec",
     boxShadow: "0px 3px 10px -3px gray",
     padding: "15px 15px 0px 15px",
+    marginBottom: "7px",
   },
 
   stockRecommandBackgroundCard: {
