@@ -10,8 +10,17 @@ import {
   NewsCategory,
   Toggle,
   GptModal,
+  Input,
+  Button,
 } from "../../components";
-import { Container, Wrapper, ContentContainer, ContentWrapper } from "./styled";
+import {
+  Container,
+  Wrapper,
+  ContentContainer,
+  ContentWrapper,
+  SummaryInput,
+  ButtonWrapper,
+} from "./styled";
 
 const PressReleaseDetail = () => {
   const gptDrag = useRecoilValue(gptDragState);
@@ -117,6 +126,16 @@ const PressReleaseDetail = () => {
               들어 수율 문제로 공급이 원활하지 않을 것이란 우려가 나오며 주가
               모멘텀이 약화된 상태다.삼성전자는{" "}
             </p>
+            <SummaryInput>
+              <Input
+                label="한 줄 요약하기"
+                type="text"
+                placeholder="요약을 입력하세요"
+              />
+              <ButtonWrapper>
+                <Button theme="summaryEnrollBtn">수정하기</Button>
+              </ButtonWrapper>
+            </SummaryInput>
           </ContentWrapper>
         </ContentContainer>
       </Wrapper>

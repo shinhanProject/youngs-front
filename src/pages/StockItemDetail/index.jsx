@@ -11,8 +11,6 @@ import {
   Footer,
   Text,
   SearchCard,
-  Input,
-  Button,
   StockChart,
   Toggle,
   GptModal,
@@ -23,8 +21,6 @@ import {
   Wrapper,
   ContentContainer,
   ContentWrapper,
-  SummaryInput,
-  ButtonWrapper,
   DummyWrapper,
 } from "./styled";
 
@@ -125,20 +121,9 @@ const StockItemDetail = () => {
             <Text theme="textbasicDetailTitle"> {posts.title}</Text>
             <StockChart />
             <StockTable />
-            <SummaryInput>
-              <Input
-                label="한 줄 요약하기"
-                type="text"
-                placeholder="요약을 입력하세요"
-              />
-              <ButtonWrapper>
-                <Button theme="summaryEnrollBtn">수정하기</Button>
-              </ButtonWrapper>
-            </SummaryInput>
           </ContentWrapper>
         </ContentContainer>
       </Wrapper>
-
       <Footer />
     </Container>
   );

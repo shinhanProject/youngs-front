@@ -17,7 +17,7 @@ export const Wrapper = styled.div`
   justify-content: space-between;
   width: 100%;
   margin-top: 5vh;
-  height: 140vh;
+  margin-bottom: 10vh;
 `;
 
 export const DummyWrapper = styled.div``;
@@ -33,21 +33,10 @@ export const ContentContainer = styled.div`
   flex-direction: column;
   border-top: 1px solid rgba(0, 0, 0, 0.4);
 `;
-export const SummaryInput = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-`;
-export const ButtonWrapper = styled.div`
-  display: flex;
-  flex-direction: column-reverse;
-`;
 
 // 주식 세부 내용
 export const ContentWrapper = styled.div`
   width: 60vw;
-  height: 100vh;
   border-radius: 30px;
   border: 1px solid #ececec;
   background: #fff;
@@ -57,7 +46,6 @@ export const ContentWrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  margin-top: 4vh;
   word-break: keep-all;
   line-height: 1.5;
   color: #0044b;

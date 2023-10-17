@@ -16,7 +16,7 @@ export const Wrapper = styled.div`
   justify-content: space-between;
   width: 100%;
   margin-top: 5vh;
-  height: 60vh;
+  margin-bottom: 10vh;
 `;
 
 export const ContentContainer = styled.div`
@@ -27,10 +27,28 @@ export const ContentContainer = styled.div`
 `;
 
 export const ContentWrapper = styled.div`
-  width: 75vw;
-  height: 80vh;
+  width: 60vw;
   border-radius: 30px;
   border: 1px solid #ececec;
   background: #fff;
   box-shadow: 10px 10px 30px 0px rgba(51, 51, 51, 0.3);
+  padding: 3vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  word-break: keep-all;
+  line-height: 1.5;
+  color: #0044b;
+`;
+
+export const SummaryInput = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+`;
+export const ButtonWrapper = styled.div`
+  display: flex;
+  flex-direction: column-reverse;
 `;
