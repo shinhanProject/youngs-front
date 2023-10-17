@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useRecoilValue } from "recoil";
 import { axiosInstance } from "../../apis";
+import { searchStock } from "../../store/atoms";
+
 import {
   Header,
   CategoryBundle,
@@ -21,26 +24,34 @@ import {
 
 const StockItemList = () => {
   // 이거 const [stockname, setStockname] = useState(); 로 바꿔서 검색 시 사용하기
-
+  const stockSearchValue = useRecoilValue(searchStock);
   const [posts, setPosts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 8;
 
+  // ###################### Search !!! => goekd
+  // const searched = posts.filter((item) =>
+  //   item.name.toLowerCase().includes(userInput)
+  // );
+
   // 주식 api 나오면 수정할 부분
   useEffect(() => {
     const fetchData = async () => {
+      console.log("stockSearchValue 바뀌면 다시 api 받아옴 ", stockSearchValue);
       axiosInstance
         .get(`news/1`)
         .then(response => {
-          console.log(response.data);
-          setPosts(response.data);
+          const searched = response.data.filter(item =>
+            item.title.toLowerCase().includes(stockSearchValue.toLowerCase()),
+          );
+          setPosts(searched);
         })
         .catch(e => {
           console.log(e);
         });
     };
     fetchData();
-  }, []);
+  }, [stockSearchValue]);
   const indexOfLast = currentPage * postsPerPage;
   const indexOfFirst = indexOfLast - postsPerPage;
   const getCurrentPosts = () => {
@@ -66,7 +77,7 @@ const StockItemList = () => {
                 <Link to={`/stdetail/${post.newsSeq}`}>
                   <StockItemCard
                     price={post.newsSeq}
-                    name={post.newsSeq}
+                    name={post.title}
                     priceChange={post.newsSeq}
                     date={post.pubDate}
                   />
