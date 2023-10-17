@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { useRecoilValue } from "recoil";
 import { useParams } from "react-router-dom";
+import { useRecoilState } from "recoil";
 import { axiosInstance } from "../../apis";
-import { loginState, privateSummary } from "../../store/atoms";
+import { followCheck } from "../../store/atoms";
 import {
   Header,
   Footer,
@@ -10,11 +10,7 @@ import {
   ProfileImg,
   Text,
   Button,
-  SettingModal,
-  FollowerModal,
-  FollowingModal,
   SummaryCard,
-  Toggle,
 } from "../../components";
 import {
   Container,
@@ -22,27 +18,19 @@ import {
   Content,
   Left,
   Right,
-  SettingImg,
-  ButtonWrapper,
   ProfileWrapper,
   TextWrapper,
   SummaryContainer,
   ErrorBoundary,
-} from "./styled";
+} from "../MyPage/styled";
 
-import setting from "../../assets/images/setting.svg";
-
-const MyPage = () => {
-  const user = useRecoilValue(loginState);
-  const SummaryOnlyMe = useRecoilValue(privateSummary);
-  const [isOpenSettingModal, setIsOpenSettingModal] = useState(false);
-  const [isOpenFollowersModal, setOpenFollowersModal] = useState(false);
-  const [isOpenFollowingModal, setIsOpenFollowingModal] = useState(false);
+const OtherPage = () => {
   const [currentNickname, setCurrentNickname] = useState("");
   const [currentProfile, setCurrentProfile] = useState("");
   const [currentTier, setCurrentTier] = useState("");
   const [currentCount, setCurrentCount] = useState("");
   const [summary, setSummary] = useState([]);
+  const [isfollow, setIsFollow] = useRecoilState(followCheck);
   const [errorMassage, setErrorMassage] = useState("요약 기록이 없습니다.");
 
   const { id } = useParams();
@@ -86,19 +74,42 @@ const MyPage = () => {
       });
   };
 
-  const setPrivate = () => {};
+  const onFollow = async () => {
+    axiosInstance
+      .post("/following/follow", {
+        targetUserSeq: id,
+      })
+      .then(response => {
+        console.log(response.data);
+        setIsFollow(2);
+      })
+      .catch(e => {
+        console.log(e);
+      });
+  };
 
-  useEffect(() => {
-    getSummary();
-  }, []);
+  const onUnFollow = async () => {
+    axiosInstance
+      .delete("/following/unfollow", {
+        data: {
+          targetUserSeq: id,
+        },
+      })
+      .then(response => {
+        console.log(response.data);
+        setIsFollow(1);
+      })
+      .catch(e => {
+        console.log(e);
+      });
+  };
 
   useEffect(() => {
     getProfile();
-  }, [user]);
+    getSummary();
+  }, []);
 
-  useEffect(() => {
-    setPrivate();
-  }, [SummaryOnlyMe]);
+  console.log(isfollow);
 
   return (
     <Container>
@@ -108,54 +119,21 @@ const MyPage = () => {
           <Left>
             <ProfileWrapper>
               <ProfileImg profile={currentProfile} theme="mypageProfile" />
-              <SettingImg
-                src={setting}
-                onClick={() => {
-                  setIsOpenSettingModal(true);
-                }}
-              />
-              {isOpenSettingModal && (
-                <SettingModal
-                  setIsOpenSettingModal={setIsOpenSettingModal}
-                  id={id}
-                />
-              )}
             </ProfileWrapper>
             <TextWrapper>
               <Text>{currentNickname}</Text>
               <Text>{currentTier}</Text>
               <Text>총 요약 개수 {currentCount}</Text>
             </TextWrapper>
-            <ButtonWrapper>
-              <Button
-                theme="followersBtn"
-                onClick={() => {
-                  setOpenFollowersModal(true);
-                }}
-              >
-                followers
+            {isfollow === 1 ? (
+              <Button theme="followBtn" onClick={onFollow}>
+                follow
               </Button>
-              {isOpenFollowersModal && (
-                <FollowerModal
-                  userId={id}
-                  setOpenFollowersModal={setOpenFollowersModal}
-                />
-              )}
-              <Button
-                theme="followingBtn"
-                onClick={() => {
-                  setIsOpenFollowingModal(true);
-                }}
-              >
-                following
+            ) : (
+              <Button theme="followBtn" onClick={onUnFollow}>
+                unfollow
               </Button>
-              {isOpenFollowingModal && (
-                <FollowingModal
-                  setIsOpenFollowingModal={setIsOpenFollowingModal}
-                  userId={id}
-                />
-              )}
-            </ButtonWrapper>
+            )}
           </Left>
           <Right>
             {currentCount === 0 ? (
@@ -163,7 +141,6 @@ const MyPage = () => {
             ) : (
               <SandBeach id={id} />
             )}
-            <Toggle flag={3} />
             <SummaryContainer>
               {summary.length > 0 ? (
                 summary.map(s => (
@@ -183,4 +160,4 @@ const MyPage = () => {
     </Container>
   );
 };
-export default MyPage;
+export default OtherPage;

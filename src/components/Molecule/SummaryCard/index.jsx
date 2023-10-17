@@ -11,7 +11,7 @@ const SummaryCard = ({ data }) => {
   const setNews = useSetRecoilState(newsCategoryState);
   const onDetail = () => {
     if (data.category === "basic") {
-      if (data.title === "경제 기초 지식") {
+      if (data.title === "주식 기초") {
         setBasic(1);
         navigate(`/bsdetail/1/${data.articleSeq}`);
       }
@@ -23,7 +23,7 @@ const SummaryCard = ({ data }) => {
         setBasic(3);
         navigate(`/bsdetail/3/${data.articleSeq}`);
       }
-      if (data.title === "주식 기초") {
+      if (data.title === "경제 기초 지식") {
         setBasic(4);
         navigate(`/bsdetail/4/${data.articleSeq}`);
       }

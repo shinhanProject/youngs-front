@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useRecoilState } from "recoil";
 import { axiosInstance } from "../../apis";
+import { rankModalOpenState } from "../../store/atoms";
 import {
   Header,
   Footer,
@@ -16,7 +17,6 @@ import {
   Wrapperpage,
   Dummy,
 } from "./styled";
-import { rankModalOpenState } from "../../store/atoms";
 
 const Ranking = () => {
   const [posts, setPosts] = useState([]);

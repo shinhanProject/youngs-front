@@ -14,7 +14,7 @@ const BasicKnowledgeCategory = () => {
           category={category === 1 ? "on" : ""}
           onClick={() => setCategory(1)}
         >
-          경제 기초 지식
+          주식 기초
         </ListItem>
       </Link>
       <Link to="/basicknowledge">
@@ -38,7 +38,7 @@ const BasicKnowledgeCategory = () => {
           category={category === 4 ? "on" : ""}
           onClick={() => setCategory(4)}
         >
-          주식기초
+          경제 기초 지식
         </ListItem>
       </Link>
     </Card>

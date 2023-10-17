@@ -14,6 +14,7 @@ import PressReleaseDetail from "./pages/PressReleaseDetail";
 import Ranking from "./pages/Ranking";
 import OnBoarding from "./pages/OnBoarding";
 import MyPage from "./pages/MyPage";
+import OtherPage from "./pages/OtherPage";
 
 const Router = () => {
   return (
@@ -38,6 +39,7 @@ const Router = () => {
         <Route path="/ranking" element={<Ranking />} />
         <Route path="/onboarding" element={<OnBoarding />} />
         <Route path="/mypage/:id" element={<MyPage />} />
+        <Route path="/otherpage/:id" element={<OtherPage />} />
       </Routes>
     </BrowserRouter>
   );

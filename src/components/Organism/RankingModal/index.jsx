@@ -1,6 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useSetRecoilState } from "recoil";
+
 import { axiosInstance } from "../../../apis";
+import { followCheck } from "../../../store/atoms";
 import { Wrapper, WrapperProfile } from "./styled";
 import { Text, ProfileImg, Card, Button } from "../../index";
 
@@ -13,7 +16,10 @@ const RankingModal = ({
   modalPosition,
 }) => {
   const [checkFollow, setCheckFollow] = useState(isfollow);
+  const setFollow = useSetRecoilState(followCheck);
   const modalRef = useRef(null);
+  const navigate = useNavigate();
+
   const onFollow = async () => {
     axiosInstance
       .post("/following/follow", {
@@ -54,6 +60,11 @@ const RankingModal = ({
       document.removeEventListener("mousedown", handler);
     };
   }, []);
+
+  const goOtherPage = () => {
+    setFollow(isfollow);
+    navigate(`/otherpage/${userSeq}`);
+  };
   return (
     <div
       ref={modalRef}
@@ -78,11 +89,9 @@ const RankingModal = ({
               Unfollow
             </Button>
           )}
-          <Link to={`/mypage/${userSeq}`}>
-            <Button theme="rankToUserBtn" onClick={closeModal}>
-              보러가기
-            </Button>
-          </Link>
+          <Button theme="rankToUserBtn" onClick={goOtherPage}>
+            보러가기
+          </Button>
         </Wrapper>
       </Card>
     </div>
