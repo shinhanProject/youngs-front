@@ -65,3 +65,8 @@ export const summaryContent = atom({
   default: "summary",
   // 요약 내용
 });
+export const searchStock = atom({
+  key: "searchStock",
+  default: "",
+  // 요약 내용
+});

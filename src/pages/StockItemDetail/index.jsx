@@ -63,11 +63,13 @@ const StockItemDetail = () => {
       const text = window.getSelection().toString().trim();
       console.log(text);
       if (text.length <= 20) {
-        setModalPosition({
-          top: event.clientY + window.scrollY,
-          left: event.clientX,
-        });
-        setWord(text);
+        if (event.target !== StockChart) {
+          setModalPosition({
+            top: event.clientY + window.scrollY,
+            left: event.clientX,
+          });
+          setWord(text);
+        }
       } else {
         console.log("길어");
       }
