@@ -113,6 +113,19 @@ const ButtonStyles = {
     background: "white",
     fontSize: "1.2vw",
   },
+  unfollow: {
+    width: "5vw",
+    borderRadius: "1vw",
+    background: "rgba(0, 70, 255, 0.1)",
+    color: "#4B4B4B",
+  },
+  follow: {
+    width: "5vw",
+    borderRadius: "1vw",
+    background: "white",
+    border: "1px solid rgba(0, 70, 255, 0.1)",
+    color: "#4B4B4B",
+  },
 };
 
 export const StyledButton = styled.button`

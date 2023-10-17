@@ -46,6 +46,7 @@ const FollowingModal = ({ setIsOpenFollowingModal }) => {
           <ImgWrapper key={following.index}>
             <ProfileImg theme="followingProfile" profile={following.profile} />
             <Text theme="textFollowing">{following.nickname}</Text>
+            <Button theme="unfollow">unfollow</Button>
           </ImgWrapper>
         ))}
       </Wrapper>

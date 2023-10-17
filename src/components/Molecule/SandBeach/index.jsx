@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { SandHole, Text } from "../../index";
+import { Unit, Text } from "../../index";
 import { axiosInstance } from "../../../apis";
 
 import { Container, Wrapper } from "./styled";
 
 const SandBeach = ({ id }) => {
   const [data, setData] = useState({});
-  const [sand, setSand] = useState({});
+  const [unit, setUnit] = useState({});
 
   const transformData = () => {
     const today = new Date();
@@ -52,19 +52,19 @@ const SandBeach = ({ id }) => {
 
   useEffect(() => {
     if (Object.keys(data).length !== 0) {
-      setSand(transformData());
+      setUnit(transformData());
     }
   }, [data]);
 
   return (
     <Container>
       <Text theme="mypageText">
-        {Object.keys(sand)[0]} ~{" "}
-        {Object.keys(sand)[Object.keys(sand).length - 1]}
+        {Object.keys(unit)[0]} ~{" "}
+        {Object.keys(unit)[Object.keys(unit).length - 1]}
       </Text>
       <Wrapper>
-        {Object.keys(sand).map(date => (
-          <SandHole key={date} count={sand[date]} date={date} />
+        {Object.keys(unit).map(date => (
+          <Unit key={date} count={unit[date]} date={date} />
         ))}
       </Wrapper>
     </Container>

@@ -55,7 +55,6 @@ const BasicKnowledgeDetail = () => {
       <CategoryBundle selected="basicknowledge" />
       <Wrapper>
         <BasicKnowledgeCategory />
-
         <ContentContainer>
           <ContentWrapper>
             <Text theme="textbasicDetailTitle"> {posts.title}</Text>

@@ -82,7 +82,7 @@ const CardStyles = {
 
   gptModalCard: {
     position: "absolute",
-    zIndex: "10",
+    zIndex: "8",
     background: "white",
     color: "black",
     width: "25vw",
@@ -105,7 +105,7 @@ const CardStyles = {
   summaryCard: {
     background: "white",
     color: "black",
-    width: "40vw",
+    width: "45vw",
     borderRadius: "1vw",
     border: "0.5px solid #ececec",
     boxShadow: "0px 3px 10px -3px gray",
