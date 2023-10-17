@@ -3,30 +3,26 @@ import { Container, Wrapper, ImgWrapper } from "./styled";
 import { Text, ProfileImg, Button } from "../../index";
 import { axiosInstance } from "../../../apis";
 
-const FollowingModal = ({ setIsOpenFollowingModal }) => {
+const FollowingModal = ({ setIsOpenFollowingModal, userId }) => {
   const [followings, setFollowings] = useState([]);
   const modalRef = useRef(null);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      axiosInstance
-        .get(`/profile/1/following`)
-        .then(response => {
-          const dataWithRank = response.data.map((item, index) => ({
-            ...item,
-            index: index + 1,
-          }));
-          console.log(dataWithRank);
-          setFollowings(dataWithRank);
-        })
-        .catch(e => {
-          console.log(e);
-        });
-    };
-    fetchData();
-  }, []);
+  const getData = async () => {
+    axiosInstance
+      .get(`/profile/${userId}/following`)
+      .then(response => {
+        const data = response.data.map(item => ({
+          ...item,
+        }));
+        setFollowings(data);
+      })
+      .catch(e => {
+        console.log(e);
+      });
+  };
 
   useEffect(() => {
+    getData();
     const handler = event => {
       if (modalRef.current && !modalRef.current.contains(event.target)) {
         setIsOpenFollowingModal(false);
@@ -36,7 +32,23 @@ const FollowingModal = ({ setIsOpenFollowingModal }) => {
     return () => {
       document.removeEventListener("mousedown", handler);
     };
-  });
+  }, []);
+
+  const onUnFollow = async id => {
+    axiosInstance
+      .delete("/following/unfollow", {
+        data: {
+          targetUserSeq: id,
+        },
+      })
+      .then(response => {
+        console.log(response.data);
+        getData();
+      })
+      .catch(e => {
+        console.log(e);
+      });
+  };
 
   return (
     <Container ref={modalRef}>
@@ -46,11 +58,17 @@ const FollowingModal = ({ setIsOpenFollowingModal }) => {
           <ImgWrapper key={following.index}>
             <ProfileImg theme="followingProfile" profile={following.profile} />
             <Text theme="textFollowing">{following.nickname}</Text>
-            <Button theme="unfollow">unfollow</Button>
+            <Button
+              theme="unfollow"
+              onClick={() => {
+                onUnFollow(following.userSeq);
+              }}
+            >
+              unfollow
+            </Button>
           </ImgWrapper>
         ))}
       </Wrapper>
-
       <Button
         theme="settingBtn"
         onClick={() => {
