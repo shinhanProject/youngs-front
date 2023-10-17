@@ -16,7 +16,7 @@ export const Wrapper = styled.div`
   justify-content: space-between;
   width: 100%;
   margin-top: 5vh;
-  height: 60vh;
+  margin-bottom: 10vh;
 `;
 export const Title = styled.div`
   background: gray;
