@@ -54,3 +54,9 @@ export const privateSummary = atom({
   default: false,
   // 요약 나만 보기 true
 });
+
+export const summaryContent = atom({
+  key: "summaryContent",
+  default: "summary",
+  // 요약 내용
+});
