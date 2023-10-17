@@ -34,7 +34,7 @@ import setting from "../../assets/images/setting.svg";
 
 const MyPage = () => {
   const user = useRecoilValue(loginState);
-  const SummaryOnlyMe = useRecoilValue(privateSummary);
+  const summaryOnlyMe = useRecoilValue(privateSummary);
   const [isOpenSettingModal, setIsOpenSettingModal] = useState(false);
   const [isOpenFollowersModal, setOpenFollowersModal] = useState(false);
   const [isOpenFollowingModal, setIsOpenFollowingModal] = useState(false);
@@ -86,7 +86,29 @@ const MyPage = () => {
       });
   };
 
-  const setPrivate = () => {};
+  const setPrivate = async () => {
+    let flag = -1;
+    if (summaryOnlyMe) {
+      flag = 1;
+    } else {
+      flag = 0;
+    }
+    console.log(flag);
+    axiosInstance
+      .patch(`/profile/${id}/private`, {
+        isPrivate: flag,
+      })
+      .then(response => {
+        if (response.status === 200) {
+          console.log(response.data);
+        } else {
+          alert("공개옵션 변경에 실패했습니다.");
+        }
+      })
+      .catch(e => {
+        console.log(e);
+      });
+  };
 
   useEffect(() => {
     getSummary();
@@ -98,7 +120,7 @@ const MyPage = () => {
 
   useEffect(() => {
     setPrivate();
-  }, [SummaryOnlyMe]);
+  }, [summaryOnlyMe]);
 
   return (
     <Container>
@@ -159,7 +181,9 @@ const MyPage = () => {
           </Left>
           <Right>
             {currentCount === 0 ? (
-              <ErrorBoundary>{errorMassage}</ErrorBoundary>
+              <ErrorBoundary>
+                요약을 통해 중요한 점들을 기록해보세요!
+              </ErrorBoundary>
             ) : (
               <SandBeach id={id} />
             )}
@@ -173,7 +197,7 @@ const MyPage = () => {
                   />
                 ))
               ) : (
-                <Text>요약을 통해 중요한 점들을 기록해보세요!</Text>
+                <Text>{errorMassage}</Text>
               )}
             </SummaryContainer>
           </Right>
