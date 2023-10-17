@@ -70,7 +70,7 @@ export const followCheck = atom({
   key: "followCheck",
   default: -1,
   effects_UNSTABLE: [persistAtom],
-
+});
 export const searchStock = atom({
   key: "searchStock",
   default: "",

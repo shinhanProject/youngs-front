@@ -41,7 +41,7 @@ export const ContentWrapper = styled.div`
   border: 1px solid #ececec;
   background: #fff;
   box-shadow: 10px 10px 30px 0px rgba(51, 51, 51, 0.3);
-  padding: 3vw;
+  padding: 3vw 0vw;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
