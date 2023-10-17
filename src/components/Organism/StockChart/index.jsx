@@ -1,86 +1,74 @@
 import React from "react";
 import ReactApexChart from "react-apexcharts";
-import { Text } from "../../index";
-import { Container } from "./styled";
 
 const StockChart = () => {
-  const generateDummyData = () => {
-    const data = [];
-    const currentDate = new Date();
-
-    for (let i = 0; i < 30; i += 1) {
-      const date = new Date(currentDate);
-      date.setDate(date.getDate() - i); // Subtract 'i' days from the current date
-      const timeClose = date.toISOString();
-      const open = Math.random() * 1000; // Replace with your desired range
-      const high = open + Math.random() * 100; // Replace with your desired range
-      const low = open - Math.random() * 100; // Replace with your desired range
-      const close = open + Math.random() * 200 - 100; // Replace with your desired range
-
-      data.push({ timeClose, open, high, low, close });
-    }
-
-    return data;
-  };
-
-  const data = generateDummyData();
-
-  const options = {
-    theme: {
-      mode: "dark",
+  const Stockdata = {
+    "2023-04-11": {
+      open: "186600",
+      high: "192400",
+      low: "185100",
+      close: "192100",
     },
-    chart: {
-      type: "candlestick",
-      height: 350,
-      width: 500,
-      toolbar: {
-        show: false,
-      },
-      background: "transparent",
+    "2023-04-10": {
+      open: "186000",
+      high: "188500",
+      low: "184200",
+      close: "185900",
     },
-    stroke: {
-      curve: "smooth",
-      width: 2,
+    "2023-04-07": {
+      open: "180400",
+      high: "186000",
+      low: "180600",
+      close: "185000",
     },
-    yaxis: {
-      show: false,
+    "2023-04-05": {
+      open: "186400",
+      high: "142400",
+      low: "184100",
+      close: "142100",
     },
-    xaxis: {
-      type: "datetime",
-      categories: data?.map(price => price.timeClose),
-      labels: {
-        style: {
-          colors: "#9c88ff",
-        },
-      },
+    "2023-04-04": {
+      open: "156000",
+      high: "158500",
+      low: "154200",
+      close: "155900",
     },
-    plotOptions: {
-      candlestick: {
-        colors: {
-          upward: "#3C90EB",
-          downward: "#DF7D46",
-        },
-      },
+    "2023-04-02": {
+      open: "175400",
+      high: "176500",
+      low: "174600",
+      close: "175100",
     },
   };
+  // 주식 차트 데이터를 변환
+  const seriesData = Object.keys(Stockdata).map(date => {
+    const stockInfo = Stockdata[date];
+    return [
+      new Date(date).getTime(),
+      parseFloat(stockInfo.open),
+      parseFloat(stockInfo.high),
+      parseFloat(stockInfo.low),
+      parseFloat(stockInfo.close),
+    ];
+  });
 
   const series = [
     {
-      data: data?.map(price => {
-        return [
-          Date.parse(price.timeClose),
-          price.open,
-          price.high,
-          price.low,
-          price.close,
-        ];
-      }),
+      data: seriesData,
     },
   ];
 
+  const options = {
+    chart: {
+      type: "candlestick",
+    },
+    xaxis: {
+      type: "datetime",
+    },
+  };
+
   return (
-    <Container>
-      <Text>주식 차트</Text>
+    <div>
       <ReactApexChart
         options={options}
         series={series}
@@ -88,7 +76,7 @@ const StockChart = () => {
         height={350}
         width={500}
       />
-    </Container>
+    </div>
   );
 };
 

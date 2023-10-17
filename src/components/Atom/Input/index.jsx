@@ -3,7 +3,7 @@ import { useSetRecoilState } from "recoil";
 import { summaryContent } from "../../../store/atoms";
 import { InputWrapper, Label, UserInput } from "./styled";
 
-const Input = ({ label, type, placeholder, context }) => {
+const Input = ({ label, type, placeholder, context, onEnter }) => {
   const setSummaryContent = useSetRecoilState(summaryContent);
   const [inputText, setInputText] = useState("");
   useEffect(() => {
@@ -11,9 +11,12 @@ const Input = ({ label, type, placeholder, context }) => {
       setInputText(context);
     }
   }, []);
+
+  useEffect(() => {
+    setSummaryContent(inputText);
+  }, [inputText]);
   const handleChange = e => {
     setInputText(e.target.value);
-    setSummaryContent(inputText);
   };
 
   return (
@@ -24,6 +27,7 @@ const Input = ({ label, type, placeholder, context }) => {
         type={type}
         onChange={handleChange}
         placeholder={placeholder}
+        onKeyUp={onEnter}
       />
     </InputWrapper>
   );

@@ -141,6 +141,16 @@ const BasicKnowledgeDetail = () => {
     fetchData();
   }, [id]);
 
+  const handleOnKeyPress = e => {
+    if (e.key === "Enter") {
+      if (isSummaryDone) {
+        EditSummaryapi();
+      } else {
+        EnrollSummaryapi();
+      }
+    }
+  };
+
   return (
     <Container>
       <Header />
@@ -163,6 +173,7 @@ const BasicKnowledgeDetail = () => {
                 type="text"
                 placeholder="요약을 입력하세요"
                 context={haveContent}
+                onEnter={handleOnKeyPress}
               />
               <ButtonWrapper>
                 {!isSummaryDone && (
