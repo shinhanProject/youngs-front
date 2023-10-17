@@ -18,6 +18,11 @@ export const gptDragState = atom({
   default: false,
 });
 
+export const gptDragStateStock = atom({
+  key: "gptDragStateStock",
+  default: false,
+});
+
 export const rankModalOpenState = atom({
   key: "rankModalOpenState",
   default: false,
@@ -65,4 +70,9 @@ export const followCheck = atom({
   key: "followCheck",
   default: -1,
   effects_UNSTABLE: [persistAtom],
+
+export const searchStock = atom({
+  key: "searchStock",
+  default: "",
+  // 요약 내용
 });

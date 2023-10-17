@@ -32,4 +32,6 @@ export const CategoryWrapper = styled.div`
   flex-direction: column;
 `;
 
-export const List = styled.div``;
+export const List = styled.div`
+  border-top: 1px solid darkgray;
+`;

@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useRecoilValue } from "recoil";
 import React, { useState, useEffect } from "react";
-import { gptDragState } from "../../store/atoms";
+import { gptDragStateStock } from "../../store/atoms";
 
 import { axiosInstance } from "../../apis";
 
@@ -25,30 +25,48 @@ import {
 } from "./styled";
 
 const StockItemDetail = () => {
-  const { category, id } = useParams();
-  const [posts, setPosts] = useState({
-    title: "basicTitle",
-    info: "description",
-  });
+  const stockName = "삼성전자";
+  const { category } = useParams();
+  const [stockData, setStockData] = useState({});
+  const [seriesData, setSeriesData] = useState({});
   useEffect(() => {
     const fetchData = async () => {
       axiosInstance
-        .get(`/basic/detail?categorySeq=${category}&basicSeq=${id}`)
+        .get(`/stock/chart/삼성전자`)
         .then(response => {
           console.log(response.data);
-          setPosts({
-            title: response.data.subject,
-            info: response.data.information,
-          });
+          setStockData(response.data);
         })
         .catch(e => {
           console.log(e);
         });
     };
     fetchData();
+    console.log("stock Data 입니당 ", stockData);
   }, [category]);
-  // GPT
-  const gptDrag = useRecoilValue(gptDragState);
+  const fineData = () => {
+    const transformedData = Object.entries(stockData).map(([date, values]) => {
+      const [open, high, low, close] = [
+        parseFloat(values.open),
+        parseFloat(values.high),
+        parseFloat(values.low),
+        parseFloat(values.close),
+      ];
+
+      return {
+        x: new Date(date).getTime(),
+        y: [open, high, low, close],
+      };
+    });
+    return transformedData;
+  };
+  useEffect(() => {
+    const transformedData = fineData();
+    setSeriesData(transformedData);
+    console.log("USEEFFECT 안이지롱 ", stockData, transformedData);
+  }, [stockData]);
+
+  const gptDragStock = useRecoilValue(gptDragStateStock);
   const [word, setWord] = useState("");
   const [explanation, setExplanation] = useState("설명을 불러오는 중입니다.");
   const [modalOpen, setModalOpen] = useState(false);
@@ -59,17 +77,21 @@ const StockItemDetail = () => {
   };
 
   const handleSelect = event => {
-    if (gptDrag) {
+    if (gptDragStock) {
       const text = window.getSelection().toString().trim();
       console.log(text);
-      if (text.length <= 20) {
-        setModalPosition({
-          top: event.clientY,
-          left: event.clientX,
-        });
-        setWord(text);
-      } else {
-        console.log("길어");
+      if (text) {
+        if (text.length <= 20) {
+          if (event.target !== StockChart) {
+            setModalPosition({
+              top: event.clientY + window.scrollY,
+              left: event.clientX,
+            });
+            setWord(text);
+          }
+        } else {
+          console.log("길어");
+        }
       }
     }
   };
@@ -87,20 +109,20 @@ const StockItemDetail = () => {
   };
 
   useEffect(() => {
-    if (word !== "" && gptDrag === true) {
+    console.log(gptDragStock);
+    if (word !== "" && gptDragStock === true) {
       showModal();
       getWord({ w: word });
     }
   }, [word]);
-  console.log(gptDrag, word, " 여기요 ... ");
+
   return (
     <Container>
       <Header />
       <DummyWrapper>
-        <Text theme="infoTitle">기초 지식</Text>
+        <Text theme="infoTitle">종목 정보</Text>
         <Text theme="infoText">
-          주식 투자에 필요한 기초 지식 정보를 통해 주식 투자 0 단계 부터 성장해
-          나가세요!
+          실제 주식 정보를 보며 공부한 내용을 확인해 보세요!
         </Text>
         <CategoryBundle selected="stockitem" />
       </DummyWrapper>
@@ -118,8 +140,8 @@ const StockItemDetail = () => {
         <ContentContainer>
           <Toggle flag={2} />
           <ContentWrapper onMouseUp={event => handleSelect(event)}>
-            <Text theme="textbasicDetailTitle"> {posts.title}</Text>
-            <StockChart />
+            <Text theme="textbasicDetailTitle"> {stockName}</Text>
+            <StockChart innerData={seriesData} />
             <StockTable />
           </ContentWrapper>
         </ContentContainer>
