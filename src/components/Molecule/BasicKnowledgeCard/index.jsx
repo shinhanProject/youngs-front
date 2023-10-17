@@ -7,7 +7,13 @@ const TextShortener = ({ text, maxLength }) => {
 
   useEffect(() => {
     if (text.length > maxLength) {
-      setShortenedText(`${text.substring(0, maxLength)}...`);
+      const truncatedText = text.substring(0, maxLength);
+      const lastSpaceIndex = truncatedText.lastIndexOf(" ");
+      if (lastSpaceIndex !== -1) {
+        setShortenedText(truncatedText.substring(0, lastSpaceIndex) + "...");
+      } else {
+        setShortenedText(truncatedText + "...");
+      }
     } else {
       setShortenedText(text);
     }
@@ -17,7 +23,7 @@ const TextShortener = ({ text, maxLength }) => {
 };
 
 const BasicKnowledgeCard = ({ name, category, description }) => {
-  const maxLength = 30;
+  const maxLength = 29;
   const shortened = TextShortener({ text: description, maxLength }); // 여기 수정
   return (
     <Card theme="basicItemCard">
