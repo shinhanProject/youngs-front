@@ -45,19 +45,24 @@ const StockItemDetail = () => {
     console.log("stock Data 입니당 ", stockData);
   }, [category]);
   const fineData = () => {
-    const transformedData = Object.entries(stockData).map(([date, values]) => {
-      const [open, high, low, close] = [
-        parseFloat(values.open),
-        parseFloat(values.high),
-        parseFloat(values.low),
-        parseFloat(values.close),
-      ];
+    const transformedData = Object.entries(stockData).reduce(
+      (result, [date, values]) => {
+        const [open, high, low, close] = [
+          parseFloat(values.open),
+          parseFloat(values.high),
+          parseFloat(values.low),
+          parseFloat(values.close),
+        ];
 
-      return {
-        x: new Date(date).getTime(),
-        y: [open, high, low, close],
-      };
-    });
+        result.push({
+          x: new Date(date).getTime(),
+          y: [open, high, low, close],
+        });
+
+        return result;
+      },
+      [],
+    );
     return transformedData;
   };
   useEffect(() => {

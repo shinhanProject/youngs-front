@@ -26,7 +26,7 @@ const StockChart = ({ innerData }) => {
         series={series}
         type="candlestick"
         height={350}
-        width={500}
+        width={700}
       />
     </div>
   );

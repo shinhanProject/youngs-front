@@ -149,7 +149,15 @@ const PressReleaseDetail = () => {
     };
     fetchData();
   }, [id]);
-
+  const handleOnKeyPress = e => {
+    if (e.key === "Enter") {
+      if (isSummaryDone) {
+        EditSummaryapi();
+      } else {
+        EnrollSummaryapi();
+      }
+    }
+  };
   const fetchHaveContext = async () => {
     if (isSummaryDone === true) {
       setHaveContent(summaryContents);
@@ -225,6 +233,7 @@ const PressReleaseDetail = () => {
                 type="text"
                 placeholder="요약을 입력하세요"
                 context={haveContent}
+                onEnter={handleOnKeyPress}
               />
               <ButtonWrapper>
                 {!isSummaryDone && (
