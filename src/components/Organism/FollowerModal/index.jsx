@@ -3,36 +3,26 @@ import { Container, Wrapper, ImgWrapper } from "./styled";
 import { Text, ProfileImg, Button } from "../../index";
 import { axiosInstance } from "../../../apis";
 
-const FollowerModal = ({ setOpenFollowersModal }) => {
+const FollowerModal = ({ setOpenFollowersModal, userId }) => {
   const [followers, setFollowers] = useState([]);
   const modalRef = useRef(null);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      axiosInstance
-        .get(`/profile/${1}/follower`)
-        .then(response => {
-          const dataWithRank = response.data.map((item, index) => ({
-            ...item,
-            index: index + 1,
-          }));
-          console.log(dataWithRank);
-          setFollowers(dataWithRank);
-        })
-        .catch(e => {
-          console.log(e);
-        });
-    };
-    fetchData();
-  }, []);
-
-  const onFollow = async e => {
-    console.log(e.target);
+  const getData = async () => {
+    axiosInstance
+      .get(`/profile/${userId}/follower`)
+      .then(response => {
+        const data = response.data.map(item => ({
+          ...item,
+        }));
+        setFollowers(data);
+      })
+      .catch(e => {
+        console.log(e);
+      });
   };
 
-  const onUnFollow = () => {};
-
   useEffect(() => {
+    getData();
     const handler = event => {
       if (modalRef.current && !modalRef.current.contains(event.target)) {
         setOpenFollowersModal(false);
@@ -42,7 +32,37 @@ const FollowerModal = ({ setOpenFollowersModal }) => {
     return () => {
       document.removeEventListener("mousedown", handler);
     };
-  });
+  }, []);
+
+  const onFollow = async id => {
+    axiosInstance
+      .post("/following/follow", {
+        targetUserSeq: id,
+      })
+      .then(response => {
+        console.log(response.data);
+        getData();
+      })
+      .catch(e => {
+        console.log(e);
+      });
+  };
+
+  const onUnFollow = async id => {
+    axiosInstance
+      .delete("/following/unfollow", {
+        data: {
+          targetUserSeq: id,
+        },
+      })
+      .then(response => {
+        console.log(response.data);
+        getData();
+      })
+      .catch(e => {
+        console.log(e);
+      });
+  };
 
   return (
     <Container ref={modalRef}>
@@ -55,8 +75,8 @@ const FollowerModal = ({ setOpenFollowersModal }) => {
             {follower.status === 1 ? (
               <Button
                 theme="follow"
-                onClick={e => {
-                  onFollow(e);
+                onClick={() => {
+                  onFollow(follower.userSeq);
                 }}
               >
                 follow
@@ -64,8 +84,8 @@ const FollowerModal = ({ setOpenFollowersModal }) => {
             ) : (
               <Button
                 theme="unfollow"
-                onClick={e => {
-                  onUnFollow(e);
+                onClick={() => {
+                  onUnFollow(follower.userSeq);
                 }}
               >
                 unfollow

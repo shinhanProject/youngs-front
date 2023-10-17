@@ -44,6 +44,7 @@ const MyPage = () => {
   const [currentTier, setCurrentTier] = useState("");
   const [currentCount, setCurrentCount] = useState("");
   const [summary, setSummary] = useState([]);
+  const [errorMassage, setErrorMassage] = useState("요약 기록이 없습니다.");
 
   const { id } = useParams();
 
@@ -74,12 +75,14 @@ const MyPage = () => {
             ...item,
           }));
           setSummary(summaryData);
+        } else if (response.status === 204) {
+          setErrorMassage("비공개 기록입니다.");
         } else {
           alert("요약 정보를 가져오는데 실패했습니다.");
         }
       })
-      .catch(() => {
-        alert("요약 정보를 가져오는데 실패했습니다.");
+      .catch(e => {
+        console.log(e);
       });
   };
 
@@ -140,7 +143,7 @@ const MyPage = () => {
                 </Button>
                 {isOpenFollowersModal && (
                   <FollowerModal
-                    id={id}
+                    userId={id}
                     setOpenFollowersModal={setOpenFollowersModal}
                   />
                 )}
@@ -154,8 +157,8 @@ const MyPage = () => {
                 </Button>
                 {isOpenFollowingModal && (
                   <FollowingModal
-                    id={id}
                     setIsOpenFollowingModal={setIsOpenFollowingModal}
+                    userId={id}
                   />
                 )}
               </ButtonWrapper>
@@ -165,7 +168,7 @@ const MyPage = () => {
           </Left>
           <Right>
             {currentCount === 0 ? (
-              <ErrorBoundary>요약 기록이 없습니다.</ErrorBoundary>
+              <ErrorBoundary>{errorMassage}</ErrorBoundary>
             ) : (
               <SandBeach id={id} />
             )}

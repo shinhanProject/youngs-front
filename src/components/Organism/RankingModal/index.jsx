@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import { axiosInstance } from "../../../apis";
 import { Wrapper, WrapperProfile } from "./styled";
 import { Text, ProfileImg, Card, Button } from "../../index";
 
@@ -10,10 +11,52 @@ const RankingModal = ({
   userSeq,
   isfollow,
   modalPosition,
-  followOnClick,
 }) => {
+  const [checkFollow, setCheckFollow] = useState(isfollow);
+  const modalRef = useRef(null);
+  const onFollow = async () => {
+    axiosInstance
+      .post("/following/follow", {
+        targetUserSeq: userSeq,
+      })
+      .then(response => {
+        console.log(response.data);
+        setCheckFollow(2);
+      })
+      .catch(e => {
+        console.log(e);
+      });
+  };
+
+  const onUnFollow = async () => {
+    axiosInstance
+      .delete("/following/unfollow", {
+        data: {
+          targetUserSeq: userSeq,
+        },
+      })
+      .then(response => {
+        console.log(response.data);
+        setCheckFollow(1);
+      })
+      .catch(e => {
+        console.log(e);
+      });
+  };
+  useEffect(() => {
+    const handler = event => {
+      if (modalRef.current && !modalRef.current.contains(event.target)) {
+        closeModal();
+      }
+    };
+    document.addEventListener("mousedown", handler);
+    return () => {
+      document.removeEventListener("mousedown", handler);
+    };
+  }, []);
   return (
     <div
+      ref={modalRef}
       style={{
         top: `${modalPosition.top}px`,
         left: `${modalPosition.left}px`,
@@ -26,9 +69,15 @@ const RankingModal = ({
           <ProfileImg theme="rankingProfile" profile={profileImg} />
         </WrapperProfile>
         <Wrapper>
-          <Button theme="rankToUserBtn" onClick={followOnClick}>
-            {isfollow === 1 ? "Follow" : "Unfollow"}
-          </Button>
+          {checkFollow === 1 ? (
+            <Button theme="rankToUserBtn" onClick={onFollow}>
+              Follow
+            </Button>
+          ) : (
+            <Button theme="rankToUserBtn" onClick={onUnFollow}>
+              Unfollow
+            </Button>
+          )}
           <Link to={`/mypage/${userSeq}`}>
             <Button theme="rankToUserBtn" onClick={closeModal}>
               보러가기

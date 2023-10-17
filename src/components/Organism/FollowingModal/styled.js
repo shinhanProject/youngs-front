@@ -22,7 +22,6 @@ export const Wrapper = styled.div`
   margin-bottom: 1vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   align-items: center;
   width: 90%;
   height: 70%;
