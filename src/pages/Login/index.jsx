@@ -66,7 +66,7 @@ const Login = () => {
       });
   };
 
-  const JWT_EXPIRY_TIME = 24 * 3600;
+  const JWT_EXPIRY_TIME = 24 * 3600 * 1000;
 
   const onLoginSuccess = response => {
     const accessToken = response.data.accessToken;
