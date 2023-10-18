@@ -10614,9 +10614,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["http-proxy-middleware", "virtual:124cfa88c804d3ef9664d62bf75e3732a738462a7df2c91c749bc023d8f1ab02224d421ee6a2ddd629421c7d4ec9598a167d87406d529480e527da83618b89ec#npm:2.0.6"],\
             ["@types/express", null],\
             ["@types/http-proxy", "npm:1.17.12"],\
+            ["eventemitter3", "npm:4.0.7"],\
+            ["follow-redirects", "virtual:6bc68e7d25b7055a51c269c1fa5648c8246286db1b7949168396e2ffbde7ed58cf742783c99b4e376ba9a3e96fcc4d029f96bd1b532b606b5055545461060ec6#npm:1.15.3"],\
             ["http-proxy", "npm:1.18.1"],\
             ["is-glob", "npm:4.0.3"],\
             ["is-plain-obj", "npm:3.0.0"],\
+            ["lodash", "npm:4.17.21"],\
             ["micromatch", "npm:4.0.5"]\
           ],\
           "packagePeers": [\
@@ -10630,9 +10633,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["http-proxy-middleware", "virtual:86d3d3ce25f22f5654c60dfebb98395c861b1127c970d50f0e3ad1a902e59c321bdad01da9206d172dd85b978d27cc66cec133bdd1158ae18345eb586a1c881b#npm:2.0.6"],\
             ["@types/express", "npm:4.17.19"],\
             ["@types/http-proxy", "npm:1.17.12"],\
+            ["eventemitter3", "npm:4.0.7"],\
+            ["follow-redirects", "virtual:6bc68e7d25b7055a51c269c1fa5648c8246286db1b7949168396e2ffbde7ed58cf742783c99b4e376ba9a3e96fcc4d029f96bd1b532b606b5055545461060ec6#npm:1.15.3"],\
             ["http-proxy", "npm:1.18.1"],\
             ["is-glob", "npm:4.0.3"],\
             ["is-plain-obj", "npm:3.0.0"],\
+            ["lodash", "npm:4.17.21"],\
             ["micromatch", "npm:4.0.5"]\
           ],\
           "packagePeers": [\
