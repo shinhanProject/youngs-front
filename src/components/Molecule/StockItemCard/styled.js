@@ -5,8 +5,7 @@ export const Wrapper1 = styled.div`
   flex-direction: column;
   justify-content: space-around;
   height: 100%;
-
-  padding: 0px 0px 5px 0px;
+  padding: 0px 0px 0px 0px;
 `;
 
 export const Wrapper2 = styled.div`
@@ -20,7 +19,6 @@ export const Wrapper2 = styled.div`
 export const Wrapper3 = styled.div`
   display: flex;
   flex-direction: row;
-  height: 80%;
   justify-content: space-around;
   align-items: center;
 `;

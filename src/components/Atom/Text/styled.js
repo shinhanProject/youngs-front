@@ -184,12 +184,12 @@ const textStyles = {
   },
   textStockItemName: {
     fontWeight: "normal",
-    fontSize: "1.2vw",
+    fontSize: "1.4vw",
     color: "#4AFFF",
     lineHeight: "1.5vw",
   },
   textStockItemDescription: {
-    fontSize: "12px",
+    fontSize: "1.2vw",
     color: "#4A483F",
     lineHeight: "1.1vw",
   },
@@ -243,6 +243,16 @@ const textStyles = {
   toggleText: {
     fontSize: "1.2vw",
     fontWeight: "normal",
+    color: "black",
+  },
+  stockTableTextContent: {
+    fontSize: "1.2vw",
+    fontWeight: "normal",
+    color: "black",
+  },
+  stockTableTextTitle: {
+    fontSize: "1.2vw",
+    fontWeight: "bold",
     color: "black",
   },
 };
