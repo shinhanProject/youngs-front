@@ -15,13 +15,20 @@ export const getWidthBasedOnFlag = flag => {
 
 export const Wrapper = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   width: ${props => getWidthBasedOnFlag(props.flag)};
   margin: ${props => (props.flag === 3 ? "0" : "2vh 0")};
+  @media (max-width: 768px) {
+    width: 50%; /* 테블릿 사이즈에서 50%의 너비를 사용 */
+  }
+
+  @media (min-width: 769px) {
+    width: 30%; /* 웹에서 30%의 너비를 사용 */
+  }
 `;
 export const ToggleBtn = styled.button`
-  width: 3.5vw;
+  width: 4vw;
   height: 4vh;
   border-radius: 15px;
   border: none;
@@ -33,6 +40,11 @@ export const ToggleBtn = styled.button`
   justify-content: center;
   align-items: center;
   transition: all 0.5s ease-in-out;
+
+  @media (max-width: 768px) {
+    width: 40px; /* 테블릿 사이즈에서 작은 크기로 조절 */
+    height: 20px;
+  }
 `;
 export const Circle = styled.div`
   background-color: white;
@@ -45,7 +57,12 @@ export const Circle = styled.div`
   ${props =>
     props.toggle === "true" &&
     css`
-      transform: translate(1.5vw, 0);
+      transform: translate(1.9vw, 0);
       transition: all 0.5s ease-in-out;
     `}
+  @media (max-width: 768px) {
+    width: 12px; /* 테블릿 사이즈에서 작은 크기로 조절 */
+    height: 12px;
+    left: 4px;
+  }
 `;

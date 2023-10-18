@@ -38,7 +38,7 @@ const Toggle = ({ flag }) => {
       <ToggleBtn onClick={clickedToggle} toggle={toggle.toString()}>
         <Circle toggle={toggle.toString()} />
       </ToggleBtn>
-      <Text>{buttonText}</Text>
+      <Text theme="toggleText">{buttonText}</Text>
     </Wrapper>
   );
 };
