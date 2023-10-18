@@ -244,7 +244,6 @@ const textStyles = {
     fontSize: "1.2vw",
     fontWeight: "normal",
     color: "black",
-    marginLeft: "-3vw",
   },
 };
 
