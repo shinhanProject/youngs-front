@@ -90,11 +90,11 @@ const textStyles = {
   },
   textStockRankingTitle: {
     fontWeight: "normal",
-    fontSize: "20px",
+    fontSize: "1.2vw",
   },
   textStockRankingScore: {
     fontWeight: "normal",
-    fontSize: "20px",
+    fontSize: "1.2vw",
     color: "red",
   },
   textRankingPage: {
