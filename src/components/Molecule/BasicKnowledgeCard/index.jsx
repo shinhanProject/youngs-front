@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Wrapper1, Wrapper2, Wrapper3 } from "./styled";
+import { Wrapper1, Wrapper3 } from "./styled";
 import { Text, Card } from "../../index";
 
 const TextShortener = ({ text, maxLength }) => {
@@ -22,19 +22,16 @@ const TextShortener = ({ text, maxLength }) => {
   return shortenedText;
 };
 
-const BasicKnowledgeCard = ({ name, category, description }) => {
+const BasicKnowledgeCard = ({ name, description }) => {
   const maxLength = 29;
   const shortened = TextShortener({ text: description, maxLength }); // 여기 수정
   return (
     <Card theme="basicItemCard">
       <Wrapper3>
         <Wrapper1>
-          <Text theme="textBasicItemName">{name} : PER </Text>
+          <Text theme="textBasicItemName">{name} </Text>
           <Text theme="textBasicItemDescription">{shortened}</Text>
         </Wrapper1>
-        <Wrapper2>
-          <Text theme="textBasicDate">{category} :주식 기초 정보</Text>
-        </Wrapper2>
       </Wrapper3>
     </Card>
   );

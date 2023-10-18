@@ -74,7 +74,6 @@ const BasicKnowledgeList = () => {
                   <BasicKnowledgeCard
                     name={post.subject}
                     description={post.information}
-                    category={post.pubDate}
                   />
                 </Link>
               ))}
