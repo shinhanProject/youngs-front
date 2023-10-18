@@ -14,7 +14,7 @@ const listItemState = {
 export const Wrapper = styled.div`
   display: flex;
   height: 20px;
-  width: 25vw;
+  width: 20vw;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
