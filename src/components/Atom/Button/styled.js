@@ -22,6 +22,7 @@ const ButtonStyles = {
   },
   headerBtn: {
     height: "5vh",
+    wordBreak: "keep-all",
     textAlign: "center",
     fontWeight: "bold",
     background: "rgba(255, 255, 255, 0)",

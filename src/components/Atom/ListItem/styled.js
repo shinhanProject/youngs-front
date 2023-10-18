@@ -9,26 +9,33 @@ const listItemState = {
     WebkitBackgroundClip: "text",
     WebkitTextFillColor: "transparent",
   },
-  off: {
-    fontWeight: "bold",
-    fontSize: "1vw",
-    color: "#333333",
-  },
 };
 
 export const Wrapper = styled.div`
   display: flex;
   height: 20px;
+  flex-direction: row;
   align-items: center;
-  margin-top: 2vh;
+  margin-top: 1.7vw;
+`;
+
+export const Wrapper2 = styled.div`
+  height: 2vw;
 `;
 
 export const Asterisk = styled.img`
-  width: 15px;
+  width: 1.2vw;
 `;
 
-export const StyledListItem = styled.p`
-  ${props => listItemState[props.category]};
+export const StyledListItem = styled.div`
+  height: 1.7vw;
+  font-weight: bold;
+  font-size: 1vw;
+  background: transparent;
+  color: black;
   cursor: pointer;
   caret-color: transparent;
+  align-items: center;
+  word-break: keep-all;
+  ${props => listItemState[props.category]};
 `;

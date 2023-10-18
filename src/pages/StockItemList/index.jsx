@@ -29,11 +29,6 @@ const StockItemList = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 8;
 
-  // ###################### Search !!! => goekd
-  // const searched = posts.filter((item) =>
-  //   item.name.toLowerCase().includes(userInput)
-  // );
-
   // 주식 api 나오면 수정할 부분
   useEffect(() => {
     const fetchData = async () => {

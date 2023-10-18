@@ -7,7 +7,7 @@ const BasicKnowledgeCategory = () => {
   const [category, setCategory] = useRecoilState(basicCategoryState);
   return (
     <Card theme="grayCard">
-      <Text theme="text2">카테고리</Text>
+      <Text theme="listCategoryText">카테고리</Text>
 
       <Link to="/basicknowledge">
         <ListItem

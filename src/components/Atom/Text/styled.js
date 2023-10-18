@@ -11,6 +11,12 @@ const textStyles = {
     fontSize: "1.5vw",
     color: "#333333",
   },
+  listCategoryText: {
+    fontWeight: "bold",
+    fontSize: "1.5vw",
+    color: "#333333",
+    marginBottom: "0.8vw",
+  },
   text3: {
     fontWeight: "bold",
     fontSize: "48px",
@@ -197,7 +203,8 @@ const textStyles = {
   textBasicItemDescription: {
     fontSize: "12px",
     color: "#4AFFF",
-    lineHeight: "1.1vw",
+    lineHeight: "1.4vw",
+    wordBreak: "keep-all",
   },
   textBasicDate: {
     fontWeight: "normal",
