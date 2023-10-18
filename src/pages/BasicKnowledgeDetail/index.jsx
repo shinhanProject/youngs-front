@@ -11,6 +11,7 @@ import {
   BasicKnowledgeCategory,
   Input,
   UpdateInput,
+  LoadFile,
 } from "../../components";
 import { Container, Wrapper, ContentContainer, ContentWrapper } from "./styled";
 
@@ -19,6 +20,11 @@ const BasicKnowledgeDetail = () => {
   const { category, id } = useParams();
 
   const [posts, setPosts] = useState({
+    title: "",
+    info: "",
+  });
+
+  const [key, setKey] = useState({
     title: "",
     info: "",
   });
@@ -38,8 +44,27 @@ const BasicKnowledgeDetail = () => {
       });
   };
 
+  const getKey = async () => {
+    axiosInstance
+      .get(`/basic/detail?categorySeq=${category}&basicSeq=${id}`)
+      .then(response => {
+        setKey({
+          title: response.data.subject,
+          info: response.data.information,
+        });
+        setIsSummaryDone(response.data.wasWritten);
+      })
+      .catch(e => {
+        console.log(e);
+      });
+  };
+
   useEffect(() => {
-    getContent();
+    if (category === 1 || category === 4) {
+      getContent();
+    } else {
+      getKey();
+    }
   }, []);
 
   return (
@@ -55,8 +80,17 @@ const BasicKnowledgeDetail = () => {
         <BasicKnowledgeCategory />
         <ContentContainer>
           <ContentWrapper>
-            <Text theme="textbasicDetailTitle"> {posts.title}</Text>
-            <p>{posts.info}</p>
+            {category === 1 || category === 4 ? (
+              <>
+                <Text theme="textbasicDetailTitle"> {posts.title}</Text>
+                <p>{posts.info}</p>
+              </>
+            ) : (
+              <>
+                <Text theme="textbasicDetailTitle"> {key.title}</Text>
+                <LoadFile currentHTMLKey={key.info} />
+              </>
+            )}
             {isSummaryDone ? (
               <UpdateInput
                 label="한 줄 요약하기"
