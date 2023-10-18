@@ -24,7 +24,7 @@ export const Wrapper = styled.div`
   }
 
   @media (min-width: 769px) {
-    width: 30%; /* 웹에서 30%의 너비를 사용 */
+    width: 25%; /* 웹에서 30%의 너비를 사용 */
   }
 `;
 export const ToggleBtn = styled.button`

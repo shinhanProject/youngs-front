@@ -29,7 +29,7 @@ const Toggle = ({ flag }) => {
   if (flag === 1) {
     buttonText = "학습한 내용 포함하지 않기";
   } else if (flag === 2) {
-    buttonText = "GPT 사용하기";
+    buttonText = "GPT 검색 기능 활성화하기";
   } else if (flag === 3) {
     buttonText = "요약 내용 나만 보기";
   }
