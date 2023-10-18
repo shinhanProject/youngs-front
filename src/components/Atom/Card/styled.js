@@ -91,6 +91,17 @@ const CardStyles = {
     boxShadow: "2px 3.5px 4px -3px gray",
     padding: "20px",
   },
+  alertModal: {
+    position: "absolute",
+    zIndex: "8",
+    background: "white",
+    color: "#ececec",
+    width: "25vw",
+    borderRadius: "1vw",
+    border: "0.5px solid #fdfafa",
+    boxShadow: "2px 3.5px 4px -3px gray",
+    padding: "20px",
+  },
 
   followModalCard: {
     background: "white",
