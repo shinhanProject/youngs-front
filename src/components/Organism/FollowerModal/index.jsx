@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import { Container, Wrapper, ImgWrapper } from "./styled";
 import { Text, ProfileImg, Button } from "../../index";
 import { axiosInstance } from "../../../apis";
@@ -69,29 +70,31 @@ const FollowerModal = ({ setOpenFollowersModal, userId }) => {
       <Text theme="textSetting">Followers</Text>
       <Wrapper>
         {followers.map(follower => (
-          <ImgWrapper key={follower.index}>
-            <ProfileImg theme="followingProfile" profile={follower.profile} />
-            <Text theme="textFollowing">{follower.nickname}</Text>
-            {follower.status === 1 ? (
-              <Button
-                theme="follow"
-                onClick={() => {
-                  onFollow(follower.userSeq);
-                }}
-              >
-                follow
-              </Button>
-            ) : (
-              <Button
-                theme="unfollow"
-                onClick={() => {
-                  onUnFollow(follower.userSeq);
-                }}
-              >
-                unfollow
-              </Button>
-            )}
-          </ImgWrapper>
+          <Link to={`/otherpage/${follower.userSeq}`}>
+            <ImgWrapper key={follower.index}>
+              <ProfileImg theme="followingProfile" profile={follower.profile} />
+              <Text theme="textFollowing">{follower.nickname}</Text>
+              {follower.status === 1 ? (
+                <Button
+                  theme="follow"
+                  onClick={() => {
+                    onFollow(follower.userSeq);
+                  }}
+                >
+                  follow
+                </Button>
+              ) : (
+                <Button
+                  theme="unfollow"
+                  onClick={() => {
+                    onUnFollow(follower.userSeq);
+                  }}
+                >
+                  unfollow
+                </Button>
+              )}
+            </ImgWrapper>
+          </Link>
         ))}
       </Wrapper>
       <Button

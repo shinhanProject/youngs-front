@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import { Container, Wrapper, ImgWrapper } from "./styled";
 import { Text, ProfileImg, Button } from "../../index";
 import { axiosInstance } from "../../../apis";
@@ -55,18 +56,23 @@ const FollowingModal = ({ setIsOpenFollowingModal, userId }) => {
       <Text theme="textSetting">Followings</Text>
       <Wrapper>
         {followings.map(following => (
-          <ImgWrapper key={following.index}>
-            <ProfileImg theme="followingProfile" profile={following.profile} />
-            <Text theme="textFollowing">{following.nickname}</Text>
-            <Button
-              theme="unfollow"
-              onClick={() => {
-                onUnFollow(following.userSeq);
-              }}
-            >
-              unfollow
-            </Button>
-          </ImgWrapper>
+          <Link to={`/otherpage/${following.userSeq}`}>
+            <ImgWrapper key={following.index}>
+              <ProfileImg
+                theme="followingProfile"
+                profile={following.profile}
+              />
+              <Text theme="textFollowing">{following.nickname}</Text>
+              <Button
+                theme="unfollow"
+                onClick={() => {
+                  onUnFollow(following.userSeq);
+                }}
+              >
+                unfollow
+              </Button>
+            </ImgWrapper>
+          </Link>
         ))}
       </Wrapper>
       <Button

@@ -54,12 +54,6 @@ export const loginState = atom({
   effects_UNSTABLE: [persistAtom],
 });
 
-export const privateSummary = atom({
-  key: "privateSummary",
-  default: false,
-  // 요약 나만 보기 true
-});
-
 export const followCheck = atom({
   key: "followCheck",
   default: -1,
@@ -76,4 +70,10 @@ export const summaryCheck = atom({
   key: "summaryCheck",
   default: false,
   // 요약 했는 지 여부
+});
+
+export const onlyMeCheck = atom({
+  key: "onlyMeCheck",
+  default: false,
+  // 요약 나만 보기 했는 지 여부
 });

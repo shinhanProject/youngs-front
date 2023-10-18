@@ -97,7 +97,6 @@ const Login = () => {
             로그인
           </Button>
           <SignUpWrapper>
-            <Button theme="blueTextBtn">비밀번호 찾기</Button>
             <Button theme="blueTextBtn">
               <Link to="/signup">회원가입 하기</Link>
             </Button>

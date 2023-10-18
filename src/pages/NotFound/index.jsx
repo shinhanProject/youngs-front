@@ -1,5 +1,13 @@
+import React from "react";
+import { LoadFile } from "../../components";
+import { Container } from "./styled";
+
 const NotFound = () => {
-  return <div>페이지가 존재하지 않습니다.</div>;
+  return (
+    <Container>
+      <LoadFile />
+    </Container>
+  );
 };
 
 export default NotFound;
