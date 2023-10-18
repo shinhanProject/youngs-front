@@ -7,6 +7,7 @@ export { default as Toggle } from "./Atom/Toggle";
 export { default as ProfileImg } from "./Atom/ProfileImg";
 export { default as Unit } from "./Atom/Unit";
 export { default as Pagination } from "./Atom/Pagination";
+export { default as UpdateInput } from "./Atom/UpdateInput";
 
 export { default as Header } from "./Molecule/Header";
 export { default as Footer } from "./Molecule/Footer";

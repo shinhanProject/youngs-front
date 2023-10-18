@@ -60,12 +60,6 @@ export const privateSummary = atom({
   // 요약 나만 보기 true
 });
 
-export const summaryContent = atom({
-  key: "summaryContent",
-  default: "summary",
-  // 요약 내용
-});
-
 export const followCheck = atom({
   key: "followCheck",
   default: -1,
@@ -76,4 +70,10 @@ export const searchStock = atom({
   key: "searchStock",
   default: "",
   // 요약 내용
+});
+
+export const summaryCheck = atom({
+  key: "summaryCheck",
+  default: false,
+  // 요약 했는 지 여부
 });
