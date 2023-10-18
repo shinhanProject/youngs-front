@@ -20,6 +20,7 @@ export { default as SearchCard } from "./Molecule/SearchCard";
 export { default as SandBeach } from "./Molecule/SandBeach";
 export { default as StockItemCard } from "./Molecule/StockItemCard";
 export { default as BasicKnowledgeCard } from "./Molecule/BasicKnowledgeCard";
+export { default as AlertModal } from "./Molecule/AlertModal";
 
 export { default as Banner } from "./Organism/Banner";
 export { default as RankingModal } from "./Organism/RankingModal";

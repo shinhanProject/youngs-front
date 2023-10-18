@@ -22,6 +22,7 @@ const ButtonStyles = {
   },
   headerBtn: {
     height: "5vh",
+    wordBreak: "keep-all",
     textAlign: "center",
     fontWeight: "bold",
     background: "rgba(255, 255, 255, 0)",
@@ -93,8 +94,19 @@ const ButtonStyles = {
     padding: "0.4vw  1.7vw",
     fontSize: "0.8vw",
     width: "10vw",
-    boxShadow: "2px 3.5px 4px -3px lightgray",
+    boxShadow: "1px 2.2px 2px -1px lightgray",
     margin: "0 0 0 3vw",
+  },
+  alertCloseButton: {
+    borderRadius: "15px",
+    background:
+      "linear-gradient( to bottom,  rgba(0,70,255,0.7) 30% , rgba(195, 0, 202, 0.1) 10%,  rgba(0,70,255,0.7) 30% )",
+    color: "white",
+    textShadow: "1px 1px 1px #000",
+    padding: "0.4vw  1.7vw",
+    fontSize: "0.8vw",
+    width: "10vw",
+    boxShadow: "2px 3.5px 4px -3px lightgray",
   },
   duplicateCheckBtn: {
     width: "30%",
