@@ -11,8 +11,8 @@ const Header = ({ theme }) => {
   const [loginUserState, setLoginUserState] = useRecoilState(loginState);
   const [explanation, setExplanation] = useState("오류가 발생했습니다");
   const [modalOpen, setModalOpen] = useState(false);
-  const [whereis, setWhereis] = useState("toMain");
-  const [needSelect, SetNeedSelect] = useState(false);
+  const [isLogout, setIsLogout] = useState(false);
+  const [title, setTitle] = useState("죄송합니다");
   const showModal = () => {
     setModalOpen(true);
   };
@@ -22,41 +22,14 @@ const Header = ({ theme }) => {
     console.log(loginUserState);
   }, [loginUserState]);
 
-  // const onLogout = async () => {
-  //   if (confirm("로그아웃 하시겠습니까?")) {
-  //     axiosInstance
-  //       .post("/auth/logout")
-  //       .then(response => {
-  //         if (response.status === 200) {
-  //           setLoginUserState({
-  //             isLogin: false,
-  //             userInfo: {
-  //               userSeq: -999,
-  //               email: "",
-  //               nickname: "",
-  //               profile: "",
-  //             },
-  //           });
-  //           navigate("/");
-  //           sessionStorage.removeItem("recoil-persist");
-  //           delete axiosInstance.defaults.headers.common["Authorization"];
-  //         }
-  //       })
-  //       .catch(e => {
-  //         console.log(e);
-  //         showModal();
-  //         setExplanation("로그아웃 중 오류가 발생했습니다.");
-  //         setWhereis("toMain");
-  //       });
-  //   }
-  // };
   const showLogoutConfirm = () => {
     showModal();
+    setTitle("정말 가시나요");
     setExplanation("로그아웃 하시겠습니까?");
-    setWhereis("toMain");
-    SetNeedSelect(true);
   };
-
+  const onRank = () => {
+    navigate("/login");
+  };
   const onLogout = () => {
     axiosInstance
       .post("/auth/logout")
@@ -78,9 +51,10 @@ const Header = ({ theme }) => {
       })
       .catch(e => {
         console.log(e);
-        showModal();
+        setTitle("죄송해요");
         setExplanation("로그아웃 중 오류가 발생했습니다.");
-        setWhereis("toMain");
+        showModal();
+        navigate("/");
       });
   };
 
@@ -89,8 +63,8 @@ const Header = ({ theme }) => {
       navigate("/ranking");
     } else {
       showModal();
-      setExplanation("로그인이 필요한 서비스입니다.");
-      setWhereis("toLogin");
+      setTitle("로그인이 필요한 서비스");
+      setExplanation("로그인 하시겠습니까?");
     }
   };
 
@@ -98,11 +72,10 @@ const Header = ({ theme }) => {
     <Wrapper theme={theme}>
       {modalOpen && (
         <AlertModal
-          whereis={whereis}
           explanation={explanation}
           setModalOpen={setModalOpen}
-          onConfirmLogout={onLogout}
-          needSelect={needSelect}
+          onOkButton={isLogout ? onLogout : onRank}
+          title={title}
         />
       )}
 
@@ -123,7 +96,13 @@ const Header = ({ theme }) => {
                 {loginUserState.userInfo.nickname}
               </LoginProfile>
             </Link>
-            <Button theme="loginBtn" onClick={showLogoutConfirm}>
+            <Button
+              theme="loginBtn"
+              onClick={() => {
+                showLogoutConfirm();
+                setIsLogout(true);
+              }}
+            >
               LOGOUT
             </Button>
           </>
