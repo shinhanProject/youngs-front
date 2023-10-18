@@ -67,6 +67,9 @@ const CardStyles = {
     border: "0.5px solid #ececec",
     padding: "1vh 1vw 1vh 1vw",
     boxShadow: "3px 5px 12px -1px gray",
+    "&:hover": {
+      background: " rgba(195, 0, 202, 0.06 )",
+    },
   },
   rankModalCard: {
     background: "#fdfafa",
