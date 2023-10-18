@@ -22,17 +22,86 @@ import {
   ContentContainer,
   ContentWrapper,
   DummyWrapper,
+  TableContainer,
 } from "./styled";
 
 const StockItemDetail = () => {
-  const stockName = "삼성전자";
-  const { category } = useParams();
+  const { id } = useParams();
   const [stockData, setStockData] = useState({});
+  const [allStocks, setAllStocks] = useState([]);
+  const [statisticData, setStatisticData] = useState({});
+  const [firstSectionData, SetFirstSectionData] = useState({});
+  const [secondSectionData, SetSecondSectionData] = useState({});
+  const [nameStock, setNameStock] = useState("삼성전자");
   const [seriesData, setSeriesData] = useState([]);
+
+  const findStockNameById = () => {
+    console.log("혹시 전체주식이 없니..?", allStocks);
+    const findStock = allStocks.find(stock => stock.stockId === id);
+    console.log("findStockname 여기요", findStock);
+    return findStock ? setNameStock(findStock.name) : setNameStock(""); // 주식을 찾았을 경우 이름을 반환, 찾지 못한 경우 빈 문자열 반환
+  };
+  const getAllStock = async () => {
+    axiosInstance
+      .get(`/stock`)
+      .then(response => {
+        console.log("스톡 데이터", response.data);
+        setAllStocks(response.data);
+      })
+      .catch(e => {
+        console.log(e);
+      });
+  };
   useEffect(() => {
+    getAllStock();
+  }, []);
+  useEffect(() => {
+    findStockNameById();
+  }, [allStocks]);
+
+  // 통계 데이터 가져올 것
+  const getStat = async () => {
+    axiosInstance
+      .get(`/stock/stat/${id}`)
+      .then(response => {
+        console.log("재무제표 내용 ", response.data);
+        setStatisticData(response.data);
+      })
+      .catch(e => {
+        console.log(e);
+      });
+    console.log("통계 데이터!", statisticData);
+  };
+
+  useEffect(() => {
+    getStat();
+  }, []);
+
+  useEffect(() => {
+    console.log("USEEFFECT 안의 ㄴㅅㅁ샨", statisticData);
+    const keys = Object.keys(statisticData);
+    const middleIndex = Math.floor(keys.length / 2);
+    const firstSection = {};
+    const secondSection = {};
+
+    for (let i = 0; i < middleIndex; i += 1) {
+      const key = keys[i];
+      firstSection[key] = statisticData[key];
+    }
+
+    for (let i = middleIndex; i < keys.length; i += 1) {
+      const key = keys[i];
+      secondSection[key] = statisticData[key];
+    }
+    SetFirstSectionData(firstSection);
+    SetSecondSectionData(secondSection);
+  }, [statisticData]);
+  // 차트
+  useEffect(() => {
+    console.log("nameStock", nameStock);
     const fetchData = async () => {
       axiosInstance
-        .get(`/stock/chart/삼성전자`)
+        .get(`/stock/chart/${nameStock}`)
         .then(response => {
           console.log(response.data);
           setStockData(response.data);
@@ -43,7 +112,7 @@ const StockItemDetail = () => {
     };
     fetchData();
     console.log("stock Data 입니당 ", stockData);
-  }, [category]);
+  }, [nameStock]);
   const fineData = () => {
     const transformedData = Object.entries(stockData).reduce(
       (result, [date, values]) => {
@@ -65,6 +134,9 @@ const StockItemDetail = () => {
     );
     return transformedData;
   };
+
+  // 필터링
+
   useEffect(() => {
     const transformedData = fineData();
 
@@ -149,9 +221,13 @@ const StockItemDetail = () => {
             onMouseUp={event => handleSelect(event)}
             onTouchEnd={event => handleSelect(event)}
           >
-            <Text theme="textbasicDetailTitle"> {stockName}</Text>
+            <Text theme="textbasicDetailTitle"> {nameStock}</Text>
             <StockChart innerData={seriesData} />
-            <StockTable />
+            <Text>주식 분석 정보</Text>
+            <TableContainer>
+              <StockTable stockData={firstSectionData} />
+              <StockTable stockData={secondSectionData} />
+            </TableContainer>
           </ContentWrapper>
         </ContentContainer>
       </Wrapper>

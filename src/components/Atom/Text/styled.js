@@ -183,7 +183,7 @@ const textStyles = {
     marginBottom: "2vh",
   },
   textStockItemName: {
-    fontWeight: "normal",
+    fontWeight: "bold",
     fontSize: "1.4vw",
     color: "#4AFFF",
     lineHeight: "1.5vw",
@@ -194,8 +194,8 @@ const textStyles = {
     lineHeight: "1.1vw",
   },
   textBasicItemName: {
-    fontWeight: "normal",
-    fontSize: "1.2vw",
+    fontWeight: "bold",
+    fontSize: "1.3vw",
     color: "black",
     lineHeight: "1.5vw",
     marginBottom: "1vw",

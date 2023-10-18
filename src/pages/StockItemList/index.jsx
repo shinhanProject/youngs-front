@@ -26,6 +26,7 @@ const StockItemList = () => {
   // 이거 const [stockname, setStockname] = useState(); 로 바꿔서 검색 시 사용하기
   const stockSearchValue = useRecoilValue(searchStock);
   const [posts, setPosts] = useState([]);
+  const [filteredPosts, setFilteredPosts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 8;
 
@@ -34,27 +35,30 @@ const StockItemList = () => {
     const fetchData = async () => {
       console.log("stockSearchValue 바뀌면 다시 api 받아옴 ", stockSearchValue);
       axiosInstance
-        .get(`stock`)
+        .get(`/stock`)
         .then(response => {
           console.log(response.data);
-          const searched = response.data.filter(item =>
-            item.name.toLowerCase().includes(stockSearchValue.toLowerCase()),
-          );
-          setPosts(searched);
+          setPosts(response.data);
         })
         .catch(e => {
           console.log(e);
         });
     };
     fetchData();
-  }, [stockSearchValue]);
+  }, []);
+  useEffect(() => {
+    // stockSearchValue에 따라 데이터 필터링
+    const searched = posts.filter(item =>
+      item.name.toLowerCase().includes(stockSearchValue.toLowerCase()),
+    );
+    setFilteredPosts(searched);
+  }, [stockSearchValue, posts]);
   const indexOfLast = currentPage * postsPerPage;
   const indexOfFirst = indexOfLast - postsPerPage;
   const getCurrentPosts = () => {
-    let currentPosts = 0;
-    currentPosts = posts.slice(indexOfFirst, indexOfLast);
-    return currentPosts;
+    return filteredPosts.slice(indexOfFirst, indexOfLast);
   };
+
   return (
     <Container>
       <Header />
@@ -82,7 +86,7 @@ const StockItemList = () => {
             <Wrapperpage>
               <Pagination
                 postsPerPage={postsPerPage}
-                totalPosts={posts.length}
+                totalPosts={filteredPosts.length}
                 paginate={setCurrentPage}
               />
             </Wrapperpage>
