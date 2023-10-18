@@ -28,7 +28,7 @@ const StockItemDetail = () => {
   const stockName = "삼성전자";
   const { category } = useParams();
   const [stockData, setStockData] = useState({});
-  const [seriesData, setSeriesData] = useState({});
+  const [seriesData, setSeriesData] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       axiosInstance
@@ -55,7 +55,7 @@ const StockItemDetail = () => {
         ];
 
         result.push({
-          x: new Date(date).getTime(),
+          x: new Date(date),
           y: [open, high, low, close],
         });
 
@@ -67,6 +67,7 @@ const StockItemDetail = () => {
   };
   useEffect(() => {
     const transformedData = fineData();
+
     setSeriesData(transformedData);
     console.log("USEEFFECT 안이지롱 ", stockData, transformedData);
   }, [stockData]);
