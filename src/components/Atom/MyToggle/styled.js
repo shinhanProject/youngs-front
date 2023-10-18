@@ -1,21 +1,10 @@
 import styled, { css } from "styled-components";
 
-export const getWidthBasedOnFlag = flag => {
-  if (flag === 1) {
-    return "16.5vw";
-  }
-  if (flag === 2) {
-    return "11vw";
-  }
-  return "12vw";
-};
-
-export const Wrapper = styled.div`
+export const ToggleWrapper = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: ${props => getWidthBasedOnFlag(props.flag)};
-  margin: 2vh 0;
+  width: 13vw;
   @media (max-width: 768px) {
     width: 50%; /* 테블릿 사이즈에서 50%의 너비를 사용 */
   }

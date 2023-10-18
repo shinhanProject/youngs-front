@@ -3,8 +3,9 @@ import { useNavigate } from "react-router-dom";
 import { Wrapper1, Wrapper2, Wrapper3, Image } from "./styled";
 import { Text, Card, Button } from "../../index";
 import doraemi from "../../../assets/images/doraemi.svg";
+import sol from "../../../assets/images/sol.svg";
 
-const AlertModal = ({ src, setModalOpen, title, explanation, onOkButton }) => {
+const AlertModal = ({ setModalOpen, title, explanation, onOkButton, flag }) => {
   const modalRef = useRef(null);
   const navigate = useNavigate();
   const closeModal = () => {
@@ -38,7 +39,7 @@ const AlertModal = ({ src, setModalOpen, title, explanation, onOkButton }) => {
           <Text theme="textGptDescription">{explanation}</Text>
         </Wrapper1>
         <Wrapper2>
-          <Image src={doraemi} alt={src} />
+          <Image src={flag ? sol : doraemi} alt="image" />
         </Wrapper2>
         <Wrapper3>
           <Button

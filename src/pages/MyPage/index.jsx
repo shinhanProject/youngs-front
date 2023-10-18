@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { useRecoilValue } from "recoil";
+import { useRecoilValue, useSetRecoilState } from "recoil";
 import { useParams } from "react-router-dom";
 import { axiosInstance } from "../../apis";
-import { loginState, privateSummary } from "../../store/atoms";
+import { loginState, onlyMeCheck } from "../../store/atoms";
 import {
   Header,
   Footer,
@@ -14,7 +14,7 @@ import {
   FollowerModal,
   FollowingModal,
   SummaryCard,
-  Toggle,
+  MyToggle,
 } from "../../components";
 import {
   Container,
@@ -34,7 +34,6 @@ import setting from "../../assets/images/setting.svg";
 
 const MyPage = () => {
   const user = useRecoilValue(loginState);
-  const summaryOnlyMe = useRecoilValue(privateSummary);
   const [isOpenSettingModal, setIsOpenSettingModal] = useState(false);
   const [isOpenFollowersModal, setOpenFollowersModal] = useState(false);
   const [isOpenFollowingModal, setIsOpenFollowingModal] = useState(false);
@@ -42,8 +41,8 @@ const MyPage = () => {
   const [currentProfile, setCurrentProfile] = useState("");
   const [currentTier, setCurrentTier] = useState("");
   const [currentCount, setCurrentCount] = useState("");
+  const setCurrentOnlyMe = useSetRecoilState(onlyMeCheck);
   const [summary, setSummary] = useState([]);
-  const [errorMassage, setErrorMassage] = useState("요약 기록이 없습니다.");
 
   const { id } = useParams();
 
@@ -56,6 +55,8 @@ const MyPage = () => {
           setCurrentProfile(response.data.profile);
           setCurrentTier(response.data.tier);
           setCurrentCount(response.data.count);
+          setCurrentOnlyMe(response.data.onlyMe);
+          console.log(response.data);
         } else {
           alert("마이페이지의 정보를 가져오는데 실패했습니다.");
         }
@@ -75,34 +76,8 @@ const MyPage = () => {
           }));
           setSummary(summaryData);
           console.log(summaryData);
-        } else if (response.status === 204) {
-          setErrorMassage("비공개 기록입니다.");
         } else {
           alert("요약 정보를 가져오는데 실패했습니다.");
-        }
-      })
-      .catch(e => {
-        console.log(e);
-      });
-  };
-
-  const setPrivate = async () => {
-    let flag = -1;
-    if (summaryOnlyMe) {
-      flag = 1;
-    } else {
-      flag = 0;
-    }
-    console.log(flag);
-    axiosInstance
-      .patch(`/profile/${id}/private`, {
-        isPrivate: flag,
-      })
-      .then(response => {
-        if (response.status === 200) {
-          console.log(response.data);
-        } else {
-          alert("공개옵션 변경에 실패했습니다.");
         }
       })
       .catch(e => {
@@ -117,10 +92,6 @@ const MyPage = () => {
   useEffect(() => {
     getProfile();
   }, [user]);
-
-  useEffect(() => {
-    setPrivate();
-  }, [summaryOnlyMe]);
 
   return (
     <Container>
@@ -187,8 +158,8 @@ const MyPage = () => {
             ) : (
               <SandBeach id={id} />
             )}
-            <Toggle flag={3} />
             <SummaryContainer>
+              <MyToggle id={id} />
               {summary.length > 0 ? (
                 summary.map(s => (
                   <SummaryCard
@@ -197,7 +168,7 @@ const MyPage = () => {
                   />
                 ))
               ) : (
-                <Text>{errorMassage}</Text>
+                <Text>요약 기록이 없습니다.</Text>
               )}
             </SummaryContainer>
           </Right>

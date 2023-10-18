@@ -13,6 +13,7 @@ import {
   GptModal,
   Input,
   UpdateInput,
+  AlertModal,
 } from "../../components";
 import { Container, Wrapper, ContentContainer, ContentWrapper } from "./styled";
 
@@ -29,6 +30,7 @@ const PressReleaseDetail = () => {
   const [word, setWord] = useState("");
   const [explanation, setExplanation] = useState("설명을 불러오는 중입니다.");
   const [modalOpen, setModalOpen] = useState(false);
+  const [alertModalOpen, setAlertModalOpen] = useState(false);
   const [modalPosition, setModalPosition] = useState({ top: 0, left: 0 });
 
   const showModal = () => {
@@ -38,7 +40,6 @@ const PressReleaseDetail = () => {
   const handleSelect = event => {
     if (gptDrag) {
       const text = window.getSelection().toString().trim();
-      console.log(text);
       if (text.length <= 20) {
         setModalPosition({
           top: event.clientY + window.scrollY,
@@ -46,7 +47,7 @@ const PressReleaseDetail = () => {
         });
         setWord(text);
       } else {
-        console.log("길어");
+        setAlertModalOpen(true);
       }
     }
   };
@@ -108,6 +109,16 @@ const PressReleaseDetail = () => {
             explanation={explanation}
             setExplanation={setExplanation}
             position={modalPosition}
+          />
+        )}
+        {alertModalOpen && (
+          <AlertModal
+            title="죄송합니다"
+            explanation="20자 넘는 단어는 검색하기 어려워요!"
+            setModalOpen={setAlertModalOpen}
+            onOkButton={() => {
+              setAlertModalOpen(false);
+            }}
           />
         )}
         <ContentContainer

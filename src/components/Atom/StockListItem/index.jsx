@@ -22,7 +22,6 @@ const StockListItem = ({ infoName, data }) => {
   return (
     <Wrapper>
       <Text theme="stockTableTextTitle">{koreanName}</Text>
-      <Text theme="stockTableTextContent">{data}</Text>
     </Wrapper>
   );
 };
