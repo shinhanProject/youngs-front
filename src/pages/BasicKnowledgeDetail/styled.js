@@ -18,27 +18,12 @@ export const Wrapper = styled.div`
   margin-top: 5vh;
   margin-bottom: 10vh;
 `;
-export const Title = styled.div`
-  background: gray;
-  width: 20vw;
-  border-radius: 20px;
-`;
 
 export const ContentContainer = styled.div`
   width: 80vw;
   display: flex;
   flex-direction: column;
   border-top: 1px solid rgba(0, 0, 0, 0.4);
-`;
-export const SummaryInput = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-`;
-export const ButtonWrapper = styled.div`
-  display: flex;
-  flex-direction: column-reverse;
 `;
 
 export const ContentWrapper = styled.div`

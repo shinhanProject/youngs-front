@@ -144,7 +144,10 @@ const StockItemDetail = () => {
         )}
         <ContentContainer>
           <Toggle flag={2} />
-          <ContentWrapper onMouseUp={event => handleSelect(event)}>
+          <ContentWrapper
+            onMouseUp={event => handleSelect(event)}
+            onTouchEnd={event => handleSelect(event)}
+          >
             <Text theme="textbasicDetailTitle"> {stockName}</Text>
             <StockChart innerData={seriesData} />
             <StockTable />

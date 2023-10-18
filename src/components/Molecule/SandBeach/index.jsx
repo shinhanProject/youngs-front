@@ -13,7 +13,8 @@ const SandBeach = ({ id }) => {
     let transformedData = {};
 
     for (let i = 0; i < 365; i += 1) {
-      const date = new Date(today);
+      const offset = 1000 * 60 * 60 * 9;
+      const date = new Date(new Date().getTime() + offset);
       date.setDate(today.getDate() - i);
       const formattedDate = date.toISOString().slice(0, 10);
       const formattedDataDate = formattedDate.replace(/-/g, "");

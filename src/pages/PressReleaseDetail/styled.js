@@ -41,14 +41,3 @@ export const ContentWrapper = styled.div`
   line-height: 1.5;
   color: #0044b;
 `;
-
-export const SummaryInput = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-`;
-export const ButtonWrapper = styled.div`
-  display: flex;
-  flex-direction: column-reverse;
-`;
