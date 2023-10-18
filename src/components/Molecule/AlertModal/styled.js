@@ -15,14 +15,13 @@ export const Wrapper2 = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-
   text-align: center;
 `;
 
 export const Wrapper3 = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 
   text-align: center;
