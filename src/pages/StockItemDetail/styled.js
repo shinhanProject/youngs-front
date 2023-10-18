@@ -19,6 +19,14 @@ export const Wrapper = styled.div`
   margin-top: 5vh;
   margin-bottom: 10vh;
 `;
+export const TableContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  margin: 2vw;
+  width: 50vw;
+`;
 
 export const DummyWrapper = styled.div``;
 export const Title = styled.div`

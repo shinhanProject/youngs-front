@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, StockListItem } from "../../index";
+import { StockListItem } from "../../index";
 import { Container } from "./styled";
 
 const StockTable = () => {
@@ -20,20 +20,17 @@ const StockTable = () => {
       Dividend: 0.96,
     },
   ];
-
+  const firstSectionData = stockData.slice(0, 6);
   return (
-    <>
-      <Text>주식 분석 정보</Text>
-      <Container>
-        {stockData.map(sdata => (
-          <div>
-            {Object.entries(sdata).map(([key, value]) => (
-              <StockListItem infoName={key} data={value} />
-            ))}
-          </div>
-        ))}
-      </Container>
-    </>
+    <Container>
+      {firstSectionData.map(sdata => (
+        <div>
+          {Object.entries(sdata).map(([key, value]) => (
+            <StockListItem infoName={key} data={value} />
+          ))}
+        </div>
+      ))}
+    </Container>
   );
 };
 

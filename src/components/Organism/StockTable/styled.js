@@ -1,12 +1,8 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
   margin: 10px;
-  width: 45vw; /* 원하는 너비 설정 */
+  width: 20vw; /* 원하는 너비 설정 */
 `;
 export const StockListItemContainer = styled.div`
   display: flex;
@@ -31,3 +27,4 @@ export const Data = styled.div`
   overflow: hidden;
   text-overflow: ellipsis; /* 텍스트가 넘칠 경우 ...으로 표시 */
 `;
+export const Row = styled.div``;

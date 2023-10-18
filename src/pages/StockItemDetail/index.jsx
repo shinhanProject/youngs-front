@@ -22,6 +22,7 @@ import {
   ContentContainer,
   ContentWrapper,
   DummyWrapper,
+  TableContainer,
 } from "./styled";
 
 const StockItemDetail = () => {
@@ -151,7 +152,11 @@ const StockItemDetail = () => {
           >
             <Text theme="textbasicDetailTitle"> {stockName}</Text>
             <StockChart innerData={seriesData} />
-            <StockTable />
+            <Text>주식 분석 정보</Text>
+            <TableContainer>
+              <StockTable />
+              <StockTable />
+            </TableContainer>
           </ContentWrapper>
         </ContentContainer>
       </Wrapper>
