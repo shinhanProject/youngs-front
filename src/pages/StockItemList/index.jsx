@@ -35,7 +35,7 @@ const StockItemList = () => {
     const fetchData = async () => {
       console.log("stockSearchValue 바뀌면 다시 api 받아옴 ", stockSearchValue);
       axiosInstance
-        .get(`stock`)
+        .get(`/stock`)
         .then(response => {
           console.log(response.data);
           setPosts(response.data);
