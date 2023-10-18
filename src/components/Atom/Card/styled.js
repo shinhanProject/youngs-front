@@ -156,6 +156,9 @@ const CardStyles = {
     boxShadow: "0px 1px 6px -4px black",
     padding: "5px 0px 5px 0px",
     margin: "0px 0px 10px 0px",
+    "&:hover": {
+      background: " rgba(195, 0, 202, 0.1 )",
+    },
   },
   grayCard: {
     background: "#ECECEC",

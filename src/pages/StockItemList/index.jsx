@@ -70,7 +70,7 @@ const StockItemList = () => {
           <CategoryWrapper>
             <List>
               {getCurrentPosts(posts).map(post => (
-                <Link to={`/stdetail/${post.newsSeq}`}>
+                <Link to={`/stdetail/${post.stockId}`}>
                   <StockItemCard
                     price={post.price}
                     stockName={post.name}
