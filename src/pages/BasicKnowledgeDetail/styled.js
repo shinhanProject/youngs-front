@@ -41,4 +41,5 @@ export const ContentWrapper = styled.div`
   word-break: keep-all;
   line-height: 1.5;
   color: #0044b;
+  text-align: left;
 `;
