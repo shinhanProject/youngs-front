@@ -1,4 +1,6 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
+
 import { Wrapper1, Wrapper2, Wrapper3, Image } from "./styled";
 import { Text, Card, Button } from "../../index";
 import doraemi from "../../../assets/images/doraemi.svg";
@@ -7,35 +9,44 @@ const AlertModal = ({
   setModalOpen,
   // word,
   explanation,
-  setExplanation,
-  // position,
+  whereis,
+  needSelect,
+  onConfirmLogout,
 }) => {
   const modalRef = useRef(null);
+  const navigate = useNavigate();
 
   const closeModal = () => {
     setModalOpen(false);
-    setExplanation("설명을 불러오는 중입니다.");
   };
-
-  //   useEffect(() => {
-  //     const handler = event => {
-  //       if (modalRef.current && !modalRef.current.contains(event.target)) {
-  //         setModalOpen(false);
-  //         setExplanation("설명을 불러오는 중입니다.");
-  //       }
-  //     };
-  //     document.addEventListener("mousedown", handler);
-  //     return () => {
-  //       document.removeEventListener("mousedown", handler);
-  //     };
-  //
+  const goWhere = whereIam => {
+    if (whereIam === "toMain") {
+      navigate("/");
+    } else if (whereIam === "toLogin") {
+      navigate("/login");
+    } else {
+      navigate("");
+    }
+  };
+  useEffect(() => {
+    const handler = event => {
+      if (modalRef.current && !modalRef.current.contains(event.target)) {
+        setModalOpen(false);
+        goWhere(whereis);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+    return () => {
+      document.removeEventListener("mousedown", handler);
+    };
+  });
 
   return (
     <div
       ref={modalRef}
       style={{
         top: "10vh",
-        left: "50vw",
+        left: "35vw",
         position: "absolute",
       }}
     >
@@ -48,7 +59,25 @@ const AlertModal = ({
           <Image src={doraemi} alt="doraemi" />
         </Wrapper2>
         <Wrapper3>
-          <Button theme="alertCloseButton" onClick={closeModal}>
+          {needSelect && (
+            <Button
+              theme="alertCloseButton"
+              onClick={() => {
+                closeModal();
+                goWhere(whereis);
+                onConfirmLogout();
+              }}
+            >
+              확인
+            </Button>
+          )}
+          <Button
+            theme="alertCloseButton"
+            onClick={() => {
+              closeModal();
+              goWhere(whereis);
+            }}
+          >
             닫기
           </Button>
         </Wrapper3>

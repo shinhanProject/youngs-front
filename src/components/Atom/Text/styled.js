@@ -240,8 +240,15 @@ const textStyles = {
     color: "black",
     lineHeight: "1.1vw",
   },
+  toggleText: {
+    fontSize: "1.2vw",
+    fontWeight: "normal",
+    color: "black",
+    marginLeft: "-3vw",
+  },
 };
 
 export const StyledText = styled.p`
+  word-break: keep-all;
   ${props => textStyles[props.theme]}
 `;
