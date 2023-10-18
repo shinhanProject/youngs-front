@@ -36,7 +36,7 @@ export const ContentContainer = styled.div`
 
 // 주식 세부 내용
 export const ContentWrapper = styled.div`
-  width: 60vw;
+  width: 70vw;
   border-radius: 30px;
   border: 1px solid #ececec;
   background: #fff;

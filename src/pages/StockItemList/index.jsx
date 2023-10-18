@@ -34,10 +34,11 @@ const StockItemList = () => {
     const fetchData = async () => {
       console.log("stockSearchValue 바뀌면 다시 api 받아옴 ", stockSearchValue);
       axiosInstance
-        .get(`news/1`)
+        .get(`stock`)
         .then(response => {
+          console.log(response.data);
           const searched = response.data.filter(item =>
-            item.title.toLowerCase().includes(stockSearchValue.toLowerCase()),
+            item.name.toLowerCase().includes(stockSearchValue.toLowerCase()),
           );
           setPosts(searched);
         })
@@ -69,12 +70,11 @@ const StockItemList = () => {
           <CategoryWrapper>
             <List>
               {getCurrentPosts(posts).map(post => (
-                <Link to={`/stdetail/${post.newsSeq}`}>
+                <Link to={`/stdetail/${post.stockId}`}>
                   <StockItemCard
-                    price={post.newsSeq}
-                    name={post.title}
-                    priceChange={post.newsSeq}
-                    date={post.pubDate}
+                    price={post.price}
+                    stockName={post.name}
+                    stockId={post.stockId}
                   />
                 </Link>
               ))}

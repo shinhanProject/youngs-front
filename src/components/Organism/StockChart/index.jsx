@@ -17,13 +17,13 @@ const StockChart = ({ innerData }) => {
   };
 
   return (
-    <div>
+    <div style={{ width: "90%" }}>
       <ReactApexChart
         options={options}
         series={series}
         type="candlestick"
-        height={350}
-        width={700}
+        width="100%"
+        height="300"
       />
     </div>
   );

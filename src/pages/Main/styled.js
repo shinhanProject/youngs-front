@@ -9,6 +9,14 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
 `;
+export const StockContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+`;
 
 export const DecoImg = styled.img`
   position: absolute;
@@ -47,4 +55,16 @@ export const DecoImg4 = styled.img`
   z-index: -1;
   filter: invert(15%) sepia(87%) saturate(7242%) hue-rotate(227deg)
     brightness(103%) contrast(106%) opacity(0.2);
+`;
+
+export const Image = styled.img`
+  width: 15vw;
+`;
+
+export const Wrapper1 = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0px 0px 0px 0px;
+  margin: 0px 0px -1vw 0px;
 `;

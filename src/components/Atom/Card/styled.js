@@ -54,6 +54,9 @@ const CardStyles = {
     border: "0.5px solid #ececec",
     padding: "1vh 1vw 1vh 1vw",
     boxShadow: "3px 5px 12px -1px gray",
+    "&:hover": {
+      background: " rgba(195, 0, 202, 0.06 )",
+    },
   },
   basicItemCard: {
     background: "white",
@@ -64,6 +67,9 @@ const CardStyles = {
     border: "0.5px solid #ececec",
     padding: "1vh 1vw 1vh 1vw",
     boxShadow: "3px 5px 12px -1px gray",
+    "&:hover": {
+      background: " rgba(195, 0, 202, 0.06 )",
+    },
   },
   rankModalCard: {
     background: "#fdfafa",
@@ -150,6 +156,9 @@ const CardStyles = {
     boxShadow: "0px 1px 6px -4px black",
     padding: "5px 0px 5px 0px",
     margin: "0px 0px 10px 0px",
+    "&:hover": {
+      background: " rgba(195, 0, 202, 0.1 )",
+    },
   },
   grayCard: {
     background: "#ECECEC",
