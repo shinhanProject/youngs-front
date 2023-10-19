@@ -3,9 +3,10 @@ import { Link } from "react-router-dom";
 import { Wrapper } from "./styled";
 import { Text, Card } from "../../index";
 
-const StockRecommandCard = ({ key, stockName, rate }) => {
+const StockRecommandCard = ({ stockId, stockName, rate }) => {
+  console.log(stockId, stockName, "왜...");
   return (
-    <Link to={`/stdetail/${key}}`}>
+    <Link to={`/stdetail/${stockId}`}>
       <Card theme="stockRecommandListCard">
         <Wrapper>
           <Text theme="textStockRankingTitle">{stockName}</Text>
