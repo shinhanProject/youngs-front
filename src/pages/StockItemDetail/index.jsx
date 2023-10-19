@@ -95,6 +95,7 @@ const StockItemDetail = () => {
     }
     SetFirstSectionData(firstSection);
     SetSecondSectionData(secondSection);
+    console.log("퍼스트 ", firstSection);
   }, [statisticData]);
   // 차트
   useEffect(() => {
@@ -223,7 +224,8 @@ const StockItemDetail = () => {
           >
             <Text theme="textbasicDetailTitle"> {nameStock}</Text>
             <StockChart innerData={seriesData} />
-            <Text>주식 분석 정보</Text>
+            <Text theme="stockDetailSubTitle">주식 분석 정보</Text>
+            <Text>2023.3분기</Text>
             <TableContainer>
               <StockTable stockData={firstSectionData} />
               <StockTable stockData={secondSectionData} />
