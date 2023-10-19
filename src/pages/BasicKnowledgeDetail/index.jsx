@@ -18,13 +18,7 @@ import { Container, Wrapper, ContentContainer, ContentWrapper } from "./styled";
 const BasicKnowledgeDetail = () => {
   const [isSummaryDone, setIsSummaryDone] = useRecoilState(summaryCheck);
   const { category, id } = useParams();
-
   const [posts, setPosts] = useState({
-    title: "",
-    info: "",
-  });
-
-  const [key, setKey] = useState({
     title: "",
     info: "",
   });
@@ -44,27 +38,8 @@ const BasicKnowledgeDetail = () => {
       });
   };
 
-  const getKey = async () => {
-    axiosInstance
-      .get(`/basic/detail?categorySeq=${category}&basicSeq=${id}`)
-      .then(response => {
-        setKey({
-          title: response.data.subject,
-          info: response.data.information,
-        });
-        setIsSummaryDone(response.data.wasWritten);
-      })
-      .catch(e => {
-        console.log(e);
-      });
-  };
-
   useEffect(() => {
-    if (category === 1 || category === 4) {
-      getContent();
-    } else {
-      getKey();
-    }
+    getContent();
   }, []);
 
   return (
@@ -80,16 +55,11 @@ const BasicKnowledgeDetail = () => {
         <BasicKnowledgeCategory />
         <ContentContainer>
           <ContentWrapper>
-            {category === 1 || category === 4 ? (
-              <>
-                <Text theme="textbasicDetailTitle"> {posts.title}</Text>
-                <p>{posts.info}</p>
-              </>
+            <Text theme="textbasicDetailTitle"> {posts.title}</Text>
+            {category === "1" || category === "4" ? (
+              <p>{posts.info}</p>
             ) : (
-              <>
-                <Text theme="textbasicDetailTitle"> {key.title}</Text>
-                <LoadFile currentHTMLKey={key.info} />
-              </>
+              <LoadFile currentHTMLKey={posts.info} />
             )}
             {isSummaryDone ? (
               <UpdateInput

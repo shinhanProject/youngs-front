@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import AWS from "aws-sdk";
+import { Container } from "./styled";
 
 const LoadFile = ({ currentHTMLKey }) => {
   const [htmlContent, setHtmlContent] = useState("");
@@ -32,10 +33,12 @@ const LoadFile = ({ currentHTMLKey }) => {
     });
   }, []);
 
+  console.log(currentHTMLKey);
+
   return (
-    <div>
-      <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
-    </div>
+    <Container>
+      <span dangerouslySetInnerHTML={{ __html: htmlContent }} />
+    </Container>
   );
 };
 
