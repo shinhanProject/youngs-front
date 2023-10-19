@@ -16,12 +16,26 @@ const mapping = {
   marketCap: "시가총액",
 };
 
-const StockListItem = ({ infoName }) => {
+function formatNumber(value) {
+  const numberString = value.replace(/["\\]/g, ""); // 쌍따옴표와 역슬래시 제거
+  const number = parseInt(numberString, 10);
+
+  if (isNaN(number)) {
+    return "Invalid Number";
+  }
+
+  // 억(10억) 단위로 포맷
+  return (number / 100000000).toLocaleString() + " 억";
+}
+
+const StockListItem = ({ infoName, data }) => {
   const koreanName = mapping[infoName] || infoName;
+  const formattedData = formatNumber(data);
 
   return (
     <Wrapper>
       <Text theme="stockTableTextTitle">{koreanName}</Text>
+      <Text theme="stockTableTextContent">{formattedData}</Text>
     </Wrapper>
   );
 };

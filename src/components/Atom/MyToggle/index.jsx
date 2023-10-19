@@ -30,7 +30,7 @@ const MyToggle = ({ id }) => {
       <ToggleBtn onClick={clickedToggle} toggle={toggle.toString()}>
         <Circle toggle={toggle.toString()} />
       </ToggleBtn>
-      <Text theme="toggleText">요약 내용 나만 보기</Text>
+      <Text theme="myToggleText">요약 내용 나만 보기</Text>
     </ToggleWrapper>
   );
 };
