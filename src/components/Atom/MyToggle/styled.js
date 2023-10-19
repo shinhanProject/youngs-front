@@ -2,15 +2,16 @@ import styled, { css } from "styled-components";
 
 export const ToggleWrapper = styled.div`
   display: flex;
+  margin-bottom: 1vh;
   justify-content: space-around;
   align-items: center;
-  width: 13vw;
+  width: 20vw;
   @media (max-width: 768px) {
     width: 50%; /* 테블릿 사이즈에서 50%의 너비를 사용 */
   }
 
   @media (min-width: 769px) {
-    width: 25%; /* 웹에서 30%의 너비를 사용 */
+    width: 30%; /* 웹에서 30%의 너비를 사용 */
   }
 `;
 export const ToggleBtn = styled.button`
@@ -28,8 +29,8 @@ export const ToggleBtn = styled.button`
   transition: all 0.5s ease-in-out;
 
   @media (max-width: 768px) {
-    width: 40px; /* 테블릿 사이즈에서 작은 크기로 조절 */
-    height: 20px;
+    width: 3vw; /* 테블릿 사이즈에서 작은 크기로 조절 */
+    height: 2vh;
   }
 `;
 export const Circle = styled.div`
@@ -47,8 +48,8 @@ export const Circle = styled.div`
       transition: all 0.5s ease-in-out;
     `}
   @media (max-width: 768px) {
-    width: 12px; /* 테블릿 사이즈에서 작은 크기로 조절 */
-    height: 12px;
+    width: 1.2vw; /* 테블릿 사이즈에서 작은 크기로 조절 */
+    height: 1.2vw;
     left: 4px;
   }
 `;

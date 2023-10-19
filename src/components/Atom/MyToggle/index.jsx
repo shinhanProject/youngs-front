@@ -13,11 +13,7 @@ const MyToggle = ({ id }) => {
         isPrivate: toggle,
       })
       .then(response => {
-        if (response.status === 200) {
-          console.log(response.data);
-        } else {
-          alert("공개옵션 변경에 실패했습니다.");
-        }
+        console.log(response.data);
       })
       .catch(e => {
         console.log(e);
@@ -34,7 +30,7 @@ const MyToggle = ({ id }) => {
       <ToggleBtn onClick={clickedToggle} toggle={toggle.toString()}>
         <Circle toggle={toggle.toString()} />
       </ToggleBtn>
-      <Text theme="toggleText">요약 내용 나만 보기</Text>
+      <Text theme="myToggleText">요약 내용 나만 보기</Text>
     </ToggleWrapper>
   );
 };

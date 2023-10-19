@@ -51,7 +51,7 @@ const Main = () => {
             <Wrapper1>
               {recommandList.map(stock => (
                 <StockRecommandCard
-                  key={stock.stockId}
+                  stockId={stock.stockId}
                   stockName={stock.name}
                   rate={stock.rate}
                 />

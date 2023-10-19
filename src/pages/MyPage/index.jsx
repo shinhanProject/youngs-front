@@ -158,8 +158,8 @@ const MyPage = () => {
             ) : (
               <SandBeach id={id} />
             )}
+            <MyToggle id={id} />
             <SummaryContainer>
-              <MyToggle id={id} />
               {summary.length > 0 ? (
                 summary.map(s => (
                   <SummaryCard

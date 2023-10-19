@@ -16,6 +16,7 @@ export const Wrapper = styled.div`
   justify-content: space-between;
   width: 100%;
   margin-top: 5vh;
+  height: 60vh;
   margin-bottom: 10vh;
 `;
 
@@ -28,7 +29,7 @@ export const ContentContainer = styled.div`
 
 export const ContentWrapper = styled.div`
   width: 60vw;
-  height: 40vh;
+  height: 100vh;
   border-radius: 30px;
   border: 1px solid #ececec;
   background: #fff;
@@ -42,4 +43,17 @@ export const ContentWrapper = styled.div`
   line-height: 1.5;
   color: #0044b;
   text-align: left;
+  overflow-x: hidden;
+  overflow-y: auto;
+  white-space: normal;
+  overflow-wrap: break-word;
+`;
+
+export const LoadWrapper = styled.div`
+  width: 100%;
+`;
+
+export const PostWrapper = styled.div`
+  width: 100%;
+  white-space: normal;
 `;

@@ -5,14 +5,17 @@ export const InputWrapper = styled.div`
   width: 50vw;
   flex-direction: column;
   align-items: flex-start;
-  gap: 5px;
+  justify-content: space-around;
 `;
 export const Label = styled.label`
   padding-left: 1vw;
+  margin-top : 1.2vw;
+  font-size : 1vw;
+  color = #ececec;
 `;
 
 export const UserInput = styled.input`
-  margin-top: 10px;
+  margin-top: 5px;
   height: 7vh;
   width: 100%;
   border-radius: 20px;
