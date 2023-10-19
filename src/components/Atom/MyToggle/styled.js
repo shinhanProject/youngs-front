@@ -5,7 +5,7 @@ export const ToggleWrapper = styled.div`
   margin-bottom: 1vh;
   justify-content: space-around;
   align-items: center;
-  width: 13vw;
+  width: 20vw;
   @media (max-width: 768px) {
     width: 50%; /* 테블릿 사이즈에서 50%의 너비를 사용 */
   }

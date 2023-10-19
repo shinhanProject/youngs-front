@@ -72,6 +72,7 @@ const BasicKnowledgeList = () => {
               {getCurrentPosts(posts).map(post => (
                 <Link to={`/bsdetail/${category}/${post.basicSeq}`}>
                   <BasicKnowledgeCard
+                    key={post.subject}
                     name={post.subject}
                     description={post.information}
                   />

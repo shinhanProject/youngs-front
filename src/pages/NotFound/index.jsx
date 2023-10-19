@@ -5,7 +5,7 @@ import { Container } from "./styled";
 const NotFound = () => {
   return (
     <Container>
-      <LoadFile />
+      <LoadFile currentHTMLKey="basic/stock2.html" />
     </Container>
   );
 };
