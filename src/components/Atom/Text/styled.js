@@ -246,14 +246,20 @@ const textStyles = {
     color: "black",
   },
   stockTableTextContent: {
-    fontSize: "1.2vw",
+    fontSize: "1.1vw",
     fontWeight: "normal",
-    color: "black",
+    color: "#eeeee",
   },
   stockTableTextTitle: {
-    fontSize: "1.2vw",
+    fontSize: "1.1vw",
     fontWeight: "bold",
     color: "black",
+  },
+  stockDetailSubTitle: {
+    fontSize: "1.3vw",
+    fontWeight: "bold",
+    color: "black",
+    marginTop: "2vh",
   },
 };
 
