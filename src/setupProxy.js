@@ -4,14 +4,14 @@ module.exports = app => {
   app.use(
     "/auth/login",
     createProxyMiddleware({
-      target: "http://52.78.30.240:8080",
+      target: "https://app-team-6.shinhansec-pda.net",
       changeOrigin: true,
     }),
   );
   app.use(
     "/auth/reissue",
     createProxyMiddleware({
-      target: "http://52.78.30.240:8080",
+      target: "https://app-team-6.shinhansec-pda.net",
       changeOrigin: true,
     }),
   );
