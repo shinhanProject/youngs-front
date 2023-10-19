@@ -151,6 +151,25 @@ const textStyles = {
     color: "gray",
     margin: "3px 0",
   },
+  newsTitle: {
+    fontWeight: "bold",
+    fontSize: "1vw",
+    color: "black",
+    margin: "1vw 0vw 0vw 0vw",
+  },
+  newsDateText: {
+    fontWeight: "100",
+    fontSize: "0.7vw",
+    color: "gray",
+    margin: "1vh 0",
+  },
+  newsDescriptionText: {
+    fontWeight: "normal",
+    fontSize: "0.8vw",
+    color: "#eeeee",
+    margin: "0.5vw 0vw",
+    lineHeight: "1.3vw",
+  },
   textSearch: {
     fontWeight: "bold",
     fontSize: "1.1vw",
