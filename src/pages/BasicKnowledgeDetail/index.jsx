@@ -19,6 +19,7 @@ import {
   ContentContainer,
   ContentWrapper,
   LoadWrapper,
+  PostWrapper,
 } from "./styled";
 
 const BasicKnowledgeDetail = () => {
@@ -64,7 +65,9 @@ const BasicKnowledgeDetail = () => {
             {category === "1" || category === "4" ? (
               <>
                 <Text theme="textbasicDetailTitle"> {posts.title}</Text>
-                <p>{posts.info}</p>
+                <PostWrapper>
+                  <p>{posts.info}</p>
+                </PostWrapper>
               </>
             ) : (
               <LoadWrapper>
