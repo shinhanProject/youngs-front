@@ -1,0 +1,21 @@
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  display: inline !important;
+  white-space: nowrap !important;
+}
+article {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+* {
+  box-sizing: initial !important;
+}
+
+a {
+  text-decoration: none !important;
+}
+.className {
+  text-align: left;
+  height: 100vh;
+}

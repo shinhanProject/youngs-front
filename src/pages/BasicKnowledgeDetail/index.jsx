@@ -13,7 +13,13 @@ import {
   UpdateInput,
   LoadFile,
 } from "../../components";
-import { Container, Wrapper, ContentContainer, ContentWrapper } from "./styled";
+import {
+  Container,
+  Wrapper,
+  ContentContainer,
+  ContentWrapper,
+  LoadWrapper,
+} from "./styled";
 
 const BasicKnowledgeDetail = () => {
   const [isSummaryDone, setIsSummaryDone] = useRecoilState(summaryCheck);
@@ -55,11 +61,15 @@ const BasicKnowledgeDetail = () => {
         <BasicKnowledgeCategory />
         <ContentContainer>
           <ContentWrapper>
-            <Text theme="textbasicDetailTitle"> {posts.title}</Text>
             {category === "1" || category === "4" ? (
-              <p>{posts.info}</p>
+              <>
+                <Text theme="textbasicDetailTitle"> {posts.title}</Text>
+                <p>{posts.info}</p>
+              </>
             ) : (
-              <LoadFile currentHTMLKey={posts.info} />
+              <LoadWrapper>
+                <LoadFile currentHTMLKey={posts.info} />
+              </LoadWrapper>
             )}
             {isSummaryDone ? (
               <UpdateInput

@@ -14,6 +14,7 @@ import {
   Input,
   UpdateInput,
   AlertModal,
+  LoadFile,
 } from "../../components";
 import { Container, Wrapper, ContentContainer, ContentWrapper } from "./styled";
 
@@ -127,9 +128,7 @@ const PressReleaseDetail = () => {
         >
           <Toggle flag={2} />
           <ContentWrapper>
-            <p>{posts.title}</p>
-            <p>{posts.url}</p>
-            <p>{posts.pubDate}</p>
+            <LoadFile currentHTMLKey={posts.url} />
             {isSummaryDone ? (
               <UpdateInput
                 label="한 줄 요약하기"

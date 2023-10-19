@@ -11,9 +11,7 @@ const RankingList = ({
   handlePosition,
   changeProfile,
 }) => {
-  const doNothing = () => {
-    console.log("no");
-  };
+  const doNothing = () => {};
   return (
     <Rankers>
       <RankingCard

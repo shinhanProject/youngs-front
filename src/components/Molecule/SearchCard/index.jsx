@@ -17,7 +17,6 @@ const SearchCard = () => {
 
   const handleEnter = e => {
     if (e.key === "Enter") {
-      console.log(inputText, "ㅇ에");
       setSearchStock(inputText);
       navigate("/stockitem");
     }
@@ -25,7 +24,6 @@ const SearchCard = () => {
 
   const handleChange = e => {
     setInputText(e.target.value);
-    console.log(inputText);
   };
   return (
     <Container>
