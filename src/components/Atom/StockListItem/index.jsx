@@ -16,7 +16,7 @@ const mapping = {
   marketCap: "시가총액",
 };
 
-const StockListItem = ({ infoName, data }) => {
+const StockListItem = ({ infoName }) => {
   const koreanName = mapping[infoName] || infoName;
 
   return (

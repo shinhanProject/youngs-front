@@ -11,13 +11,13 @@ import {
   BasicKnowledgeCategory,
   Input,
   UpdateInput,
+  LoadFile,
 } from "../../components";
 import { Container, Wrapper, ContentContainer, ContentWrapper } from "./styled";
 
 const BasicKnowledgeDetail = () => {
   const [isSummaryDone, setIsSummaryDone] = useRecoilState(summaryCheck);
   const { category, id } = useParams();
-
   const [posts, setPosts] = useState({
     title: "",
     info: "",
@@ -56,7 +56,11 @@ const BasicKnowledgeDetail = () => {
         <ContentContainer>
           <ContentWrapper>
             <Text theme="textbasicDetailTitle"> {posts.title}</Text>
-            <p>{posts.info}</p>
+            {category === "1" || category === "4" ? (
+              <p>{posts.info}</p>
+            ) : (
+              <LoadFile currentHTMLKey={posts.info} />
+            )}
             {isSummaryDone ? (
               <UpdateInput
                 label="한 줄 요약하기"
