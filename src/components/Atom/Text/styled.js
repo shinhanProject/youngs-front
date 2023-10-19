@@ -264,6 +264,11 @@ const textStyles = {
     fontWeight: "normal",
     color: "black",
   },
+  myToggleText: {
+    fontSize: "1.2vw",
+    fontWeight: "normal",
+    color: "black",
+  },
   stockTableTextContent: {
     fontSize: "1.1vw",
     fontWeight: "normal",
