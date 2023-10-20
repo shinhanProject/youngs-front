@@ -41,3 +41,11 @@ export const ContentWrapper = styled.div`
   line-height: 1.5;
   color: #0044b;
 `;
+
+export const LoadWrapper = styled.div`
+  width: 100%;
+  overflow-wrap: break-word;
+  white-space: normal;
+  overflow-x: hidden;
+  overflow-y: auto;
+`;

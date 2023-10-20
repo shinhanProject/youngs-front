@@ -7,7 +7,8 @@ export const Wrapper1 = styled.div`
   align-items: flex-start;
   height: 100%;
   text-align: left;
-
+  white-space: normal;
+  overflow-wrap: break-word;
   padding: 0px 0px 5px 0px;
 `;
 

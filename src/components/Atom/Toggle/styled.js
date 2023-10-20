@@ -25,7 +25,7 @@ export const Wrapper = styled.div`
   }
 `;
 export const ToggleBtn = styled.button`
-  width: 4vw;
+  width: 3.3vw;
   height: 4vh;
   border-radius: 15px;
   border: none;
