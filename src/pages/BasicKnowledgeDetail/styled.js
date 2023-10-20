@@ -16,7 +16,16 @@ export const Wrapper = styled.div`
   justify-content: space-between;
   width: 100%;
   margin-top: 5vh;
+  margin-bottom: 10vh;
+`;
+
+export const Wrapper1 = styled.div`
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
   height: 60vh;
+  margin-top: 5vh;
   margin-bottom: 10vh;
 `;
 
@@ -43,17 +52,20 @@ export const ContentWrapper = styled.div`
   line-height: 1.5;
   color: #0044b;
   text-align: left;
+`;
+
+export const LoadWrapper = styled.div`
+  width: 100%;
   overflow-x: hidden;
   overflow-y: auto;
   white-space: normal;
   overflow-wrap: break-word;
 `;
 
-export const LoadWrapper = styled.div`
-  width: 100%;
-`;
-
 export const PostWrapper = styled.div`
   width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
   white-space: normal;
+  overflow-wrap: break-word;
 `;

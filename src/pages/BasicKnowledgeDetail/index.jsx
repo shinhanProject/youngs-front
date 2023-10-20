@@ -20,6 +20,7 @@ import {
   ContentWrapper,
   LoadWrapper,
   PostWrapper,
+  Wrapper1,
 } from "./styled";
 
 const BasicKnowledgeDetail = () => {
@@ -58,41 +59,62 @@ const BasicKnowledgeDetail = () => {
         나가세요!
       </Text>
       <CategoryBundle selected="basicknowledge" />
-      <Wrapper>
-        <BasicKnowledgeCategory />
-        <ContentContainer>
-          <ContentWrapper>
-            {category === "1" || category === "4" ? (
-              <>
-                <Text theme="textbasicDetailTitle"> {posts.title}</Text>
-                <PostWrapper>
-                  <p>{posts.info}</p>
-                </PostWrapper>
-              </>
-            ) : (
+      {category === "1" || category === "4" ? (
+        <Wrapper1>
+          <BasicKnowledgeCategory />
+          <ContentContainer>
+            <ContentWrapper>
+              <Text theme="textbasicDetailTitle"> {posts.title}</Text>
+              <PostWrapper>
+                <p>{posts.info}</p>
+              </PostWrapper>
+              {isSummaryDone ? (
+                <UpdateInput
+                  label="한 줄 요약하기"
+                  type="text"
+                  id={id}
+                  categorySeq="basic"
+                />
+              ) : (
+                <Input
+                  label="한 줄 요약하기"
+                  type="text"
+                  placeholder="요약을 입력하세요"
+                  id={id}
+                  categorySeq="basic"
+                />
+              )}
+            </ContentWrapper>
+          </ContentContainer>
+        </Wrapper1>
+      ) : (
+        <Wrapper>
+          <BasicKnowledgeCategory />
+          <ContentContainer>
+            <ContentWrapper>
               <LoadWrapper>
                 <LoadFile currentHTMLKey={posts.info} />
               </LoadWrapper>
-            )}
-            {isSummaryDone ? (
-              <UpdateInput
-                label="한 줄 요약하기"
-                type="text"
-                id={id}
-                categorySeq="basic"
-              />
-            ) : (
-              <Input
-                label="한 줄 요약하기"
-                type="text"
-                placeholder="요약을 입력하세요"
-                id={id}
-                categorySeq="basic"
-              />
-            )}
-          </ContentWrapper>
-        </ContentContainer>
-      </Wrapper>
+              {isSummaryDone ? (
+                <UpdateInput
+                  label="한 줄 요약하기"
+                  type="text"
+                  id={id}
+                  categorySeq="basic"
+                />
+              ) : (
+                <Input
+                  label="한 줄 요약하기"
+                  type="text"
+                  placeholder="요약을 입력하세요"
+                  id={id}
+                  categorySeq="basic"
+                />
+              )}
+            </ContentWrapper>
+          </ContentContainer>
+        </Wrapper>
+      )}
       <Footer />
     </Container>
   );
