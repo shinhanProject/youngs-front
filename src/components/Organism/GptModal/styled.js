@@ -15,6 +15,8 @@ export const Wrapper2 = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  overflow-wrap: break-word;
+  white-space: normal;
   margin: 0.5vw;
 `;
 

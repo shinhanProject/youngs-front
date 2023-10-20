@@ -16,7 +16,13 @@ import {
   AlertModal,
   LoadFile,
 } from "../../components";
-import { Container, Wrapper, ContentContainer, ContentWrapper } from "./styled";
+import {
+  Container,
+  Wrapper,
+  ContentContainer,
+  ContentWrapper,
+  LoadWrapper,
+} from "./styled";
 
 const PressReleaseDetail = () => {
   const [isSummaryDone, setIsSummaryDone] = useState(false);
@@ -128,7 +134,9 @@ const PressReleaseDetail = () => {
         >
           <Toggle flag={2} />
           <ContentWrapper>
-            <LoadFile currentHTMLKey={posts.url} />
+            <LoadWrapper>
+              <LoadFile currentHTMLKey={posts.url} />
+            </LoadWrapper>
             {isSummaryDone ? (
               <UpdateInput
                 label="한 줄 요약하기"
