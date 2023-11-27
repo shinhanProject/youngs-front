@@ -213,7 +213,7 @@
 
 <br><br><br>
 
-# ⚙️ Conversion Rule
+# ⚙️ Convention Rule
 
 <h2>📃 commit message</h2> 
 
